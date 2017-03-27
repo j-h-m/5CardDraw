@@ -9,51 +9,43 @@ using System.Collections;
 
 namespace WindowsFormsApplication1
 {
-    class Hand : Deck
+    public class Hand
     {
-        Image[] playerHand = new Image[5];
-        Image[] computerHand = new Image[5];
-        
+        Card[] playerHand = new Card[5];
+        Card[] computerHand = new Card[5];
         Deck myDeck = new Deck();
-        
-       
-        
-        
+
         public Hand()
         {
             playerHand = setplayerHand();
             computerHand = setcomputerHand();
-            
         }
 
-        public Image[] setplayerHand()
-        {
-
-             
-            for (int i=0; i<5; i++)
-            {
-                playerHand[i]=(myDeck.getDeck().Pop());
-            }
-            return playerHand;
-        }
-        public Image[] setcomputerHand()
+        public Card[] setplayerHand()
         {
             for (int i = 0; i < 5; i++)
             {
-                computerHand[i]=(myDeck.getDeck().Pop());
+                playerHand[i] = (myDeck.getDeck().Pop());
+            }
+            return playerHand;
+        }
+        public Card[] setcomputerHand()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                computerHand[i] = (myDeck.getDeck().Pop());
             }
             return computerHand;
         }
 
-        public Image[] getplayerHand()
+        public Card[] getplayerHand()
         {
             return playerHand;
         }
 
-        public Image[] getcomputerHand()
+        public Card[] getcomputerHand()
         {
             return computerHand;
         }
-
     }
 }

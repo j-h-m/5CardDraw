@@ -41,28 +41,27 @@ namespace WindowsFormsApplication1
 
         private void DealBtn_Click(object sender, EventArgs e)
         {
-            /* Do something with random logic to ensure identical cards aren't drawn
-             * occasionally draws 4
-             *  */
-            
-            //Makes dat path all dynamic n'shit
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string testFolderPath = projectPath + "\\Card Images\\back of card.png";
+            string cardback = projectPath + "\\Card Images\\back of card";
 
-            PBplayerCard1.Image = myHand.getplayerHand()[0];
-            PBplayerCard2.Image = myHand.getplayerHand()[1];
-            PBplayerCard3.Image = myHand.getplayerHand()[2];
-            PBplayerCard4.Image = myHand.getplayerHand()[3];
-            PBplayerCard5.Image = myHand.getplayerHand()[4];
+            // test of Hand class
+            Hand hand_ref = new Hand();
+            Card[] player_hand = hand_ref.getplayerHand();
+            Card[] comp_hand = hand_ref.getcomputerHand();
 
-            
-            ComputerCard1.Image = Image.FromFile(testFolderPath);
-            ComputerCard2.Image = Image.FromFile(testFolderPath);
-            ComputerCard3.Image = Image.FromFile(testFolderPath);
-            ComputerCard4.Image = Image.FromFile(testFolderPath);
-            ComputerCard5.Image = Image.FromFile(testFolderPath);
+            PBplayerCard1.Image = player_hand[0].getImage();
+            PBplayerCard2.Image = player_hand[1].getImage();
+            PBplayerCard3.Image = player_hand[2].getImage();
+            PBplayerCard4.Image = player_hand[3].getImage();
+            PBplayerCard5.Image = player_hand[4].getImage();
+
+            ComputerCard1.Image = Image.FromFile(cardback);
+            ComputerCard2.Image = Image.FromFile(cardback);
+            ComputerCard3.Image = Image.FromFile(cardback);
+            ComputerCard4.Image = Image.FromFile(cardback);
+            ComputerCard5.Image = Image.FromFile(cardback);
 
             moneyPot.Text = "$2.00";
             playerMoney.Text = "$99.00";
@@ -70,8 +69,6 @@ namespace WindowsFormsApplication1
 
             DealBtn.Enabled = false;
             DealBtn.BackColor = Color.Gray;
-
-
         }
     }
 }
