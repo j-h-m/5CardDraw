@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
     {
         
         Deck myDeck = new Deck();
-        Hand myHand = new Hand();
+        Hand hand_ref = new Hand();
     
         public GameBoard()
         {
@@ -44,11 +44,11 @@ namespace WindowsFormsApplication1
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string cardback = projectPath + "\\Card Images\\back of card";
+            string cardback = projectPath + "\\Card Images\\back of card.png";
 
             // test of Hand class
-            Hand hand_ref = new Hand();
             Card[] player_hand = hand_ref.getplayerHand();
+            hand_ref.sortHand(player_hand);
             Card[] comp_hand = hand_ref.getcomputerHand();
 
             PBplayerCard1.Image = player_hand[0].getImage();

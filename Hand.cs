@@ -47,5 +47,14 @@ namespace WindowsFormsApplication1
         {
             return computerHand;
         }
+
+        public void sortHand(Card[] array)
+        {
+            Array.Sort(array, delegate (Card c1, Card c2)
+            {
+                return c1.getFace().CompareTo(c2.getFace());
+            });
+        }
+
     }
 }

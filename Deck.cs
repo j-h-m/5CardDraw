@@ -27,9 +27,9 @@ namespace WindowsFormsApplication1
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string testFolderPath = projectPath + "\\Card Images\\";
+            string testFolderPath = projectPath + "\\Card Images\\Cards\\";
 
-            string[] card_names = Directory.GetFiles(testFolderPath, "*.png").Select(Path.GetFileName).ToArray();
+            card_names = Directory.GetFiles(testFolderPath).Select(Path.GetFileName).ToArray();
             Card[] card_array = new Card[52];
 
             for (int i = 0; i < card_array.Length; i++)
@@ -41,275 +41,275 @@ namespace WindowsFormsApplication1
             {
                 switch (card_names[i])
                 {
-                    case "2_of_clubs":
+                    case "2_of_clubs.png":
                         card_array[i].setFace(20);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "2_of_diamonds":
+                    case "2_of_diamonds.png":
                         card_array[i].setFace(20);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "2_of_hearts":
+                    case "2_of_hearts.png":
                         card_array[i].setFace(20);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "2_of_spades":
+                    case "2_of_spades.png":
                         card_array[i].setFace(20);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- 3
-                    case "3_of_clubs":
+                    case "3_of_clubs.png":
                         card_array[i].setFace(30);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "3_of_diamonds":
+                    case "3_of_diamonds.png":
                         card_array[i].setFace(30);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "3_of_hearts":
+                    case "3_of_hearts.png":
                         card_array[i].setFace(30);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "3_of_spades":
+                    case "3_of_spades.png":
                         card_array[i].setFace(30);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- 4
-                    case "4_of_clubs":
+                    case "4_of_clubs.png":
                         card_array[i].setFace(40);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "4_of_diamonds":
+                    case "4_of_diamonds.png":
                         card_array[i].setFace(40);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "4_of_hearts":
+                    case "4_of_hearts.png":
                         card_array[i].setFace(40);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "4_of_spades":
+                    case "4_of_spades.png":
                         card_array[i].setFace(40);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- 5
-                    case "5_of_clubs":
+                    case "5_of_clubs.png":
                         card_array[i].setFace(50);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "5_of_diamonds":
+                    case "5_of_diamonds.png":
                         card_array[i].setFace(50);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "5_of_hearts":
+                    case "5_of_hearts.png":
                         card_array[i].setFace(50);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "5_of_spades":
+                    case "5_of_spades.png":
                         card_array[i].setFace(50);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- 6
-                    case "6_of_clubs":
+                    case "6_of_clubs.png":
                         card_array[i].setFace(60);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "6_of_diamonds":
+                    case "6_of_diamonds.png":
                         card_array[i].setFace(60);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "6_of_hearts":
+                    case "6_of_hearts.png":
                         card_array[i].setFace(60);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "6_of_spades":
+                    case "6_of_spades.png":
                         card_array[i].setFace(60);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- 7
-                    case "7_of_clubs":
+                    case "7_of_clubs.png":
                         card_array[i].setFace(70);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "7_of_diamonds":
+                    case "7_of_diamonds.png":
                         card_array[i].setFace(70);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "7_of_hearts":
+                    case "7_of_hearts.png":
                         card_array[i].setFace(70);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "7_of_spades":
+                    case "7_of_spades.png":
                         card_array[i].setFace(70);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- 8
-                    case "8_of_clubs":
+                    case "8_of_clubs.png":
                         card_array[i].setFace(80);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "8_of_diamonds":
+                    case "8_of_diamonds.png":
                         card_array[i].setFace(80);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "8_of_hearts":
+                    case "8_of_hearts.png":
                         card_array[i].setFace(80);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "8_of_spades":
+                    case "8_of_spades.png":
                         card_array[i].setFace(80);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- 9
-                    case "9_of_clubs":
+                    case "9_of_clubs.png":
                         card_array[i].setFace(90);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "9_of_diamonds":
+                    case "9_of_diamonds.png":
                         card_array[i].setFace(90);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "9_of_hearts":
+                    case "9_of_hearts.png":
                         card_array[i].setFace(90);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "9_of_spades":
+                    case "9_of_spades.png":
                         card_array[i].setFace(90);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- 10
-                    case "10_of_clubs":
+                    case "10_of_clubs.png":
                         card_array[i].setFace(100);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "10_of_diamonds":
+                    case "10_of_diamonds.png":
                         card_array[i].setFace(100);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "10_of_hearts":
+                    case "10_of_hearts.png":
                         card_array[i].setFace(100);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "10_of_spades":
+                    case "10_of_spades.png":
                         card_array[i].setFace(100);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- Jack
-                    case "jack_of_clubs2":
+                    case "jack_of_clubs2.png":
                         card_array[i].setFace(110);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "jack_of_diamonds2":
+                    case "jack_of_diamonds2.png":
                         card_array[i].setFace(110);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
 
                         break;
-                    case "jack_of_hearts2":
+                    case "jack_of_hearts2.png":
                         card_array[i].setFace(110);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "jack_of_spades2":
+                    case "jack_of_spades2.png":
                         card_array[i].setFace(110);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- Queen
-                    case "queen_of_clubs2":
+                    case "queen_of_clubs2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "queen_of_diamonds2":
+                    case "queen_of_diamonds2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "queen_of_hearts2":
+                    case "queen_of_hearts2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "queen_of_spades2":
+                    case "queen_of_spades2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- King
-                    case "king_of_clubs2":
+                    case "king_of_clubs2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "king_of_diamonds2":
+                    case "king_of_diamonds2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "king_of_hearts2":
+                    case "king_of_hearts2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "king_of_spades2":
+                    case "king_of_spades2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- Ace
-                    case "ace_of_clubs":
+                    case "ace_of_clubs.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "ace_of_diamonds":
+                    case "ace_of_diamonds.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "ace_of_hearts":
+                    case "ace_of_hearts.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
-                    case "ace_of_spades":
+                    case "ace_of_spades.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));

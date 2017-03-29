@@ -11,9 +11,9 @@ namespace WindowsFormsApplication1
 {
     public class Card
     {
-        Image image = null;
-        int suit = 0;
-        int face = 0;
+        Image image;
+        int suit;
+        int face;
 
         public Card()
         {
@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
 
         public int getFace()
         {
-            return this.face;
+            return face;
         }
 
         public void setFace(int face)
@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
 
         public int getSuit()
         {
-            return this.suit;
+            return suit;
         }
 
         public void setSuit(int suit)
