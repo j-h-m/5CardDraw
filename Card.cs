@@ -9,6 +9,7 @@ using WindowsFormsApplication1;
 
 namespace WindowsFormsApplication1
 {
+    
     public class Card
     {
         Image image;

@@ -55,6 +55,7 @@
             this.ComputerCard5 = new System.Windows.Forms.PictureBox();
             this.computerMoney = new System.Windows.Forms.Label();
             this.playerMoney = new System.Windows.Forms.Label();
+            this.Winner = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -383,6 +384,19 @@
             this.playerMoney.TabIndex = 25;
             this.playerMoney.Text = "$100";
             // 
+            // Winner
+            // 
+            this.Winner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Winner.BackColor = System.Drawing.Color.MintCream;
+            this.Winner.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Winner.Location = new System.Drawing.Point(217, 276);
+            this.Winner.Name = "Winner";
+            this.Winner.Size = new System.Drawing.Size(180, 48);
+            this.Winner.TabIndex = 26;
+            this.Winner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -391,6 +405,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 626);
+            this.Controls.Add(this.Winner);
             this.Controls.Add(this.playerMoney);
             this.Controls.Add(this.computerMoney);
             this.Controls.Add(this.ComputerCard5);
@@ -471,6 +486,7 @@
         private System.Windows.Forms.PictureBox ComputerCard5;
         private System.Windows.Forms.Label computerMoney;
         private System.Windows.Forms.Label playerMoney;
+        private System.Windows.Forms.Label Winner;
     }
 }
 
