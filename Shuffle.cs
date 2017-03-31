@@ -9,17 +9,13 @@ namespace WindowsFormsApplication1
 {
     static class Shuffle
     {
-        public static Image[] ShuffleCards<Image>(this Random rng, Image[] array)
+        public static void ShuffleCards<T>(this Stack<T> stack)
         {
-            int n = array.Length;
-            while (n > 1)
-            {
-                int k = rng.Next(n--);
-                Image temp = array[n];
-                array[n] = array[k];
-                array[k] = temp;
-            }
-            return array;
+            Random rnd = new Random();
+            var values = stack.ToArray();
+            stack.Clear();
+            foreach (var value in values.OrderBy(x => rnd.Next()))
+                stack.Push(value);
         }
     }
 }

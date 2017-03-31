@@ -334,6 +334,8 @@ namespace WindowsFormsApplication1
             {
                 temp_stack.Push(c);
             }
+
+            temp_stack.ShuffleCards();
             return temp_stack;
         }
 
