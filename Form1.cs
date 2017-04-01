@@ -101,7 +101,44 @@ namespace WindowsFormsApplication1
             DealBtn.Enabled = false;
             DealBtn.BackColor = Color.Gray;
 
-
+            String handType = "Nothing";
+            if (playerscore >= 1000 & playerscore < 2000)
+            {
+                handType = "Pair";
+            }
+            else if (playerscore >= 2000 & playerscore < 3000)
+            {
+                handType = "2 Pairs";
+            }
+            else if (playerscore >= 3000 & playerscore < 4000)
+            {
+                handType = "3 of a Kind";
+            }
+            else if (playerscore >= 4000 & playerscore < 5000)
+            {
+                handType = "Straight";
+            }
+            else if (playerscore >= 5000 & playerscore < 6000)
+            {
+                handType = "Flush";
+            }
+            else if (playerscore >= 6000 & playerscore < 7000)
+            {
+                handType = "Full House";
+            }
+            else if (playerscore >= 7000 & playerscore < 8000)
+            {
+                handType = "Four of a Kind";
+            }
+            else if (playerscore >= 8000 & playerscore < 9000)
+            {
+                handType = "Straight Flush";
+            }
+            else if (playerscore >= 9000)
+            {
+                handType = "Royal Flush";
+            }
+            MessageBox.Show(handType + playerscore.ToString());
             //TRIAL
 
 
