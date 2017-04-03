@@ -274,43 +274,43 @@ namespace WindowsFormsApplication1
                         break;
                     // face card -- King
                     case "king_of_clubs2.png":
-                        card_array[i].setFace(120);
+                        card_array[i].setFace(130);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     case "king_of_diamonds2.png":
-                        card_array[i].setFace(120);
+                        card_array[i].setFace(130);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     case "king_of_hearts2.png":
-                        card_array[i].setFace(120);
+                        card_array[i].setFace(130);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     case "king_of_spades2.png":
-                        card_array[i].setFace(120);
+                        card_array[i].setFace(130);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     // face card -- Ace
                     case "ace_of_clubs.png":
-                        card_array[i].setFace(120);
+                        card_array[i].setFace(140);
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     case "ace_of_diamonds.png":
-                        card_array[i].setFace(120);
+                        card_array[i].setFace(140);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     case "ace_of_hearts.png":
-                        card_array[i].setFace(120);
+                        card_array[i].setFace(140);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
                     case "ace_of_spades.png":
-                        card_array[i].setFace(120);
+                        card_array[i].setFace(140);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;

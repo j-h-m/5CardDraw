@@ -37,40 +37,27 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.moneyPot = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.DeckLabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.DealBtn = new System.Windows.Forms.Button();
             this.DrawBtn = new System.Windows.Forms.Button();
-            this.PBplayerCard1 = new System.Windows.Forms.PictureBox();
-            this.PBplayerCard2 = new System.Windows.Forms.PictureBox();
-            this.PBplayerCard3 = new System.Windows.Forms.PictureBox();
-            this.PBplayerCard4 = new System.Windows.Forms.PictureBox();
-            this.PBplayerCard5 = new System.Windows.Forms.PictureBox();
-            this.ComputerCard1 = new System.Windows.Forms.PictureBox();
-            this.ComputerCard2 = new System.Windows.Forms.PictureBox();
-            this.ComputerCard3 = new System.Windows.Forms.PictureBox();
-            this.ComputerCard4 = new System.Windows.Forms.PictureBox();
-            this.ComputerCard5 = new System.Windows.Forms.PictureBox();
             this.computerMoney = new System.Windows.Forms.Label();
             this.playerMoney = new System.Windows.Forms.Label();
             this.Winner = new System.Windows.Forms.Label();
+            this.PplayerCard1 = new System.Windows.Forms.CheckBox();
+            this.PplayerCard2 = new System.Windows.Forms.CheckBox();
+            this.PplayerCard3 = new System.Windows.Forms.CheckBox();
+            this.PplayerCard4 = new System.Windows.Forms.CheckBox();
+            this.PplayerCard5 = new System.Windows.Forms.CheckBox();
+            this.PcomputerCard5 = new System.Windows.Forms.CheckBox();
+            this.PcomputerCard4 = new System.Windows.Forms.CheckBox();
+            this.PcomputerCard3 = new System.Windows.Forms.CheckBox();
+            this.PcomputerCard2 = new System.Windows.Forms.CheckBox();
+            this.PcomputerCard1 = new System.Windows.Forms.CheckBox();
+            this.Winner2 = new System.Windows.Forms.Label();
+            this.PlayerHandLabel = new System.Windows.Forms.Label();
+            this.CompHandLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard5)).BeginInit();
             this.SuspendLayout();
             // 
             // computerLabel
@@ -92,7 +79,7 @@
             this.playerLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerLabel.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.playerLabel.Location = new System.Drawing.Point(12, 589);
+            this.playerLabel.Location = new System.Drawing.Point(17, 450);
             this.playerLabel.Name = "playerLabel";
             this.playerLabel.Size = new System.Drawing.Size(95, 25);
             this.playerLabel.TabIndex = 1;
@@ -167,62 +154,15 @@
             this.moneyPot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.moneyPot.BackColor = System.Drawing.Color.MintCream;
-            this.moneyPot.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moneyPot.Location = new System.Drawing.Point(514, 293);
+            this.moneyPot.BackColor = System.Drawing.Color.Transparent;
+            this.moneyPot.Font = new System.Drawing.Font("Goudy Stout", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moneyPot.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.moneyPot.Location = new System.Drawing.Point(482, 358);
             this.moneyPot.Name = "moneyPot";
-            this.moneyPot.Size = new System.Drawing.Size(69, 15);
+            this.moneyPot.Size = new System.Drawing.Size(127, 33);
             this.moneyPot.TabIndex = 7;
             this.moneyPot.Text = "$0";
             this.moneyPot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = global::WindowsFormsApplication1.Properties.Resources.back_of_card;
-            this.pictureBox3.Location = new System.Drawing.Point(469, 394);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(46, 60);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Image = global::WindowsFormsApplication1.Properties.Resources.back_of_card;
-            this.pictureBox4.Location = new System.Drawing.Point(583, 394);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(46, 60);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
-            // 
-            // DeckLabel
-            // 
-            this.DeckLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DeckLabel.AutoSize = true;
-            this.DeckLabel.BackColor = System.Drawing.Color.Transparent;
-            this.DeckLabel.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeckLabel.ForeColor = System.Drawing.Color.White;
-            this.DeckLabel.Location = new System.Drawing.Point(467, 369);
-            this.DeckLabel.Name = "DeckLabel";
-            this.DeckLabel.Size = new System.Drawing.Size(48, 22);
-            this.DeckLabel.TabIndex = 10;
-            this.DeckLabel.Text = "Deck";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(567, 369);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 22);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Burn Pile";
             // 
             // DealBtn
             // 
@@ -260,115 +200,17 @@
             this.DrawBtn.UseVisualStyleBackColor = false;
             this.DrawBtn.Click += new System.EventHandler(this.DrawBtn_Click);
             // 
-            // PBplayerCard1
-            // 
-            this.PBplayerCard1.BackColor = System.Drawing.Color.Transparent;
-            this.PBplayerCard1.Location = new System.Drawing.Point(230, 478);
-            this.PBplayerCard1.Name = "PBplayerCard1";
-            this.PBplayerCard1.Size = new System.Drawing.Size(100, 136);
-            this.PBplayerCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBplayerCard1.TabIndex = 14;
-            this.PBplayerCard1.TabStop = false;
-            // 
-            // PBplayerCard2
-            // 
-            this.PBplayerCard2.BackColor = System.Drawing.Color.Transparent;
-            this.PBplayerCard2.Location = new System.Drawing.Point(379, 478);
-            this.PBplayerCard2.Name = "PBplayerCard2";
-            this.PBplayerCard2.Size = new System.Drawing.Size(100, 136);
-            this.PBplayerCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBplayerCard2.TabIndex = 15;
-            this.PBplayerCard2.TabStop = false;
-            // 
-            // PBplayerCard3
-            // 
-            this.PBplayerCard3.BackColor = System.Drawing.Color.Transparent;
-            this.PBplayerCard3.Location = new System.Drawing.Point(517, 478);
-            this.PBplayerCard3.Name = "PBplayerCard3";
-            this.PBplayerCard3.Size = new System.Drawing.Size(100, 136);
-            this.PBplayerCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBplayerCard3.TabIndex = 16;
-            this.PBplayerCard3.TabStop = false;
-            // 
-            // PBplayerCard4
-            // 
-            this.PBplayerCard4.BackColor = System.Drawing.Color.Transparent;
-            this.PBplayerCard4.Location = new System.Drawing.Point(659, 478);
-            this.PBplayerCard4.Name = "PBplayerCard4";
-            this.PBplayerCard4.Size = new System.Drawing.Size(100, 136);
-            this.PBplayerCard4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBplayerCard4.TabIndex = 17;
-            this.PBplayerCard4.TabStop = false;
-            // 
-            // PBplayerCard5
-            // 
-            this.PBplayerCard5.BackColor = System.Drawing.Color.Transparent;
-            this.PBplayerCard5.Location = new System.Drawing.Point(805, 478);
-            this.PBplayerCard5.Name = "PBplayerCard5";
-            this.PBplayerCard5.Size = new System.Drawing.Size(100, 136);
-            this.PBplayerCard5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PBplayerCard5.TabIndex = 18;
-            this.PBplayerCard5.TabStop = false;
-            // 
-            // ComputerCard1
-            // 
-            this.ComputerCard1.BackColor = System.Drawing.Color.Transparent;
-            this.ComputerCard1.Location = new System.Drawing.Point(230, 12);
-            this.ComputerCard1.Name = "ComputerCard1";
-            this.ComputerCard1.Size = new System.Drawing.Size(100, 136);
-            this.ComputerCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ComputerCard1.TabIndex = 19;
-            this.ComputerCard1.TabStop = false;
-            // 
-            // ComputerCard2
-            // 
-            this.ComputerCard2.BackColor = System.Drawing.Color.Transparent;
-            this.ComputerCard2.Location = new System.Drawing.Point(379, 12);
-            this.ComputerCard2.Name = "ComputerCard2";
-            this.ComputerCard2.Size = new System.Drawing.Size(100, 136);
-            this.ComputerCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ComputerCard2.TabIndex = 20;
-            this.ComputerCard2.TabStop = false;
-            // 
-            // ComputerCard3
-            // 
-            this.ComputerCard3.BackColor = System.Drawing.Color.Transparent;
-            this.ComputerCard3.Location = new System.Drawing.Point(517, 12);
-            this.ComputerCard3.Name = "ComputerCard3";
-            this.ComputerCard3.Size = new System.Drawing.Size(100, 136);
-            this.ComputerCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ComputerCard3.TabIndex = 21;
-            this.ComputerCard3.TabStop = false;
-            // 
-            // ComputerCard4
-            // 
-            this.ComputerCard4.BackColor = System.Drawing.Color.Transparent;
-            this.ComputerCard4.Location = new System.Drawing.Point(659, 9);
-            this.ComputerCard4.Name = "ComputerCard4";
-            this.ComputerCard4.Size = new System.Drawing.Size(100, 136);
-            this.ComputerCard4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ComputerCard4.TabIndex = 22;
-            this.ComputerCard4.TabStop = false;
-            // 
-            // ComputerCard5
-            // 
-            this.ComputerCard5.BackColor = System.Drawing.Color.Transparent;
-            this.ComputerCard5.Location = new System.Drawing.Point(805, 12);
-            this.ComputerCard5.Name = "ComputerCard5";
-            this.ComputerCard5.Size = new System.Drawing.Size(100, 136);
-            this.ComputerCard5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ComputerCard5.TabIndex = 23;
-            this.ComputerCard5.TabStop = false;
-            // 
             // computerMoney
             // 
             this.computerMoney.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.computerMoney.AutoSize = true;
-            this.computerMoney.BackColor = System.Drawing.Color.MintCream;
-            this.computerMoney.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.computerMoney.Location = new System.Drawing.Point(32, 130);
+            this.computerMoney.BackColor = System.Drawing.Color.Transparent;
+            this.computerMoney.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.computerMoney.Font = new System.Drawing.Font("Goudy Stout", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.computerMoney.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.computerMoney.Location = new System.Drawing.Point(19, 130);
             this.computerMoney.Name = "computerMoney";
-            this.computerMoney.Size = new System.Drawing.Size(61, 15);
+            this.computerMoney.Size = new System.Drawing.Size(62, 22);
             this.computerMoney.TabIndex = 24;
             this.computerMoney.Text = "$100";
             // 
@@ -376,11 +218,13 @@
             // 
             this.playerMoney.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.playerMoney.AutoSize = true;
-            this.playerMoney.BackColor = System.Drawing.Color.MintCream;
-            this.playerMoney.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playerMoney.Location = new System.Drawing.Point(32, 447);
+            this.playerMoney.BackColor = System.Drawing.Color.Transparent;
+            this.playerMoney.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.playerMoney.Font = new System.Drawing.Font("Goudy Stout", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerMoney.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.playerMoney.Location = new System.Drawing.Point(19, 573);
             this.playerMoney.Name = "playerMoney";
-            this.playerMoney.Size = new System.Drawing.Size(61, 15);
+            this.playerMoney.Size = new System.Drawing.Size(62, 22);
             this.playerMoney.TabIndex = 25;
             this.playerMoney.Text = "$100";
             // 
@@ -389,13 +233,218 @@
             this.Winner.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Winner.BackColor = System.Drawing.Color.MintCream;
+            this.Winner.BackColor = System.Drawing.Color.Transparent;
             this.Winner.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Winner.Location = new System.Drawing.Point(217, 276);
+            this.Winner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.Winner.Location = new System.Drawing.Point(468, 391);
             this.Winner.Name = "Winner";
             this.Winner.Size = new System.Drawing.Size(180, 48);
             this.Winner.TabIndex = 26;
             this.Winner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PplayerCard1
+            // 
+            this.PplayerCard1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PplayerCard1.AutoSize = true;
+            this.PplayerCard1.BackColor = System.Drawing.Color.Transparent;
+            this.PplayerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PplayerCard1.FlatAppearance.BorderSize = 0;
+            this.PplayerCard1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PplayerCard1.Location = new System.Drawing.Point(249, 460);
+            this.PplayerCard1.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PplayerCard1.Name = "PplayerCard1";
+            this.PplayerCard1.Size = new System.Drawing.Size(100, 145);
+            this.PplayerCard1.TabIndex = 27;
+            this.PplayerCard1.UseVisualStyleBackColor = false;
+            this.PplayerCard1.CheckedChanged += new System.EventHandler(this.PplayerCard1_CheckedChanged);
+            // 
+            // PplayerCard2
+            // 
+            this.PplayerCard2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PplayerCard2.AutoSize = true;
+            this.PplayerCard2.BackColor = System.Drawing.Color.Transparent;
+            this.PplayerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PplayerCard2.FlatAppearance.BorderSize = 0;
+            this.PplayerCard2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PplayerCard2.Location = new System.Drawing.Point(370, 460);
+            this.PplayerCard2.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PplayerCard2.Name = "PplayerCard2";
+            this.PplayerCard2.Size = new System.Drawing.Size(100, 145);
+            this.PplayerCard2.TabIndex = 28;
+            this.PplayerCard2.UseVisualStyleBackColor = false;
+            this.PplayerCard2.CheckedChanged += new System.EventHandler(this.PplayerCard2_CheckedChanged);
+            // 
+            // PplayerCard3
+            // 
+            this.PplayerCard3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PplayerCard3.AutoSize = true;
+            this.PplayerCard3.BackColor = System.Drawing.Color.Transparent;
+            this.PplayerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PplayerCard3.FlatAppearance.BorderSize = 0;
+            this.PplayerCard3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PplayerCard3.Location = new System.Drawing.Point(498, 460);
+            this.PplayerCard3.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PplayerCard3.Name = "PplayerCard3";
+            this.PplayerCard3.Size = new System.Drawing.Size(100, 145);
+            this.PplayerCard3.TabIndex = 29;
+            this.PplayerCard3.UseVisualStyleBackColor = false;
+            this.PplayerCard3.CheckedChanged += new System.EventHandler(this.PplayerCard3_CheckedChanged);
+            // 
+            // PplayerCard4
+            // 
+            this.PplayerCard4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PplayerCard4.AutoSize = true;
+            this.PplayerCard4.BackColor = System.Drawing.Color.Transparent;
+            this.PplayerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PplayerCard4.FlatAppearance.BorderSize = 0;
+            this.PplayerCard4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PplayerCard4.Location = new System.Drawing.Point(622, 460);
+            this.PplayerCard4.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PplayerCard4.Name = "PplayerCard4";
+            this.PplayerCard4.Size = new System.Drawing.Size(100, 145);
+            this.PplayerCard4.TabIndex = 30;
+            this.PplayerCard4.UseVisualStyleBackColor = false;
+            this.PplayerCard4.CheckedChanged += new System.EventHandler(this.PplayerCard4_CheckedChanged);
+            // 
+            // PplayerCard5
+            // 
+            this.PplayerCard5.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PplayerCard5.AutoSize = true;
+            this.PplayerCard5.BackColor = System.Drawing.Color.Transparent;
+            this.PplayerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PplayerCard5.FlatAppearance.BorderSize = 0;
+            this.PplayerCard5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PplayerCard5.Location = new System.Drawing.Point(750, 460);
+            this.PplayerCard5.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PplayerCard5.Name = "PplayerCard5";
+            this.PplayerCard5.Size = new System.Drawing.Size(100, 145);
+            this.PplayerCard5.TabIndex = 31;
+            this.PplayerCard5.UseVisualStyleBackColor = false;
+            this.PplayerCard5.CheckedChanged += new System.EventHandler(this.PplayerCard5_CheckedChanged);
+            // 
+            // PcomputerCard5
+            // 
+            this.PcomputerCard5.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PcomputerCard5.AutoSize = true;
+            this.PcomputerCard5.BackColor = System.Drawing.Color.Transparent;
+            this.PcomputerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcomputerCard5.FlatAppearance.BorderSize = 0;
+            this.PcomputerCard5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PcomputerCard5.Location = new System.Drawing.Point(750, 20);
+            this.PcomputerCard5.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PcomputerCard5.Name = "PcomputerCard5";
+            this.PcomputerCard5.Size = new System.Drawing.Size(100, 145);
+            this.PcomputerCard5.TabIndex = 36;
+            this.PcomputerCard5.UseVisualStyleBackColor = false;
+            this.PcomputerCard5.CheckedChanged += new System.EventHandler(this.PcomputerCard5_CheckedChanged);
+            // 
+            // PcomputerCard4
+            // 
+            this.PcomputerCard4.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PcomputerCard4.AutoSize = true;
+            this.PcomputerCard4.BackColor = System.Drawing.Color.Transparent;
+            this.PcomputerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcomputerCard4.FlatAppearance.BorderSize = 0;
+            this.PcomputerCard4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PcomputerCard4.Location = new System.Drawing.Point(622, 20);
+            this.PcomputerCard4.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PcomputerCard4.Name = "PcomputerCard4";
+            this.PcomputerCard4.Size = new System.Drawing.Size(100, 145);
+            this.PcomputerCard4.TabIndex = 35;
+            this.PcomputerCard4.UseVisualStyleBackColor = false;
+            this.PcomputerCard4.CheckedChanged += new System.EventHandler(this.PcomputerCard4_CheckedChanged);
+            // 
+            // PcomputerCard3
+            // 
+            this.PcomputerCard3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PcomputerCard3.AutoSize = true;
+            this.PcomputerCard3.BackColor = System.Drawing.Color.Transparent;
+            this.PcomputerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcomputerCard3.FlatAppearance.BorderSize = 0;
+            this.PcomputerCard3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PcomputerCard3.Location = new System.Drawing.Point(498, 20);
+            this.PcomputerCard3.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PcomputerCard3.Name = "PcomputerCard3";
+            this.PcomputerCard3.Size = new System.Drawing.Size(100, 145);
+            this.PcomputerCard3.TabIndex = 34;
+            this.PcomputerCard3.UseVisualStyleBackColor = false;
+            this.PcomputerCard3.CheckedChanged += new System.EventHandler(this.PcomputerCard3_CheckedChanged);
+            // 
+            // PcomputerCard2
+            // 
+            this.PcomputerCard2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PcomputerCard2.AutoSize = true;
+            this.PcomputerCard2.BackColor = System.Drawing.Color.Transparent;
+            this.PcomputerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcomputerCard2.FlatAppearance.BorderSize = 0;
+            this.PcomputerCard2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PcomputerCard2.Location = new System.Drawing.Point(370, 20);
+            this.PcomputerCard2.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PcomputerCard2.Name = "PcomputerCard2";
+            this.PcomputerCard2.Size = new System.Drawing.Size(100, 145);
+            this.PcomputerCard2.TabIndex = 33;
+            this.PcomputerCard2.UseVisualStyleBackColor = false;
+            this.PcomputerCard2.CheckedChanged += new System.EventHandler(this.PcomputerCard2_CheckedChanged);
+            // 
+            // PcomputerCard1
+            // 
+            this.PcomputerCard1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.PcomputerCard1.AutoSize = true;
+            this.PcomputerCard1.BackColor = System.Drawing.Color.Transparent;
+            this.PcomputerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PcomputerCard1.FlatAppearance.BorderSize = 0;
+            this.PcomputerCard1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PcomputerCard1.Location = new System.Drawing.Point(249, 20);
+            this.PcomputerCard1.MinimumSize = new System.Drawing.Size(100, 145);
+            this.PcomputerCard1.Name = "PcomputerCard1";
+            this.PcomputerCard1.Size = new System.Drawing.Size(100, 145);
+            this.PcomputerCard1.TabIndex = 32;
+            this.PcomputerCard1.UseVisualStyleBackColor = false;
+            this.PcomputerCard1.CheckedChanged += new System.EventHandler(this.PcomputerCard1_CheckedChanged);
+            // 
+            // Winner2
+            // 
+            this.Winner2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Winner2.BackColor = System.Drawing.Color.Transparent;
+            this.Winner2.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Winner2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Winner2.Location = new System.Drawing.Point(461, 168);
+            this.Winner2.Name = "Winner2";
+            this.Winner2.Size = new System.Drawing.Size(180, 48);
+            this.Winner2.TabIndex = 37;
+            this.Winner2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // PlayerHandLabel
+            // 
+            this.PlayerHandLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PlayerHandLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerHandLabel.Font = new System.Drawing.Font("Goudy Stout", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerHandLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.PlayerHandLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PlayerHandLabel.Location = new System.Drawing.Point(20, 381);
+            this.PlayerHandLabel.Name = "PlayerHandLabel";
+            this.PlayerHandLabel.Size = new System.Drawing.Size(276, 48);
+            this.PlayerHandLabel.TabIndex = 38;
+            this.PlayerHandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // CompHandLabel
+            // 
+            this.CompHandLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.CompHandLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CompHandLabel.Font = new System.Drawing.Font("Goudy Stout", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompHandLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.CompHandLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CompHandLabel.Location = new System.Drawing.Point(19, 176);
+            this.CompHandLabel.Name = "CompHandLabel";
+            this.CompHandLabel.Size = new System.Drawing.Size(277, 48);
+            this.CompHandLabel.TabIndex = 39;
+            this.CompHandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // GameBoard
             // 
@@ -405,26 +454,25 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 626);
+            this.Controls.Add(this.CompHandLabel);
+            this.Controls.Add(this.PlayerHandLabel);
+            this.Controls.Add(this.Winner2);
+            this.Controls.Add(this.PcomputerCard5);
+            this.Controls.Add(this.PcomputerCard4);
+            this.Controls.Add(this.PcomputerCard3);
+            this.Controls.Add(this.PcomputerCard2);
+            this.Controls.Add(this.PcomputerCard1);
+            this.Controls.Add(this.PplayerCard5);
+            this.Controls.Add(this.PplayerCard4);
+            this.Controls.Add(this.PplayerCard3);
+            this.Controls.Add(this.PplayerCard2);
+            this.Controls.Add(this.PplayerCard1);
+            this.Controls.Add(this.moneyPot);
             this.Controls.Add(this.Winner);
             this.Controls.Add(this.playerMoney);
             this.Controls.Add(this.computerMoney);
-            this.Controls.Add(this.ComputerCard5);
-            this.Controls.Add(this.ComputerCard4);
-            this.Controls.Add(this.ComputerCard3);
-            this.Controls.Add(this.ComputerCard2);
-            this.Controls.Add(this.ComputerCard1);
-            this.Controls.Add(this.moneyPot);
-            this.Controls.Add(this.PBplayerCard5);
-            this.Controls.Add(this.PBplayerCard4);
-            this.Controls.Add(this.PBplayerCard3);
-            this.Controls.Add(this.PBplayerCard2);
-            this.Controls.Add(this.PBplayerCard1);
             this.Controls.Add(this.DrawBtn);
             this.Controls.Add(this.DealBtn);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.DeckLabel);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -441,18 +489,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PBplayerCard5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ComputerCard5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,25 +504,24 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label moneyPot;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label DeckLabel;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DealBtn;
         private System.Windows.Forms.Button DrawBtn;
-        private System.Windows.Forms.PictureBox PBplayerCard1;
-        private System.Windows.Forms.PictureBox PBplayerCard2;
-        private System.Windows.Forms.PictureBox PBplayerCard3;
-        private System.Windows.Forms.PictureBox PBplayerCard4;
-        private System.Windows.Forms.PictureBox PBplayerCard5;
-        private System.Windows.Forms.PictureBox ComputerCard1;
-        private System.Windows.Forms.PictureBox ComputerCard2;
-        private System.Windows.Forms.PictureBox ComputerCard3;
-        private System.Windows.Forms.PictureBox ComputerCard4;
-        private System.Windows.Forms.PictureBox ComputerCard5;
         private System.Windows.Forms.Label computerMoney;
         private System.Windows.Forms.Label playerMoney;
         private System.Windows.Forms.Label Winner;
+        private System.Windows.Forms.CheckBox PplayerCard1;
+        private System.Windows.Forms.CheckBox PplayerCard2;
+        private System.Windows.Forms.CheckBox PplayerCard3;
+        private System.Windows.Forms.CheckBox PplayerCard4;
+        private System.Windows.Forms.CheckBox PplayerCard5;
+        private System.Windows.Forms.CheckBox PcomputerCard5;
+        private System.Windows.Forms.CheckBox PcomputerCard4;
+        private System.Windows.Forms.CheckBox PcomputerCard3;
+        private System.Windows.Forms.CheckBox PcomputerCard2;
+        private System.Windows.Forms.CheckBox PcomputerCard1;
+        private System.Windows.Forms.Label Winner2;
+        private System.Windows.Forms.Label PlayerHandLabel;
+        private System.Windows.Forms.Label CompHandLabel;
     }
 }
 

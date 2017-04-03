@@ -33,7 +33,7 @@
                 }
                 else if (item.getSuit() == 3)
                 {
-                    ClubsCount++;
+                    HeartsCount++;
                 }
                 else if (item.getSuit() == 4)
                 {
@@ -43,7 +43,7 @@
             //Straight Flush
             if (ClubsCount == 5)
             {
-                if ((handCards[0].getFace() + 1 == handCards[1].getFace() && handCards[0].getFace() + 2 == handCards[2].getFace() && handCards[0].getFace() + 3 == handCards[3].getFace()) && (handCards[0].getFace() + 4 == handCards[4].getFace()))
+                if ((handCards[0].getFace() + 10 == handCards[1].getFace() && handCards[0].getFace() + 20 == handCards[2].getFace() && handCards[0].getFace() + 30 == handCards[3].getFace()) && (handCards[0].getFace() + 40 == handCards[4].getFace()))
                 {
                     HandSum.hTotal = 8000 + (handCards[4].getFace()) + 1;
                     return HandSum.hTotal;
@@ -51,7 +51,7 @@
             }
             else if (DiamondsCount == 5)
             {
-                if ((handCards[0].getFace() + 1 == handCards[1].getFace() && handCards[0].getFace() + 2 == handCards[2].getFace() && handCards[0].getFace() + 3 == handCards[3].getFace()) && (handCards[0].getFace() + 4 == handCards[4].getFace()))
+                if ((handCards[0].getFace() + 10 == handCards[1].getFace() && handCards[0].getFace() + 20 == handCards[2].getFace() && handCards[0].getFace() + 30 == handCards[3].getFace()) && (handCards[0].getFace() + 40 == handCards[4].getFace()))
                 {
                     HandSum.hTotal = 8000 + (handCards[4].getFace()) + 2;
                     return HandSum.hTotal;
@@ -59,7 +59,7 @@
             }
             else if (HeartsCount == 5)
             {
-                if ((handCards[0].getFace() + 1 == handCards[1].getFace() && handCards[0].getFace() + 2 == handCards[2].getFace() && handCards[0].getFace() + 3 == handCards[3].getFace()) && (handCards[0].getFace() + 4 == handCards[4].getFace()))
+                if ((handCards[0].getFace() + 10 == handCards[1].getFace() && handCards[0].getFace() + 20 == handCards[2].getFace() && handCards[0].getFace() + 30 == handCards[3].getFace()) && (handCards[0].getFace() + 40 == handCards[4].getFace()))
                 {
                     HandSum.hTotal = 8000 + (handCards[4].getFace()) + 3;
                     return HandSum.hTotal;
@@ -67,7 +67,7 @@
             }
             else if (SpadesCount == 5)
             {
-                if ((handCards[0].getFace() + 1 == handCards[1].getFace() && handCards[0].getFace() + 2 == handCards[2].getFace() && handCards[0].getFace() + 3 == handCards[3].getFace()) && (handCards[0].getFace() + 4 == handCards[4].getFace()))
+                if ((handCards[0].getFace() + 10 == handCards[1].getFace() && handCards[0].getFace() + 20 == handCards[2].getFace() && handCards[0].getFace() + 30 == handCards[3].getFace()) && (handCards[0].getFace() + 40 == handCards[4].getFace()))
                 {
                     HandSum.hTotal = 8000 + (handCards[4].getFace()) + 4;
                     return HandSum.hTotal;
@@ -127,7 +127,7 @@
             //Flush
 
             //Straight
-            if ((handCards[0].getFace() + 1 == handCards[1].getFace() && handCards[0].getFace() + 2 == handCards[2].getFace() && handCards[0].getFace() + 3 == handCards[3].getFace()) && (handCards[0].getFace() + 4 == handCards[4].getFace()))
+            if ((handCards[0].getFace() + 10 == handCards[1].getFace() && handCards[0].getFace() + 20 == handCards[2].getFace() && handCards[0].getFace() + 30 == handCards[3].getFace()) && (handCards[0].getFace() + 40 == handCards[4].getFace()))
             {
                 HandSum.hTotal = 4000 + (handCards[4].getFace());
                 return HandSum.hTotal;
