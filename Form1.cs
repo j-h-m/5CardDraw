@@ -1,69 +1,135 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
     public partial class GameBoard : Form
     {
-
         private Deck myDeck = new Deck();
         private Hand hand_ref = new Hand();
         private RankHand hand_rank = new RankHand();
 
-
+        private Card[] player_hand = new Card[4];
+        private Card[] comp_hand = new Card[4];
 
         public GameBoard()
         {
             InitializeComponent();
         }
-       
+
         private void GameBoard_Load(object sender, EventArgs e)
         {
-
         }
-        
+
         private void FoldBtn_Click(object sender, EventArgs e)
         {
-
         }
 
         private void DrawBtn_Click(object sender, EventArgs e)
         {
+            if (PplayerCard1.Checked)
+            {
+                player_hand[0] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(player_hand);
+                PplayerCard1.Location = new Point(249, 460);
+                PplayerCard1.FlatAppearance.BorderSize = 0;
+            }
+            if (PplayerCard2.Checked)
+            {
+                player_hand[1] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(player_hand);
+                PplayerCard2.Location = new Point(370, 460);
+                PplayerCard2.FlatAppearance.BorderSize = 0;
+            }
+            if (PplayerCard3.Checked)
+            {
+                player_hand[2] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(player_hand);
+                PplayerCard3.Location = new Point(498, 460);
 
+                PplayerCard3.FlatAppearance.BorderSize = 0;
+            }
+            if (PplayerCard4.Checked)
+            {
+                player_hand[3] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(player_hand);
+                PplayerCard4.Location = new Point(622, 460);
 
+                PplayerCard4.FlatAppearance.BorderSize = 0;
+            }
+            if (PplayerCard5.Checked)
+            {
+                player_hand[4] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(player_hand);
+                PplayerCard5.Location = new Point(750, 460);
 
-        }
+                PplayerCard5.FlatAppearance.BorderSize = 0;
+            }
 
-        private void DealBtn_Click(object sender, EventArgs e)
-        {
-            string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
-            string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string cardback = projectPath + "\\Card Images\\back of card.png";
+            PplayerCard1.BackgroundImage = player_hand[0].getImage();
+            PplayerCard2.BackgroundImage = player_hand[1].getImage();
+            PplayerCard3.BackgroundImage = player_hand[2].getImage();
+            PplayerCard4.BackgroundImage = player_hand[3].getImage();
+            PplayerCard5.BackgroundImage = player_hand[4].getImage();
 
-            // test of Hand class
-            Card[] player_hand = hand_ref.getnewHand();
-            hand_ref.sortHand(player_hand);
-            Card[] comp_hand = hand_ref.getcomputerHand();
-            hand_ref.sortHand(comp_hand);
-            
+            if (PcomputerCard1.Checked)
+            {
+                comp_hand[0] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(comp_hand);
+                PcomputerCard1.Location = new Point(249, 20);
+
+                PcomputerCard1.FlatAppearance.BorderSize = 0;
+            }
+            if (PcomputerCard2.Checked)
+            {
+                comp_hand[1] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(comp_hand);
+                PcomputerCard2.Location = new Point(370, 20);
+
+                PcomputerCard2.FlatAppearance.BorderSize = 0;
+            }
+            if (PcomputerCard3.Checked)
+            {
+                comp_hand[2] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(comp_hand);
+                PcomputerCard3.Location = new Point(498, 20);
+
+                PcomputerCard3.FlatAppearance.BorderSize = 0;
+            }
+            if (PcomputerCard4.Checked)
+            {
+                comp_hand[3] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(comp_hand);
+                PcomputerCard4.Location = new Point(622, 20);
+
+                PcomputerCard4.FlatAppearance.BorderSize = 0;
+            }
+            if (PcomputerCard5.Checked)
+            {
+                comp_hand[4] = myDeck.getDeck().Pop();
+                hand_ref.sortHand(comp_hand);
+                PcomputerCard5.Location = new Point(750, 20);
+
+                PcomputerCard5.FlatAppearance.BorderSize = 0;
+            }
+
+            PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
+            PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
+            PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
+            PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
+            PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
+
             int playerscore = hand_rank.evalHand(player_hand);
             int compscore = hand_rank.evalHand(comp_hand);
 
-            if(playerscore > compscore)
+            if (playerscore > compscore)
             {
                 Winner.Text = "Player Wins";
             }
-            else if(compscore > playerscore)
+            else if (compscore > playerscore)
             {
                 Winner2.Text = "Computer Wins";
             }
@@ -72,47 +138,6 @@ namespace WindowsFormsApplication1
                 Winner.Text = "Chuck Norris Wins";
                 Winner2.Text = "Chuck Norris Wins";
             }
-
-
-            /*PBplayerCard1.Image = player_hand[0].getImage();
-            PBplayerCard2.Image = player_hand[1].getImage();
-            PBplayerCard3.Image = player_hand[2].getImage();
-            PBplayerCard4.Image = player_hand[3].getImage();
-            PBplayerCard5.Image = player_hand[4].getImage();*/
-
-            PplayerCard1.BackgroundImage = player_hand[0].getImage();
-            PplayerCard2.BackgroundImage = player_hand[1].getImage();
-            PplayerCard3.BackgroundImage = player_hand[2].getImage();
-            PplayerCard4.BackgroundImage = player_hand[3].getImage();
-            PplayerCard5.BackgroundImage = player_hand[4].getImage();
-
-            /*ComputerCard1.Image = Image.FromFile(cardback);
-            ComputerCard2.Image = Image.FromFile(cardback);
-            ComputerCard3.Image = Image.FromFile(cardback);
-            ComputerCard4.Image = Image.FromFile(cardback);
-            ComputerCard5.Image = Image.FromFile(cardback);*/
-
-            /*ComputerCard1.Image = comp_hand[0].getImage();
-            ComputerCard2.Image = comp_hand[1].getImage();
-            ComputerCard3.Image = comp_hand[2].getImage();
-            ComputerCard4.Image = comp_hand[3].getImage();
-            ComputerCard5.Image = comp_hand[4].getImage();*/
-
-            PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
-            PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
-            PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
-            PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
-            PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
-
-
-
-            moneyPot.Text = "$2.00";
-            playerMoney.Text = "$99.00";
-            computerMoney.Text = "$99.00";
-            
-
-            DealBtn.Enabled = false;
-            DealBtn.BackColor = Color.Gray;
 
             String handType = "Nothing";
             if (playerscore >= 1000 & playerscore < 2000)
@@ -153,7 +178,6 @@ namespace WindowsFormsApplication1
             }
             PlayerHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + playerscore.ToString());
 
-            
             if (compscore >= 1000 & compscore < 2000)
             {
                 handType = "Pair";
@@ -191,10 +215,63 @@ namespace WindowsFormsApplication1
                 handType = "Royal Flush";
             }
             CompHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + compscore.ToString());
-            
+        }
+
+        private void DealBtn_Click(object sender, EventArgs e)
+        {
+            string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
+            string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
+            string cardback = projectPath + "\\Card Images\\back of card.png";
+
+            // test of Hand class
+            player_hand = hand_ref.getnewHand();
+            hand_ref.sortHand(player_hand);
+            comp_hand = hand_ref.getcomputerHand();
+            hand_ref.sortHand(comp_hand);
+
+            /*PBplayerCard1.Image = player_hand[0].getImage();
+            PBplayerCard2.Image = player_hand[1].getImage();
+            PBplayerCard3.Image = player_hand[2].getImage();
+            PBplayerCard4.Image = player_hand[3].getImage();
+            PBplayerCard5.Image = player_hand[4].getImage();*/
+
+            PplayerCard1.BackgroundImage = player_hand[0].getImage();
+            PplayerCard2.BackgroundImage = player_hand[1].getImage();
+            PplayerCard3.BackgroundImage = player_hand[2].getImage();
+            PplayerCard4.BackgroundImage = player_hand[3].getImage();
+            PplayerCard5.BackgroundImage = player_hand[4].getImage();
+
+            /*ComputerCard1.Image = Image.FromFile(cardback);
+            ComputerCard2.Image = Image.FromFile(cardback);
+            ComputerCard3.Image = Image.FromFile(cardback);
+            ComputerCard4.Image = Image.FromFile(cardback);
+            ComputerCard5.Image = Image.FromFile(cardback);*/
+
+            /*ComputerCard1.Image = comp_hand[0].getImage();
+            ComputerCard2.Image = comp_hand[1].getImage();
+            ComputerCard3.Image = comp_hand[2].getImage();
+            ComputerCard4.Image = comp_hand[3].getImage();
+            ComputerCard5.Image = comp_hand[4].getImage();*/
+
+            PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
+            PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
+            PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
+            PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
+            PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
+
+            moneyPot.Text = "$2.00";
+            playerMoney.Text = "$99.00";
+            computerMoney.Text = "$99.00";
+
+            DealBtn.Enabled = false;
+            DealBtn.BackColor = Color.Gray;
+            FoldBtn.Enabled = true;
+            FoldBtn.BackColor = Color.Transparent;
+            DrawBtn.Enabled = true;
+            DrawBtn.BackColor = Color.Transparent;
+
             //TRIAL
-
-
 
             //TRIAL
 
@@ -220,20 +297,18 @@ namespace WindowsFormsApplication1
 
         private void PplayerCard1_CheckedChanged(object sender, EventArgs e)
         {
-            
-                if (PplayerCard1.Checked)
-                {
+            if (PplayerCard1.Checked)
+            {
                 PplayerCard1.Location = new Point(249, 430);
                 PplayerCard1.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard1.FlatAppearance.BorderSize = 2;
-                }
-                else
-                {
+            }
+            else
+            {
                 PplayerCard1.Location = new Point(249, 460);
-               
+
                 PplayerCard1.FlatAppearance.BorderSize = 0;
-                }
-            
+            }
         }
 
         private void PplayerCard2_CheckedChanged(object sender, EventArgs e)
@@ -247,7 +322,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PplayerCard2.Location = new Point(370, 460);
-               
+
                 PplayerCard2.FlatAppearance.BorderSize = 0;
             }
         }
@@ -263,7 +338,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PplayerCard3.Location = new Point(498, 460);
-                
+
                 PplayerCard3.FlatAppearance.BorderSize = 0;
             }
         }
@@ -279,7 +354,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PplayerCard4.Location = new Point(622, 460);
-                
+
                 PplayerCard4.FlatAppearance.BorderSize = 0;
             }
         }
@@ -295,7 +370,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PplayerCard5.Location = new Point(750, 460);
-                
+
                 PplayerCard5.FlatAppearance.BorderSize = 0;
             }
         }
@@ -311,7 +386,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PcomputerCard1.Location = new Point(249, 20);
-                
+
                 PcomputerCard1.FlatAppearance.BorderSize = 0;
             }
         }
@@ -327,7 +402,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PcomputerCard2.Location = new Point(370, 20);
-               
+
                 PcomputerCard2.FlatAppearance.BorderSize = 0;
             }
         }
@@ -343,7 +418,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PcomputerCard3.Location = new Point(498, 20);
-                
+
                 PcomputerCard3.FlatAppearance.BorderSize = 0;
             }
         }
@@ -359,7 +434,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PcomputerCard4.Location = new Point(622, 20);
-                
+
                 PcomputerCard4.FlatAppearance.BorderSize = 0;
             }
         }
@@ -375,9 +450,13 @@ namespace WindowsFormsApplication1
             else
             {
                 PcomputerCard5.Location = new Point(750, 20);
-                
+
                 PcomputerCard5.FlatAppearance.BorderSize = 0;
             }
+        }
+
+        private void Winner_Click(object sender, EventArgs e)
+        {
         }
     }
 }

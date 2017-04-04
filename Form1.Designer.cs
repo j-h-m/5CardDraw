@@ -88,9 +88,10 @@
             // FoldBtn
             // 
             this.FoldBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FoldBtn.BackColor = System.Drawing.Color.Transparent;
+            this.FoldBtn.BackColor = System.Drawing.Color.Gray;
             this.FoldBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FoldBtn.BackgroundImage")));
             this.FoldBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FoldBtn.Enabled = false;
             this.FoldBtn.FlatAppearance.BorderSize = 0;
             this.FoldBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoldBtn.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -185,9 +186,10 @@
             // DrawBtn
             // 
             this.DrawBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DrawBtn.BackColor = System.Drawing.Color.Transparent;
+            this.DrawBtn.BackColor = System.Drawing.Color.Gray;
             this.DrawBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DrawBtn.BackgroundImage")));
             this.DrawBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DrawBtn.Enabled = false;
             this.DrawBtn.FlatAppearance.BorderSize = 0;
             this.DrawBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DrawBtn.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,11 +238,12 @@
             this.Winner.BackColor = System.Drawing.Color.Transparent;
             this.Winner.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Winner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Winner.Location = new System.Drawing.Point(468, 391);
+            this.Winner.Location = new System.Drawing.Point(279, 276);
             this.Winner.Name = "Winner";
-            this.Winner.Size = new System.Drawing.Size(180, 48);
+            this.Winner.Size = new System.Drawing.Size(180, 57);
             this.Winner.TabIndex = 26;
             this.Winner.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Winner.Click += new System.EventHandler(this.Winner_Click);
             // 
             // PplayerCard1
             // 
@@ -410,9 +413,9 @@
             this.Winner2.BackColor = System.Drawing.Color.Transparent;
             this.Winner2.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Winner2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.Winner2.Location = new System.Drawing.Point(461, 168);
+            this.Winner2.Location = new System.Drawing.Point(646, 276);
             this.Winner2.Name = "Winner2";
-            this.Winner2.Size = new System.Drawing.Size(180, 48);
+            this.Winner2.Size = new System.Drawing.Size(180, 57);
             this.Winner2.TabIndex = 37;
             this.Winner2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -427,7 +430,7 @@
             this.PlayerHandLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.PlayerHandLabel.Location = new System.Drawing.Point(20, 381);
             this.PlayerHandLabel.Name = "PlayerHandLabel";
-            this.PlayerHandLabel.Size = new System.Drawing.Size(276, 48);
+            this.PlayerHandLabel.Size = new System.Drawing.Size(214, 48);
             this.PlayerHandLabel.TabIndex = 38;
             this.PlayerHandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -442,7 +445,7 @@
             this.CompHandLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CompHandLabel.Location = new System.Drawing.Point(19, 176);
             this.CompHandLabel.Name = "CompHandLabel";
-            this.CompHandLabel.Size = new System.Drawing.Size(277, 48);
+            this.CompHandLabel.Size = new System.Drawing.Size(215, 48);
             this.CompHandLabel.TabIndex = 39;
             this.CompHandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 

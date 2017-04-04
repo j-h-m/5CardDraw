@@ -8,10 +8,10 @@
     class RankHand : Hand
     {
         public HandTotal HandSum;
-        public int ClubsCount = 0;     //rank of club suit = 1
-        public int DiamondsCount = 0;  //rank of diamond suit = 2
-        public int HeartsCount = 0;   //rank of heart suit = 3
-        public int SpadesCount = 0;  //rank of spade suit = 4
+        public int ClubsCount;     //rank of club suit = 1
+        public int DiamondsCount;  //rank of diamond suit = 2
+        public int HeartsCount; //rank of heart suit = 3
+        public int SpadesCount;  //rank of spade suit = 4
 
         public HandTotal HandGetSet
         {
@@ -21,6 +21,11 @@
 
         public int evalHand(Card[] handCards)
         {
+            ClubsCount = 0;
+            DiamondsCount = 0;
+            HeartsCount = 0;
+            SpadesCount = 0;
+
             foreach (var item in handCards)
             {
                 if (item.getSuit() == 1)
@@ -196,7 +201,7 @@
             //High Card
             else
             {
-                HandSum.hTotal = handCards[4].getFace() + handCards[4].getFace();
+                HandSum.hTotal = handCards[4].getFace();
                 return HandSum.hTotal;
             }
             //High Card
