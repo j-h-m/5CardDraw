@@ -55,9 +55,15 @@
             this.Winner2 = new System.Windows.Forms.Label();
             this.PlayerHandLabel = new System.Windows.Forms.Label();
             this.CompHandLabel = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.PlayerBetButton = new System.Windows.Forms.Button();
+            this.CompBetButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // computerLabel
@@ -66,7 +72,7 @@
             this.computerLabel.BackColor = System.Drawing.Color.Transparent;
             this.computerLabel.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.computerLabel.ForeColor = System.Drawing.Color.White;
-            this.computerLabel.Location = new System.Drawing.Point(12, 9);
+            this.computerLabel.Location = new System.Drawing.Point(13, 83);
             this.computerLabel.Name = "computerLabel";
             this.computerLabel.Size = new System.Drawing.Size(115, 25);
             this.computerLabel.TabIndex = 0;
@@ -79,7 +85,7 @@
             this.playerLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerLabel.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.playerLabel.Location = new System.Drawing.Point(17, 450);
+            this.playerLabel.Location = new System.Drawing.Point(17, 376);
             this.playerLabel.Name = "playerLabel";
             this.playerLabel.Size = new System.Drawing.Size(95, 25);
             this.playerLabel.TabIndex = 1;
@@ -119,7 +125,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.poker_chips1;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 478);
+            this.pictureBox1.Location = new System.Drawing.Point(17, 404);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(110, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -130,7 +136,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::WindowsFormsApplication1.Properties.Resources.poker_chips1;
-            this.pictureBox2.Location = new System.Drawing.Point(22, 37);
+            this.pictureBox2.Location = new System.Drawing.Point(23, 111);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(105, 82);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -208,11 +214,11 @@
             this.computerMoney.AutoSize = true;
             this.computerMoney.BackColor = System.Drawing.Color.Transparent;
             this.computerMoney.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.computerMoney.Font = new System.Drawing.Font("Goudy Stout", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.computerMoney.Font = new System.Drawing.Font("Goudy Stout", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.computerMoney.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.computerMoney.Location = new System.Drawing.Point(19, 130);
+            this.computerMoney.Location = new System.Drawing.Point(20, 204);
             this.computerMoney.Name = "computerMoney";
-            this.computerMoney.Size = new System.Drawing.Size(62, 22);
+            this.computerMoney.Size = new System.Drawing.Size(76, 26);
             this.computerMoney.TabIndex = 24;
             this.computerMoney.Text = "$100";
             // 
@@ -222,11 +228,11 @@
             this.playerMoney.AutoSize = true;
             this.playerMoney.BackColor = System.Drawing.Color.Transparent;
             this.playerMoney.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.playerMoney.Font = new System.Drawing.Font("Goudy Stout", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playerMoney.Font = new System.Drawing.Font("Goudy Stout", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerMoney.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.playerMoney.Location = new System.Drawing.Point(19, 573);
+            this.playerMoney.Location = new System.Drawing.Point(19, 499);
             this.playerMoney.Name = "playerMoney";
-            this.playerMoney.Size = new System.Drawing.Size(62, 22);
+            this.playerMoney.Size = new System.Drawing.Size(76, 26);
             this.playerMoney.TabIndex = 25;
             this.playerMoney.Text = "$100";
             // 
@@ -428,7 +434,7 @@
             this.PlayerHandLabel.Font = new System.Drawing.Font("Goudy Stout", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayerHandLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.PlayerHandLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PlayerHandLabel.Location = new System.Drawing.Point(20, 381);
+            this.PlayerHandLabel.Location = new System.Drawing.Point(14, 318);
             this.PlayerHandLabel.Name = "PlayerHandLabel";
             this.PlayerHandLabel.Size = new System.Drawing.Size(214, 48);
             this.PlayerHandLabel.TabIndex = 38;
@@ -443,11 +449,91 @@
             this.CompHandLabel.Font = new System.Drawing.Font("Goudy Stout", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompHandLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.CompHandLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CompHandLabel.Location = new System.Drawing.Point(19, 176);
+            this.CompHandLabel.Location = new System.Drawing.Point(21, 226);
             this.CompHandLabel.Name = "CompHandLabel";
             this.CompHandLabel.Size = new System.Drawing.Size(215, 48);
             this.CompHandLabel.TabIndex = 39;
             this.CompHandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown1.DecimalPlaces = 2;
+            this.numericUpDown1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Location = new System.Drawing.Point(24, 542);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(113, 24);
+            this.numericUpDown1.TabIndex = 40;
+            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown2.DecimalPlaces = 2;
+            this.numericUpDown2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.numericUpDown2.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Location = new System.Drawing.Point(18, 47);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(113, 24);
+            this.numericUpDown2.TabIndex = 41;
+            this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // PlayerBetButton
+            // 
+            this.PlayerBetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.PlayerBetButton.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerBetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PlayerBetButton.BackgroundImage")));
+            this.PlayerBetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PlayerBetButton.FlatAppearance.BorderSize = 0;
+            this.PlayerBetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayerBetButton.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerBetButton.ForeColor = System.Drawing.Color.Transparent;
+            this.PlayerBetButton.Location = new System.Drawing.Point(143, 462);
+            this.PlayerBetButton.Name = "PlayerBetButton";
+            this.PlayerBetButton.Size = new System.Drawing.Size(69, 106);
+            this.PlayerBetButton.TabIndex = 42;
+            this.PlayerBetButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.PlayerBetButton.UseVisualStyleBackColor = false;
+            // 
+            // CompBetButton
+            // 
+            this.CompBetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.CompBetButton.BackColor = System.Drawing.Color.Transparent;
+            this.CompBetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CompBetButton.BackgroundImage")));
+            this.CompBetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CompBetButton.FlatAppearance.BorderSize = 0;
+            this.CompBetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CompBetButton.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompBetButton.ForeColor = System.Drawing.Color.Transparent;
+            this.CompBetButton.Location = new System.Drawing.Point(143, 20);
+            this.CompBetButton.Name = "CompBetButton";
+            this.CompBetButton.Size = new System.Drawing.Size(69, 106);
+            this.CompBetButton.TabIndex = 43;
+            this.CompBetButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.CompBetButton.UseVisualStyleBackColor = false;
             // 
             // GameBoard
             // 
@@ -457,6 +543,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 626);
+            this.Controls.Add(this.CompBetButton);
+            this.Controls.Add(this.PlayerBetButton);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.CompHandLabel);
             this.Controls.Add(this.PlayerHandLabel);
             this.Controls.Add(this.Winner2);
@@ -492,6 +582,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,6 +617,10 @@
         private System.Windows.Forms.Label Winner2;
         private System.Windows.Forms.Label PlayerHandLabel;
         private System.Windows.Forms.Label CompHandLabel;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Button PlayerBetButton;
+        private System.Windows.Forms.Button CompBetButton;
     }
 }
 

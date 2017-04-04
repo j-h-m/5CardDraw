@@ -20,6 +20,7 @@ namespace WindowsFormsApplication1
         {
             // no args constructor
         }
+       
 
         public Image getImage()
         {

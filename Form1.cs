@@ -139,45 +139,46 @@ namespace WindowsFormsApplication1
                 Winner2.Text = "Chuck Norris Wins";
             }
 
-            String handType = "Nothing";
+            String Player_Hand_Type = "Nothing";
             if (playerscore >= 1000 & playerscore < 2000)
             {
-                handType = "Pair";
+                Player_Hand_Type = "Pair";
             }
             else if (playerscore >= 2000 & playerscore < 3000)
             {
-                handType = "2 Pairs";
+                Player_Hand_Type = "2 Pairs";
             }
             else if (playerscore >= 3000 & playerscore < 4000)
             {
-                handType = "3 of a Kind";
+                Player_Hand_Type = "3 of a Kind";
             }
             else if (playerscore >= 4000 & playerscore < 5000)
             {
-                handType = "Straight";
+                Player_Hand_Type = "Straight";
             }
             else if (playerscore >= 5000 & playerscore < 6000)
             {
-                handType = "Flush";
+                Player_Hand_Type = "Flush";
             }
             else if (playerscore >= 6000 & playerscore < 7000)
             {
-                handType = "Full House";
+                Player_Hand_Type = "Full House";
             }
             else if (playerscore >= 7000 & playerscore < 8000)
             {
-                handType = "Four of a Kind";
+                Player_Hand_Type = "Four of a Kind";
             }
             else if (playerscore >= 8000 & playerscore < 9000)
             {
-                handType = "Straight Flush";
+                Player_Hand_Type = "Straight Flush";
             }
             else if (playerscore >= 9000)
             {
-                handType = "Royal Flush";
+                Player_Hand_Type = "Royal Flush";
             }
-            PlayerHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + playerscore.ToString());
+            PlayerHandLabel.Text = ("Hand:  " + Player_Hand_Type + "\r\n" + "Score:  " + playerscore.ToString());
 
+            String handType = "Nothing";
             if (compscore >= 1000 & compscore < 2000)
             {
                 handType = "Pair";
