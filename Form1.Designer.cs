@@ -62,11 +62,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.CompPanel = new System.Windows.Forms.Panel();
+            this.PlayerPanel = new System.Windows.Forms.Panel();
+            this.PlayerBetPanel = new System.Windows.Forms.Panel();
+            this.CompBetPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompBet)).BeginInit();
+            this.CompPanel.SuspendLayout();
+            this.PlayerPanel.SuspendLayout();
+            this.PlayerBetPanel.SuspendLayout();
+            this.CompBetPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // computerLabel
@@ -263,7 +271,7 @@
             this.PplayerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PplayerCard1.FlatAppearance.BorderSize = 0;
             this.PplayerCard1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PplayerCard1.Location = new System.Drawing.Point(249, 460);
+            this.PplayerCard1.Location = new System.Drawing.Point(35, 44);
             this.PplayerCard1.MinimumSize = new System.Drawing.Size(100, 145);
             this.PplayerCard1.Name = "PplayerCard1";
             this.PplayerCard1.Size = new System.Drawing.Size(100, 145);
@@ -279,7 +287,7 @@
             this.PplayerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PplayerCard2.FlatAppearance.BorderSize = 0;
             this.PplayerCard2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PplayerCard2.Location = new System.Drawing.Point(370, 460);
+            this.PplayerCard2.Location = new System.Drawing.Point(156, 44);
             this.PplayerCard2.MinimumSize = new System.Drawing.Size(100, 145);
             this.PplayerCard2.Name = "PplayerCard2";
             this.PplayerCard2.Size = new System.Drawing.Size(100, 145);
@@ -295,7 +303,7 @@
             this.PplayerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PplayerCard3.FlatAppearance.BorderSize = 0;
             this.PplayerCard3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PplayerCard3.Location = new System.Drawing.Point(498, 460);
+            this.PplayerCard3.Location = new System.Drawing.Point(284, 44);
             this.PplayerCard3.MinimumSize = new System.Drawing.Size(100, 145);
             this.PplayerCard3.Name = "PplayerCard3";
             this.PplayerCard3.Size = new System.Drawing.Size(100, 145);
@@ -311,7 +319,7 @@
             this.PplayerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PplayerCard4.FlatAppearance.BorderSize = 0;
             this.PplayerCard4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PplayerCard4.Location = new System.Drawing.Point(622, 460);
+            this.PplayerCard4.Location = new System.Drawing.Point(408, 44);
             this.PplayerCard4.MinimumSize = new System.Drawing.Size(100, 145);
             this.PplayerCard4.Name = "PplayerCard4";
             this.PplayerCard4.Size = new System.Drawing.Size(100, 145);
@@ -327,7 +335,7 @@
             this.PplayerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PplayerCard5.FlatAppearance.BorderSize = 0;
             this.PplayerCard5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PplayerCard5.Location = new System.Drawing.Point(750, 460);
+            this.PplayerCard5.Location = new System.Drawing.Point(536, 44);
             this.PplayerCard5.MinimumSize = new System.Drawing.Size(100, 145);
             this.PplayerCard5.Name = "PplayerCard5";
             this.PplayerCard5.Size = new System.Drawing.Size(100, 145);
@@ -343,7 +351,7 @@
             this.PcomputerCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PcomputerCard5.FlatAppearance.BorderSize = 0;
             this.PcomputerCard5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PcomputerCard5.Location = new System.Drawing.Point(750, 20);
+            this.PcomputerCard5.Location = new System.Drawing.Point(539, 12);
             this.PcomputerCard5.MinimumSize = new System.Drawing.Size(100, 145);
             this.PcomputerCard5.Name = "PcomputerCard5";
             this.PcomputerCard5.Size = new System.Drawing.Size(100, 145);
@@ -359,7 +367,7 @@
             this.PcomputerCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PcomputerCard4.FlatAppearance.BorderSize = 0;
             this.PcomputerCard4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PcomputerCard4.Location = new System.Drawing.Point(622, 20);
+            this.PcomputerCard4.Location = new System.Drawing.Point(415, 12);
             this.PcomputerCard4.MinimumSize = new System.Drawing.Size(100, 145);
             this.PcomputerCard4.Name = "PcomputerCard4";
             this.PcomputerCard4.Size = new System.Drawing.Size(100, 145);
@@ -375,7 +383,7 @@
             this.PcomputerCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PcomputerCard3.FlatAppearance.BorderSize = 0;
             this.PcomputerCard3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PcomputerCard3.Location = new System.Drawing.Point(498, 20);
+            this.PcomputerCard3.Location = new System.Drawing.Point(291, 12);
             this.PcomputerCard3.MinimumSize = new System.Drawing.Size(100, 145);
             this.PcomputerCard3.Name = "PcomputerCard3";
             this.PcomputerCard3.Size = new System.Drawing.Size(100, 145);
@@ -391,7 +399,7 @@
             this.PcomputerCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PcomputerCard2.FlatAppearance.BorderSize = 0;
             this.PcomputerCard2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PcomputerCard2.Location = new System.Drawing.Point(370, 20);
+            this.PcomputerCard2.Location = new System.Drawing.Point(163, 12);
             this.PcomputerCard2.MinimumSize = new System.Drawing.Size(100, 145);
             this.PcomputerCard2.Name = "PcomputerCard2";
             this.PcomputerCard2.Size = new System.Drawing.Size(100, 145);
@@ -407,7 +415,7 @@
             this.PcomputerCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PcomputerCard1.FlatAppearance.BorderSize = 0;
             this.PcomputerCard1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.PcomputerCard1.Location = new System.Drawing.Point(249, 20);
+            this.PcomputerCard1.Location = new System.Drawing.Point(42, 12);
             this.PcomputerCard1.MinimumSize = new System.Drawing.Size(100, 145);
             this.PcomputerCard1.Name = "PcomputerCard1";
             this.PcomputerCard1.Size = new System.Drawing.Size(100, 145);
@@ -464,7 +472,6 @@
             this.PlayerBet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.PlayerBet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PlayerBet.DecimalPlaces = 2;
-            this.PlayerBet.Enabled = false;
             this.PlayerBet.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayerBet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.PlayerBet.Increment = new decimal(new int[] {
@@ -472,7 +479,7 @@
             0,
             0,
             0});
-            this.PlayerBet.Location = new System.Drawing.Point(24, 542);
+            this.PlayerBet.Location = new System.Drawing.Point(3, 124);
             this.PlayerBet.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -482,14 +489,12 @@
             this.PlayerBet.Size = new System.Drawing.Size(113, 24);
             this.PlayerBet.TabIndex = 40;
             this.PlayerBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.PlayerBet.Visible = false;
             // 
             // CompBet
             // 
             this.CompBet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CompBet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CompBet.DecimalPlaces = 2;
-            this.CompBet.Enabled = false;
             this.CompBet.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompBet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.CompBet.Increment = new decimal(new int[] {
@@ -497,7 +502,7 @@
             0,
             0,
             0});
-            this.CompBet.Location = new System.Drawing.Point(18, 47);
+            this.CompBet.Location = new System.Drawing.Point(3, 34);
             this.CompBet.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -507,7 +512,6 @@
             this.CompBet.Size = new System.Drawing.Size(113, 24);
             this.CompBet.TabIndex = 41;
             this.CompBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.CompBet.Visible = false;
             // 
             // PlayerBetButton
             // 
@@ -515,18 +519,16 @@
             this.PlayerBetButton.BackColor = System.Drawing.Color.Transparent;
             this.PlayerBetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PlayerBetButton.BackgroundImage")));
             this.PlayerBetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PlayerBetButton.Enabled = false;
             this.PlayerBetButton.FlatAppearance.BorderSize = 0;
             this.PlayerBetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PlayerBetButton.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayerBetButton.ForeColor = System.Drawing.Color.Transparent;
-            this.PlayerBetButton.Location = new System.Drawing.Point(143, 462);
+            this.PlayerBetButton.Location = new System.Drawing.Point(122, 44);
             this.PlayerBetButton.Name = "PlayerBetButton";
             this.PlayerBetButton.Size = new System.Drawing.Size(69, 106);
             this.PlayerBetButton.TabIndex = 42;
             this.PlayerBetButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.PlayerBetButton.UseVisualStyleBackColor = false;
-            this.PlayerBetButton.Visible = false;
             this.PlayerBetButton.Click += new System.EventHandler(this.PlayerBetButton_Click);
             // 
             // CompBetButton
@@ -535,18 +537,16 @@
             this.CompBetButton.BackColor = System.Drawing.Color.Transparent;
             this.CompBetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CompBetButton.BackgroundImage")));
             this.CompBetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CompBetButton.Enabled = false;
             this.CompBetButton.FlatAppearance.BorderSize = 0;
             this.CompBetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CompBetButton.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompBetButton.ForeColor = System.Drawing.Color.Transparent;
-            this.CompBetButton.Location = new System.Drawing.Point(143, 20);
+            this.CompBetButton.Location = new System.Drawing.Point(128, 7);
             this.CompBetButton.Name = "CompBetButton";
             this.CompBetButton.Size = new System.Drawing.Size(69, 106);
             this.CompBetButton.TabIndex = 43;
             this.CompBetButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.CompBetButton.UseVisualStyleBackColor = false;
-            this.CompBetButton.Visible = false;
             this.CompBetButton.Click += new System.EventHandler(this.CompBetButton_Click);
             // 
             // label2
@@ -585,6 +585,60 @@
             this.label4.TabIndex = 46;
             this.label4.Text = "$";
             // 
+            // CompPanel
+            // 
+            this.CompPanel.BackColor = System.Drawing.Color.Transparent;
+            this.CompPanel.Controls.Add(this.PcomputerCard4);
+            this.CompPanel.Controls.Add(this.PcomputerCard1);
+            this.CompPanel.Controls.Add(this.PcomputerCard2);
+            this.CompPanel.Controls.Add(this.PcomputerCard3);
+            this.CompPanel.Controls.Add(this.PcomputerCard5);
+            this.CompPanel.Enabled = false;
+            this.CompPanel.ForeColor = System.Drawing.Color.Transparent;
+            this.CompPanel.Location = new System.Drawing.Point(227, 8);
+            this.CompPanel.Name = "CompPanel";
+            this.CompPanel.Size = new System.Drawing.Size(723, 193);
+            this.CompPanel.TabIndex = 47;
+            // 
+            // PlayerPanel
+            // 
+            this.PlayerPanel.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerPanel.Controls.Add(this.PplayerCard1);
+            this.PlayerPanel.Controls.Add(this.PplayerCard2);
+            this.PlayerPanel.Controls.Add(this.PplayerCard3);
+            this.PlayerPanel.Controls.Add(this.PplayerCard4);
+            this.PlayerPanel.Controls.Add(this.PplayerCard5);
+            this.PlayerPanel.Enabled = false;
+            this.PlayerPanel.ForeColor = System.Drawing.Color.Transparent;
+            this.PlayerPanel.Location = new System.Drawing.Point(234, 394);
+            this.PlayerPanel.Name = "PlayerPanel";
+            this.PlayerPanel.Size = new System.Drawing.Size(683, 220);
+            this.PlayerPanel.TabIndex = 48;
+            // 
+            // PlayerBetPanel
+            // 
+            this.PlayerBetPanel.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerBetPanel.Controls.Add(this.PlayerBet);
+            this.PlayerBetPanel.Controls.Add(this.PlayerBetButton);
+            this.PlayerBetPanel.Enabled = false;
+            this.PlayerBetPanel.ForeColor = System.Drawing.Color.Transparent;
+            this.PlayerBetPanel.Location = new System.Drawing.Point(11, 404);
+            this.PlayerBetPanel.Name = "PlayerBetPanel";
+            this.PlayerBetPanel.Size = new System.Drawing.Size(217, 210);
+            this.PlayerBetPanel.TabIndex = 43;
+            // 
+            // CompBetPanel
+            // 
+            this.CompBetPanel.BackColor = System.Drawing.Color.Transparent;
+            this.CompBetPanel.Controls.Add(this.CompBetButton);
+            this.CompBetPanel.Controls.Add(this.CompBet);
+            this.CompBetPanel.Enabled = false;
+            this.CompBetPanel.ForeColor = System.Drawing.Color.Transparent;
+            this.CompBetPanel.Location = new System.Drawing.Point(11, 13);
+            this.CompBetPanel.Name = "CompBetPanel";
+            this.CompBetPanel.Size = new System.Drawing.Size(200, 188);
+            this.CompBetPanel.TabIndex = 49;
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,23 +652,9 @@
             this.Controls.Add(this.compMoney);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.CompBetButton);
-            this.Controls.Add(this.PlayerBetButton);
-            this.Controls.Add(this.CompBet);
-            this.Controls.Add(this.PlayerBet);
             this.Controls.Add(this.CompHandLabel);
             this.Controls.Add(this.PlayerHandLabel);
             this.Controls.Add(this.Winner2);
-            this.Controls.Add(this.PcomputerCard5);
-            this.Controls.Add(this.PcomputerCard4);
-            this.Controls.Add(this.PcomputerCard3);
-            this.Controls.Add(this.PcomputerCard2);
-            this.Controls.Add(this.PcomputerCard1);
-            this.Controls.Add(this.PplayerCard5);
-            this.Controls.Add(this.PplayerCard4);
-            this.Controls.Add(this.PplayerCard3);
-            this.Controls.Add(this.PplayerCard2);
-            this.Controls.Add(this.PplayerCard1);
             this.Controls.Add(this.moneyPot);
             this.Controls.Add(this.Winner);
             this.Controls.Add(this.DrawBtn);
@@ -626,6 +666,10 @@
             this.Controls.Add(this.FoldBtn);
             this.Controls.Add(this.playerLabel);
             this.Controls.Add(this.computerLabel);
+            this.Controls.Add(this.CompPanel);
+            this.Controls.Add(this.PlayerPanel);
+            this.Controls.Add(this.CompBetPanel);
+            this.Controls.Add(this.PlayerBetPanel);
             this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1000, 600);
@@ -637,6 +681,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerBet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompBet)).EndInit();
+            this.CompPanel.ResumeLayout(false);
+            this.CompPanel.PerformLayout();
+            this.PlayerPanel.ResumeLayout(false);
+            this.PlayerPanel.PerformLayout();
+            this.PlayerBetPanel.ResumeLayout(false);
+            this.CompBetPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -677,6 +727,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel CompPanel;
+        private System.Windows.Forms.Panel PlayerPanel;
+        private System.Windows.Forms.Panel PlayerBetPanel;
+        private System.Windows.Forms.Panel CompBetPanel;
     }
 }
 

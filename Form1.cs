@@ -38,39 +38,45 @@ namespace WindowsFormsApplication1
             {
                 player_hand[0] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(player_hand);
-                PplayerCard1.Location = new Point(249, 460);
+                PplayerCard1.Location = new Point(35, 44);
                 PplayerCard1.FlatAppearance.BorderSize = 0;
+                PplayerCard1.Checked = false;
+               
             }
             if (PplayerCard2.Checked)
             {
                 player_hand[1] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(player_hand);
-                PplayerCard2.Location = new Point(370, 460);
+                PplayerCard2.Location = new Point(156, 44);
                 PplayerCard2.FlatAppearance.BorderSize = 0;
+                PplayerCard2.Checked = false;
             }
             if (PplayerCard3.Checked)
             {
                 player_hand[2] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(player_hand);
-                PplayerCard3.Location = new Point(498, 460);
+                PplayerCard3.Location = new Point(284, 44);
 
                 PplayerCard3.FlatAppearance.BorderSize = 0;
+                PplayerCard3.Checked = false;
             }
             if (PplayerCard4.Checked)
             {
                 player_hand[3] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(player_hand);
-                PplayerCard4.Location = new Point(622, 460);
+                PplayerCard4.Location = new Point(408, 44);
 
                 PplayerCard4.FlatAppearance.BorderSize = 0;
+                PplayerCard4.Checked = false;
             }
             if (PplayerCard5.Checked)
             {
                 player_hand[4] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(player_hand);
-                PplayerCard5.Location = new Point(750, 460);
+                PplayerCard5.Location = new Point(536, 44);
 
                 PplayerCard5.FlatAppearance.BorderSize = 0;
+                PplayerCard5.Checked = false;
             }
 
             PplayerCard1.BackgroundImage = player_hand[0].getImage();
@@ -83,42 +89,49 @@ namespace WindowsFormsApplication1
             {
                 comp_hand[0] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(comp_hand);
-                PcomputerCard1.Location = new Point(249, 20);
+                PcomputerCard1.Location = new Point(42, 12);
 
                 PcomputerCard1.FlatAppearance.BorderSize = 0;
+                PcomputerCard1.Checked = false;
             }
             if (PcomputerCard2.Checked)
             {
                 comp_hand[1] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(comp_hand);
-                PcomputerCard2.Location = new Point(370, 20);
+                PcomputerCard2.Location = new Point(163, 12);
 
                 PcomputerCard2.FlatAppearance.BorderSize = 0;
+                PcomputerCard2.Checked = false;
             }
             if (PcomputerCard3.Checked)
             {
                 comp_hand[2] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(comp_hand);
-                PcomputerCard3.Location = new Point(498, 20);
+                PcomputerCard3.Location = new Point(291, 12);
 
                 PcomputerCard3.FlatAppearance.BorderSize = 0;
+                PcomputerCard3.Checked = false;
             }
             if (PcomputerCard4.Checked)
             {
                 comp_hand[3] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(comp_hand);
-                PcomputerCard4.Location = new Point(622, 20);
+                PcomputerCard4.Location = new Point(415, 12);
 
                 PcomputerCard4.FlatAppearance.BorderSize = 0;
+                PcomputerCard4.Checked = false;
             }
             if (PcomputerCard5.Checked)
             {
                 comp_hand[4] = myDeck.getDeck().Pop();
                 hand_ref.sortHand(comp_hand);
-                PcomputerCard5.Location = new Point(750, 20);
+                PcomputerCard5.Location = new Point(539, 12);
 
                 PcomputerCard5.FlatAppearance.BorderSize = 0;
+                PcomputerCard5.Checked = false;
             }
+
+            
 
             PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
             PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
@@ -126,7 +139,10 @@ namespace WindowsFormsApplication1
             PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
             PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
 
-            int playerscore = hand_rank.evalHand(player_hand);
+            CompPanel.Enabled = true;
+            PlayerPanel.Enabled = false;
+
+            /*int playerscore = hand_rank.evalHand(player_hand);
             int compscore = hand_rank.evalHand(comp_hand);
 
             if (playerscore > compscore)
@@ -219,7 +235,7 @@ namespace WindowsFormsApplication1
             {
                 handType = "Royal Flush";
             }
-            CompHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + compscore.ToString());
+            CompHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + compscore.ToString());*/
         }
 
         private void DealBtn_Click(object sender, EventArgs e)
@@ -253,11 +269,6 @@ namespace WindowsFormsApplication1
             ComputerCard4.Image = Image.FromFile(cardback);
             ComputerCard5.Image = Image.FromFile(cardback);*/
 
-            /*ComputerCard1.Image = comp_hand[0].getImage();
-            ComputerCard2.Image = comp_hand[1].getImage();
-            ComputerCard3.Image = comp_hand[2].getImage();
-            ComputerCard4.Image = comp_hand[3].getImage();
-            ComputerCard5.Image = comp_hand[4].getImage();*/
 
             PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
             PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
@@ -277,47 +288,22 @@ namespace WindowsFormsApplication1
             DealBtn.BackColor = Color.Gray;
             FoldBtn.Enabled = true;
             FoldBtn.BackColor = Color.Transparent;
-            PlayerBetButton.Enabled = true;
-            PlayerBetButton.Visible = true;
-            PlayerBet.Enabled = true;
-            PlayerBet.Visible = true;
-
-
-            //TRIAL
-
-            //TRIAL
-
-            //RankHand eval_player_hand = new RankHand(player_hand);
-            //RankHand eval_comp_hand = new RankHand(comp_hand);
-
-            //HandType player_hand_rank = eval_player_hand.EvaluateHand();
-            //HandType comp_hand_rank = eval_comp_hand.EvaluateHand();
-
-            //if (player_hand_rank > comp_hand_rank)
-            //{
-            //    Winner.Text = "Player Wins";
-            //}
-            //else if (comp_hand_rank > player_hand_rank)
-            //{
-            //    Winner.Text = "Computer Wins";
-            //}
-            //else
-            //{
-            //    Winner.Text = "Draw";
-            //}
+            PlayerBetPanel.Enabled = true;
+            
         }
 
         private void PplayerCard1_CheckedChanged(object sender, EventArgs e)
         {
             if (PplayerCard1.Checked)
             {
-                PplayerCard1.Location = new Point(249, 430);
+                PplayerCard1.Location = new Point(35, 34);
                 PplayerCard1.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard1.FlatAppearance.BorderSize = 2;
+                
             }
             else
             {
-                PplayerCard1.Location = new Point(249, 460);
+                PplayerCard1.Location = new Point(35, 44);
 
                 PplayerCard1.FlatAppearance.BorderSize = 0;
             }
@@ -327,13 +313,14 @@ namespace WindowsFormsApplication1
         {
             if (PplayerCard2.Checked)
             {
-                PplayerCard2.Location = new Point(370, 430);
+                PplayerCard2.Location = new Point(156, 14);
                 PplayerCard2.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard2.FlatAppearance.BorderSize = 2;
+               
             }
             else
             {
-                PplayerCard2.Location = new Point(370, 460);
+                PplayerCard2.Location = new Point(156, 44);
 
                 PplayerCard2.FlatAppearance.BorderSize = 0;
             }
@@ -343,13 +330,14 @@ namespace WindowsFormsApplication1
         {
             if (PplayerCard3.Checked)
             {
-                PplayerCard3.Location = new Point(498, 430);
+                PplayerCard3.Location = new Point(284, 14);
                 PplayerCard3.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard3.FlatAppearance.BorderSize = 2;
+               
             }
             else
             {
-                PplayerCard3.Location = new Point(498, 460);
+                PplayerCard3.Location = new Point(284, 44);
 
                 PplayerCard3.FlatAppearance.BorderSize = 0;
             }
@@ -359,13 +347,14 @@ namespace WindowsFormsApplication1
         {
             if (PplayerCard4.Checked)
             {
-                PplayerCard4.Location = new Point(622, 430);
+                PplayerCard4.Location = new Point(408, 14);
                 PplayerCard4.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard4.FlatAppearance.BorderSize = 2;
+                PplayerCard4.Checked = false;
             }
             else
             {
-                PplayerCard4.Location = new Point(622, 460);
+                PplayerCard4.Location = new Point(408, 44);
 
                 PplayerCard4.FlatAppearance.BorderSize = 0;
             }
@@ -375,13 +364,14 @@ namespace WindowsFormsApplication1
         {
             if (PplayerCard5.Checked)
             {
-                PplayerCard5.Location = new Point(750, 430);
+                PplayerCard5.Location = new Point(536, 14);
                 PplayerCard5.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard5.FlatAppearance.BorderSize = 2;
+                
             }
             else
             {
-                PplayerCard5.Location = new Point(750, 460);
+                PplayerCard5.Location = new Point(536, 44);
 
                 PplayerCard5.FlatAppearance.BorderSize = 0;
             }
@@ -391,13 +381,13 @@ namespace WindowsFormsApplication1
         {
             if (PcomputerCard1.Checked)
             {
-                PcomputerCard1.Location = new Point(249, 50);
+                PcomputerCard1.Location = new Point(42, 42);
                 PcomputerCard1.FlatAppearance.BorderColor = Color.Cyan;
                 PcomputerCard1.FlatAppearance.BorderSize = 2;
             }
             else
             {
-                PcomputerCard1.Location = new Point(249, 20);
+                PcomputerCard1.Location = new Point(42, 12);
 
                 PcomputerCard1.FlatAppearance.BorderSize = 0;
             }
@@ -407,13 +397,13 @@ namespace WindowsFormsApplication1
         {
             if (PcomputerCard2.Checked)
             {
-                PcomputerCard2.Location = new Point(370, 50);
+                PcomputerCard2.Location = new Point(163, 42);
                 PcomputerCard2.FlatAppearance.BorderColor = Color.Cyan;
                 PcomputerCard2.FlatAppearance.BorderSize = 2;
             }
             else
             {
-                PcomputerCard2.Location = new Point(370, 20);
+                PcomputerCard2.Location = new Point(163, 12);
 
                 PcomputerCard2.FlatAppearance.BorderSize = 0;
             }
@@ -423,13 +413,14 @@ namespace WindowsFormsApplication1
         {
             if (PcomputerCard3.Checked)
             {
-                PcomputerCard3.Location = new Point(498, 50);
+                PcomputerCard3.Location = new Point(291, 42);
                 PcomputerCard3.FlatAppearance.BorderColor = Color.Cyan;
                 PcomputerCard3.FlatAppearance.BorderSize = 2;
             }
             else
             {
-                PcomputerCard3.Location = new Point(498, 20);
+                
+                PcomputerCard3.Location = new Point(291, 12);
 
                 PcomputerCard3.FlatAppearance.BorderSize = 0;
             }
@@ -439,13 +430,13 @@ namespace WindowsFormsApplication1
         {
             if (PcomputerCard4.Checked)
             {
-                PcomputerCard4.Location = new Point(622, 50);
+                PcomputerCard4.Location = new Point(415, 42);
                 PcomputerCard4.FlatAppearance.BorderColor = Color.Cyan;
                 PcomputerCard4.FlatAppearance.BorderSize = 2;
             }
             else
             {
-                PcomputerCard4.Location = new Point(622, 20);
+                PcomputerCard4.Location = new Point(415, 12);
 
                 PcomputerCard4.FlatAppearance.BorderSize = 0;
             }
@@ -455,13 +446,13 @@ namespace WindowsFormsApplication1
         {
             if (PcomputerCard5.Checked)
             {
-                PcomputerCard5.Location = new Point(750, 50);
+                PcomputerCard5.Location = new Point(543, 42);
                 PcomputerCard5.FlatAppearance.BorderColor = Color.Cyan;
                 PcomputerCard5.FlatAppearance.BorderSize = 2;
             }
             else
             {
-                PcomputerCard5.Location = new Point(750, 20);
+                PcomputerCard5.Location = new Point(543, 12);
 
                 PcomputerCard5.FlatAppearance.BorderSize = 0;
             }
@@ -479,8 +470,8 @@ namespace WindowsFormsApplication1
             moneyPot.Text = moneyPotStartingAmount.ToString();
 
 
-            CompBetButton.Enabled = false;
-            CompBetButton.Visible = false;
+            CompBetPanel.Enabled = false;
+            PlayerPanel.Enabled = true;
             DrawBtn.Enabled = true;
             DrawBtn.BackColor = Color.Transparent;
         }
@@ -494,15 +485,8 @@ namespace WindowsFormsApplication1
             moneyPotStartingAmount = moneyPotStartingAmount + (Convert.ToInt32(Math.Round(PlayerBet.Value, 0)));
             moneyPot.Text = moneyPotStartingAmount.ToString();
 
-            PlayerBetButton.Enabled = false;
-            PlayerBetButton.Visible = false;
-            PlayerBet.Enabled = false;
-            PlayerBet.Visible = false;
-
-            CompBetButton.Enabled = true;
-            CompBetButton.Visible = true;
-            CompBet.Enabled = true;
-            CompBet.Visible = true;
+            PlayerBetPanel.Enabled = false;
+            CompBetPanel.Enabled = true;
 
 
 
