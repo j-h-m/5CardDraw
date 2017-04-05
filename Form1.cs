@@ -12,6 +12,10 @@ namespace WindowsFormsApplication1
         private Hand hand_ref = new Hand();
         private RankHand hand_rank = new RankHand();
 
+        private int playerStartingAmount = 1000;
+        private int compStartingAmount = 1000;
+        private int moneyPotStartingAmount = 0;
+
         private Card[] player_hand = new Card[4];
         private Card[] comp_hand = new Card[4];
 
@@ -261,16 +265,23 @@ namespace WindowsFormsApplication1
             PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
             PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
 
-            moneyPot.Text = "$2.00";
-            playerMoney.Text = "$99.00";
-            computerMoney.Text = "$99.00";
+            playerStartingAmount = playerStartingAmount - 2;
+            playerMoney.Text = playerStartingAmount.ToString();
+            compStartingAmount = compStartingAmount - 2;
+            compMoney.Text = compStartingAmount.ToString();
+            moneyPotStartingAmount = moneyPotStartingAmount + 4;
+            moneyPot.Text = moneyPotStartingAmount.ToString();
+           
 
             DealBtn.Enabled = false;
             DealBtn.BackColor = Color.Gray;
             FoldBtn.Enabled = true;
             FoldBtn.BackColor = Color.Transparent;
-            DrawBtn.Enabled = true;
-            DrawBtn.BackColor = Color.Transparent;
+            PlayerBetButton.Enabled = true;
+            PlayerBetButton.Visible = true;
+            PlayerBet.Enabled = true;
+            PlayerBet.Visible = true;
+
 
             //TRIAL
 
@@ -458,6 +469,48 @@ namespace WindowsFormsApplication1
 
         private void Winner_Click(object sender, EventArgs e)
         {
+        }
+
+        private void CompBetButton_Click(object sender, EventArgs e)
+        {
+            compStartingAmount = compStartingAmount - (Convert.ToInt32(Math.Round(CompBet.Value, 0)));
+            compMoney.Text = compStartingAmount.ToString();
+            moneyPotStartingAmount = moneyPotStartingAmount + (Convert.ToInt32(Math.Round(CompBet.Value, 0)));
+            moneyPot.Text = moneyPotStartingAmount.ToString();
+
+
+            CompBetButton.Enabled = false;
+            CompBetButton.Visible = false;
+            DrawBtn.Enabled = true;
+            DrawBtn.BackColor = Color.Transparent;
+        }
+
+        private void PlayerBetButton_Click(object sender, EventArgs e)
+        {
+            
+            
+            playerStartingAmount = playerStartingAmount - (Convert.ToInt32(Math.Round(PlayerBet.Value, 0)));
+            playerMoney.Text = playerStartingAmount.ToString();
+            moneyPotStartingAmount = moneyPotStartingAmount + (Convert.ToInt32(Math.Round(PlayerBet.Value, 0)));
+            moneyPot.Text = moneyPotStartingAmount.ToString();
+
+            PlayerBetButton.Enabled = false;
+            PlayerBetButton.Visible = false;
+            PlayerBet.Enabled = false;
+            PlayerBet.Visible = false;
+
+            CompBetButton.Enabled = true;
+            CompBetButton.Visible = true;
+            CompBet.Enabled = true;
+            CompBet.Visible = true;
+
+
+
+        }
+
+        private void compMoney_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

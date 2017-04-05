@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
 
         public Card()
         {
-            // no args constructor
+           
         }
        
 

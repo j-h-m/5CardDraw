@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
 using System.Drawing;
+using System.IO;
+using System.Linq;
 
 namespace WindowsFormsApplication1
 {
     public class Deck
     {
-        Card[] card_array = null;
-        String[] card_names = null;
-        Stack<Card> deck = new Stack<Card>();
+        private Card[] card_array = null;
+        private String[] card_names = null;
+        private Stack<Card> deck = new Stack<Card>();
 
         public Deck()
         {
@@ -46,16 +43,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "2_of_diamonds.png":
                         card_array[i].setFace(20);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "2_of_hearts.png":
                         card_array[i].setFace(20);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "2_of_spades.png":
                         card_array[i].setFace(20);
                         card_array[i].setSuit(4);
@@ -67,16 +67,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "3_of_diamonds.png":
                         card_array[i].setFace(30);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "3_of_hearts.png":
                         card_array[i].setFace(30);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "3_of_spades.png":
                         card_array[i].setFace(30);
                         card_array[i].setSuit(4);
@@ -88,16 +91,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "4_of_diamonds.png":
                         card_array[i].setFace(40);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "4_of_hearts.png":
                         card_array[i].setFace(40);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "4_of_spades.png":
                         card_array[i].setFace(40);
                         card_array[i].setSuit(4);
@@ -109,16 +115,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "5_of_diamonds.png":
                         card_array[i].setFace(50);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "5_of_hearts.png":
                         card_array[i].setFace(50);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "5_of_spades.png":
                         card_array[i].setFace(50);
                         card_array[i].setSuit(4);
@@ -130,16 +139,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "6_of_diamonds.png":
                         card_array[i].setFace(60);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "6_of_hearts.png":
                         card_array[i].setFace(60);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "6_of_spades.png":
                         card_array[i].setFace(60);
                         card_array[i].setSuit(4);
@@ -151,16 +163,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "7_of_diamonds.png":
                         card_array[i].setFace(70);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "7_of_hearts.png":
                         card_array[i].setFace(70);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "7_of_spades.png":
                         card_array[i].setFace(70);
                         card_array[i].setSuit(4);
@@ -172,16 +187,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "8_of_diamonds.png":
                         card_array[i].setFace(80);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "8_of_hearts.png":
                         card_array[i].setFace(80);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "8_of_spades.png":
                         card_array[i].setFace(80);
                         card_array[i].setSuit(4);
@@ -193,16 +211,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "9_of_diamonds.png":
                         card_array[i].setFace(90);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "9_of_hearts.png":
                         card_array[i].setFace(90);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "9_of_spades.png":
                         card_array[i].setFace(90);
                         card_array[i].setSuit(4);
@@ -214,16 +235,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "10_of_diamonds.png":
                         card_array[i].setFace(100);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "10_of_hearts.png":
                         card_array[i].setFace(100);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "10_of_spades.png":
                         card_array[i].setFace(100);
                         card_array[i].setSuit(4);
@@ -235,17 +259,20 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "jack_of_diamonds2.png":
                         card_array[i].setFace(110);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
 
                         break;
+
                     case "jack_of_hearts2.png":
                         card_array[i].setFace(110);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "jack_of_spades2.png":
                         card_array[i].setFace(110);
                         card_array[i].setSuit(4);
@@ -257,16 +284,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "queen_of_diamonds2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "queen_of_hearts2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "queen_of_spades2.png":
                         card_array[i].setFace(120);
                         card_array[i].setSuit(4);
@@ -278,16 +308,19 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "king_of_diamonds2.png":
                         card_array[i].setFace(130);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "king_of_hearts2.png":
                         card_array[i].setFace(130);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "king_of_spades2.png":
                         card_array[i].setFace(130);
                         card_array[i].setSuit(4);
@@ -299,21 +332,25 @@ namespace WindowsFormsApplication1
                         card_array[i].setSuit(1);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "ace_of_diamonds.png":
                         card_array[i].setFace(140);
                         card_array[i].setSuit(2);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "ace_of_hearts.png":
                         card_array[i].setFace(140);
                         card_array[i].setSuit(3);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     case "ace_of_spades.png":
                         card_array[i].setFace(140);
                         card_array[i].setSuit(4);
                         card_array[i].setImage(new Bitmap(testFolderPath + card_names[i]));
                         break;
+
                     default:
                         break;
                 }
