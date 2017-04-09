@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="GameState.cs" />
     <Compile Include="RankHand.cs" />
     <Compile Include="Deck.cs" />
     <Compile Include="Form1.cs">
@@ -78,6 +79,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -315,6 +317,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\red_joker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PlayerWallet.txt" />
+    <Content Include="CompWallet.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

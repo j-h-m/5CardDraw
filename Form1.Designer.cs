@@ -1,4 +1,7 @@
-﻿namespace WindowsFormsApplication1
+﻿using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1
 {
     partial class GameBoard
     {
@@ -599,6 +602,7 @@
             this.CompPanel.Name = "CompPanel";
             this.CompPanel.Size = new System.Drawing.Size(723, 193);
             this.CompPanel.TabIndex = 47;
+            this.CompPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.CompPanel_Paint);
             // 
             // PlayerPanel
             // 
@@ -614,6 +618,7 @@
             this.PlayerPanel.Name = "PlayerPanel";
             this.PlayerPanel.Size = new System.Drawing.Size(683, 220);
             this.PlayerPanel.TabIndex = 48;
+            this.PlayerPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.PlayerPanel_Paint);
             // 
             // PlayerBetPanel
             // 
@@ -690,6 +695,16 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void PlayerPanel_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+        private void CompPanel_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
 
         #endregion
