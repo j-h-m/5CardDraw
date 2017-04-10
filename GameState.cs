@@ -7,7 +7,7 @@ using System.IO;
 
 namespace WindowsFormsApplication1
 {
-    public class GameState
+    public class GameState : GameBoard
     {
 
         private Deck myDeck = new Deck();

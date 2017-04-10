@@ -12,6 +12,7 @@ namespace WindowsFormsApplication1
         private Hand hand_ref = new Hand();
         private RankHand hand_rank = new RankHand();
         private Computer computerGuy = new Computer();
+        private GameState game_state = new GameState();
         private int PbetClickCounter = 0;
         private int CbetClickCounter = 0;
         private int DrawClickCounter = 0;
@@ -357,22 +358,26 @@ namespace WindowsFormsApplication1
 
         private void DealBtn_Click(object sender, EventArgs e)
         {
-            string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
-            string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string cardback = projectPath + "\\Card Images\\back of card.png";
+            //string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            //var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
+            //string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
+            //string cardback = projectPath + "\\Card Images\\back of card.png";
 
-            // test of Hand class
-            player_hand = hand_ref.getnewHand();
-            hand_ref.sortHand(player_hand);
-            comp_hand = hand_ref.getcomputerHand();
-            hand_ref.sortHand(comp_hand);
+            //// test of Hand class
+            //player_hand = hand_ref.getnewHand();
+            //hand_ref.sortHand(player_hand);
+            //comp_hand = hand_ref.getcomputerHand();
+            //hand_ref.sortHand(comp_hand);
 
             /*PBplayerCard1.Image = player_hand[0].getImage();
             PBplayerCard2.Image = player_hand[1].getImage();
             PBplayerCard3.Image = player_hand[2].getImage();
             PBplayerCard4.Image = player_hand[3].getImage();
             PBplayerCard5.Image = player_hand[4].getImage();*/
+
+            game_state.PlayerDeal(out player_hand);
+            game_state.CompDeal(out comp_hand);
+
 
             PplayerCard1.BackgroundImage = player_hand[0].getImage();
             PplayerCard2.BackgroundImage = player_hand[1].getImage();
