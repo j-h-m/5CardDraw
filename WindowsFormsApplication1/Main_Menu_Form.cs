@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
 
+
 namespace WindowsFormsApplication2
 {
     public partial class Main_Menu_Form : Form
@@ -21,8 +22,14 @@ namespace WindowsFormsApplication2
         private void new_game_button_Click(object sender, EventArgs e)
         {
             GameBoard brd = new GameBoard();
+
+
             brd.Show();
+            
+
             this.Hide();
+
+
         }
 
         private void continue_button_Click(object sender, EventArgs e)

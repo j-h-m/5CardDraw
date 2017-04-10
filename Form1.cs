@@ -2,11 +2,13 @@
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace WindowsFormsApplication1
 {
-    public partial class GameBoard : Form
+    public partial class GameBoard :Form
     {
         private Deck myDeck = new Deck();
         private Hand hand_ref = new Hand();
@@ -14,8 +16,8 @@ namespace WindowsFormsApplication1
         private Computer computerGuy = new Computer();
         private GameState game_state = new GameState();
         private int PbetClickCounter = 0;
-        private int CbetClickCounter = 0;
         private int DrawClickCounter = 0;
+        
 
         private int playerStartingAmount = 1000;
         private int compStartingAmount = 1000;
@@ -36,108 +38,231 @@ namespace WindowsFormsApplication1
 
         private void FoldBtn_Click(object sender, EventArgs e)
         {
+            FadeOut(this,100);
+            this.Close();
+            
         }
 
         private void DrawBtn_Click(object sender, EventArgs e)
         {
             if (PplayerCard1.Checked)
             {
-                player_hand[0] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(player_hand);
+             
+                game_state.PlayerDraw(0, player_hand);
                 PplayerCard1.Location = new Point(35, 44);
                 PplayerCard1.FlatAppearance.BorderSize = 0;
                 PplayerCard1.Checked = false;
+                
 
             }
             if (PplayerCard2.Checked)
             {
-                player_hand[1] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(player_hand);
+                game_state.PlayerDraw(1, player_hand);
                 PplayerCard2.Location = new Point(156, 44);
                 PplayerCard2.FlatAppearance.BorderSize = 0;
                 PplayerCard2.Checked = false;
+                
             }
             if (PplayerCard3.Checked)
             {
-                player_hand[2] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(player_hand);
-                PplayerCard3.Location = new Point(284, 44);
-
+                game_state.PlayerDraw(2, player_hand);
+                PplayerCard3.Location = new Point(284, 44);            
                 PplayerCard3.FlatAppearance.BorderSize = 0;
                 PplayerCard3.Checked = false;
+                
             }
             if (PplayerCard4.Checked)
             {
-                player_hand[3] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(player_hand);
+                game_state.PlayerDraw(3, player_hand);
                 PplayerCard4.Location = new Point(408, 44);
-
                 PplayerCard4.FlatAppearance.BorderSize = 0;
                 PplayerCard4.Checked = false;
+                
             }
             if (PplayerCard5.Checked)
             {
-                player_hand[4] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(player_hand);
+                game_state.PlayerDraw(4, player_hand);
                 PplayerCard5.Location = new Point(536, 44);
-
                 PplayerCard5.FlatAppearance.BorderSize = 0;
                 PplayerCard5.Checked = false;
+                
             }
-
             PplayerCard1.BackgroundImage = player_hand[0].getImage();
             PplayerCard2.BackgroundImage = player_hand[1].getImage();
             PplayerCard3.BackgroundImage = player_hand[2].getImage();
             PplayerCard4.BackgroundImage = player_hand[3].getImage();
             PplayerCard5.BackgroundImage = player_hand[4].getImage();
+            int compDrawIndex=  computerGuy.Draw(comp_hand);
 
+            if(compDrawIndex==234)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard3.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard4.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard5.Checked = true;
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
+            else if(compDrawIndex==034)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard1.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard4.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard5.Checked = true;
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
+            else if (compDrawIndex == 014)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard1.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard2.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard5.Checked = true;
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
+            else if (compDrawIndex == 012)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard1.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard2.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard3.Checked = true;
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
+            else if (compDrawIndex == 4)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard5.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
+            else if (compDrawIndex == 2)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard3.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
+            else if (compDrawIndex == 0)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard1.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
+            else if (compDrawIndex == 14)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard1.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard5.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
+
+            else if (compDrawIndex == 1)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard1.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard2.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
+            else if (compDrawIndex == -1)
+            {
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard1.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                PcomputerCard3.Checked = true;
+                System.Threading.Thread.Sleep(1000);
+                thinkLabel.Visible = false;
+                DrawBtn.Enabled = false;
+            }
             if (PcomputerCard1.Checked)
             {
-                comp_hand[0] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(comp_hand);
+                
                 PcomputerCard1.Location = new Point(42, 12);
-
                 PcomputerCard1.FlatAppearance.BorderSize = 0;
                 PcomputerCard1.Checked = false;
+                
             }
             if (PcomputerCard2.Checked)
             {
-                comp_hand[1] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(comp_hand);
+                
                 PcomputerCard2.Location = new Point(163, 12);
-
                 PcomputerCard2.FlatAppearance.BorderSize = 0;
                 PcomputerCard2.Checked = false;
+                
             }
             if (PcomputerCard3.Checked)
             {
-                comp_hand[2] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(comp_hand);
+                
                 PcomputerCard3.Location = new Point(291, 12);
-
                 PcomputerCard3.FlatAppearance.BorderSize = 0;
                 PcomputerCard3.Checked = false;
+                
             }
             if (PcomputerCard4.Checked)
             {
-                comp_hand[3] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(comp_hand);
+               
                 PcomputerCard4.Location = new Point(415, 12);
-
                 PcomputerCard4.FlatAppearance.BorderSize = 0;
                 PcomputerCard4.Checked = false;
+                
             }
             if (PcomputerCard5.Checked)
             {
-                comp_hand[4] = myDeck.getDeck().Pop();
-                hand_ref.sortHand(comp_hand);
+                
                 PcomputerCard5.Location = new Point(539, 12);
-
                 PcomputerCard5.FlatAppearance.BorderSize = 0;
                 PcomputerCard5.Checked = false;
+                
             }
-
-
             PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
             PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
             PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
@@ -148,212 +273,20 @@ namespace WindowsFormsApplication1
             PlayerPanel.Enabled = false;
             DrawClickCounter = DrawClickCounter + 1;
 
-            if (DrawClickCounter >= 2)
+            if (DrawClickCounter >= 1)
             {
 
                 CompPanel.Enabled = false;
                 PlayerBetPanel.Enabled = true;
                 PlayerBetLabel.Visible = true;
 
-                if ((PbetClickCounter >= 2) && (CbetClickCounter >= 2))
-                {
-                    PlayerBetLabel.Visible = false;
-                    int playerscore = hand_rank.evalHand(player_hand);
-                    int compscore = hand_rank.evalHand(comp_hand);
-
-                    if (playerscore > compscore)
-                    {
-                        Winner.Text = "Player Wins";
-                    }
-                    else if (compscore > playerscore)
-                    {
-                        Winner2.Text = "Computer Wins";
-                    }
-                    else
-                    {
-                        Winner.Text = "Chuck Norris Wins";
-                        Winner2.Text = "Chuck Norris Wins";
-                    }
-
-                    String Player_Hand_Type = "Nothing";
-                    if (playerscore >= 1000 & playerscore < 2000)
-                    {
-                        Player_Hand_Type = "Pair";
-                    }
-                    else if (playerscore >= 2000 & playerscore < 3000)
-                    {
-                        Player_Hand_Type = "2 Pairs";
-                    }
-                    else if (playerscore >= 3000 & playerscore < 4000)
-                    {
-                        Player_Hand_Type = "3 of a Kind";
-                    }
-                    else if (playerscore >= 4000 & playerscore < 5000)
-                    {
-                        Player_Hand_Type = "Straight";
-                    }
-                    else if (playerscore >= 5000 & playerscore < 6000)
-                    {
-                        Player_Hand_Type = "Flush";
-                    }
-                    else if (playerscore >= 6000 & playerscore < 7000)
-                    {
-                        Player_Hand_Type = "Full House";
-                    }
-                    else if (playerscore >= 7000 & playerscore < 8000)
-                    {
-                        Player_Hand_Type = "Four of a Kind";
-                    }
-                    else if (playerscore >= 8000 & playerscore < 9000)
-                    {
-                        Player_Hand_Type = "Straight Flush";
-                    }
-                    else if (playerscore >= 9000)
-                    {
-                        Player_Hand_Type = "Royal Flush";
-                    }
-                    PlayerHandLabel.Text = ("Hand:  " + Player_Hand_Type + "\r\n" + "Score:  " + playerscore.ToString());
-
-                    String handType = "Nothing";
-                    if (compscore >= 1000 & compscore < 2000)
-                    {
-                        handType = "Pair";
-                    }
-                    else if (compscore >= 2000 & compscore < 3000)
-                    {
-                        handType = "2 Pairs";
-                    }
-                    else if (compscore >= 3000 & compscore < 4000)
-                    {
-                        handType = "3 of a Kind";
-                    }
-                    else if (compscore >= 4000 & compscore < 5000)
-                    {
-                        handType = "Straight";
-                    }
-                    else if (compscore >= 5000 & compscore < 6000)
-                    {
-                        handType = "Flush";
-                    }
-                    else if (compscore >= 6000 & compscore < 7000)
-                    {
-                        handType = "Full House";
-                    }
-                    else if (compscore >= 7000 & compscore < 8000)
-                    {
-                        handType = "Four of a Kind";
-                    }
-                    else if (compscore >= 8000 & compscore < 9000)
-                    {
-                        handType = "Straight Flush";
-                    }
-                    else if (compscore >= 9000)
-                    {
-                        handType = "Royal Flush";
-                    }
-                    CompHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + compscore.ToString());
-                    this.Update();
-                }
+               
 
 
 
             }
 
 
-            /*int playerscore = hand_rank.evalHand(player_hand);
-            int compscore = hand_rank.evalHand(comp_hand);
-
-            if (playerscore > compscore)
-            {
-                Winner.Text = "Player Wins";
-            }
-            else if (compscore > playerscore)
-            {
-                Winner2.Text = "Computer Wins";
-            }
-            else
-            {
-                Winner.Text = "Chuck Norris Wins";
-                Winner2.Text = "Chuck Norris Wins";
-            }
-
-            String Player_Hand_Type = "Nothing";
-            if (playerscore >= 1000 & playerscore < 2000)
-            {
-                Player_Hand_Type = "Pair";
-            }
-            else if (playerscore >= 2000 & playerscore < 3000)
-            {
-                Player_Hand_Type = "2 Pairs";
-            }
-            else if (playerscore >= 3000 & playerscore < 4000)
-            {
-                Player_Hand_Type = "3 of a Kind";
-            }
-            else if (playerscore >= 4000 & playerscore < 5000)
-            {
-                Player_Hand_Type = "Straight";
-            }
-            else if (playerscore >= 5000 & playerscore < 6000)
-            {
-                Player_Hand_Type = "Flush";
-            }
-            else if (playerscore >= 6000 & playerscore < 7000)
-            {
-                Player_Hand_Type = "Full House";
-            }
-            else if (playerscore >= 7000 & playerscore < 8000)
-            {
-                Player_Hand_Type = "Four of a Kind";
-            }
-            else if (playerscore >= 8000 & playerscore < 9000)
-            {
-                Player_Hand_Type = "Straight Flush";
-            }
-            else if (playerscore >= 9000)
-            {
-                Player_Hand_Type = "Royal Flush";
-            }
-            PlayerHandLabel.Text = ("Hand:  " + Player_Hand_Type + "\r\n" + "Score:  " + playerscore.ToString());
-
-            String handType = "Nothing";
-            if (compscore >= 1000 & compscore < 2000)
-            {
-                handType = "Pair";
-            }
-            else if (compscore >= 2000 & compscore < 3000)
-            {
-                handType = "2 Pairs";
-            }
-            else if (compscore >= 3000 & compscore < 4000)
-            {
-                handType = "3 of a Kind";
-            }
-            else if (compscore >= 4000 & compscore < 5000)
-            {
-                handType = "Straight";
-            }
-            else if (compscore >= 5000 & compscore < 6000)
-            {
-                handType = "Flush";
-            }
-            else if (compscore >= 6000 & compscore < 7000)
-            {
-                handType = "Full House";
-            }
-            else if (compscore >= 7000 & compscore < 8000)
-            {
-                handType = "Four of a Kind";
-            }
-            else if (compscore >= 8000 & compscore < 9000)
-            {
-                handType = "Straight Flush";
-            }
-            else if (compscore >= 9000)
-            {
-                handType = "Royal Flush";
-            }
-            CompHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + compscore.ToString());*/
         }
 
         private void DealBtn_Click(object sender, EventArgs e)
@@ -604,12 +537,9 @@ namespace WindowsFormsApplication1
             PlayerPanel.Enabled = true;
             DrawBtn.Enabled = true;
             DrawBtn.BackColor = Color.Transparent;
-            CbetClickCounter = CbetClickCounter + 1;
+        
 
-            if (CbetClickCounter >= 2)
-            {
-                DrawBtn.PerformClick();
-            }
+           
 
         }
 
@@ -639,7 +569,10 @@ namespace WindowsFormsApplication1
             System.Threading.Thread.Sleep(3000);
             CompBet.Value = PlayerBet.Value + computerGuy.generateBet(hand_rank.evalHand(comp_hand));
             CompBetButton.PerformClick();
-
+            if (PbetClickCounter >= 2)
+            {
+                showdown();
+            }
 
 
         }
@@ -648,5 +581,119 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void showdown()
+        {
+            
+                PlayerBetLabel.Visible = false;
+                int playerscore = hand_rank.evalHand(player_hand);
+                int compscore = hand_rank.evalHand(comp_hand);
+
+                if (playerscore > compscore)
+                {
+                    Winner.Text = "Player Wins";
+                }
+                else if (compscore > playerscore)
+                {
+                    Winner2.Text = "Computer Wins";
+                }
+                else
+                {
+                    Winner.Text = "Chuck Norris Wins";
+                    Winner2.Text = "Chuck Norris Wins";
+                }
+
+                String Player_Hand_Type = "Nothing";
+                if (playerscore >= 1000 & playerscore < 2000)
+                {
+                    Player_Hand_Type = "Pair";
+                }
+                else if (playerscore >= 2000 & playerscore < 3000)
+                {
+                    Player_Hand_Type = "2 Pairs";
+                }
+                else if (playerscore >= 3000 & playerscore < 4000)
+                {
+                    Player_Hand_Type = "3 of a Kind";
+                }
+                else if (playerscore >= 4000 & playerscore < 5000)
+                {
+                    Player_Hand_Type = "Straight";
+                }
+                else if (playerscore >= 5000 & playerscore < 6000)
+                {
+                    Player_Hand_Type = "Flush";
+                }
+                else if (playerscore >= 6000 & playerscore < 7000)
+                {
+                    Player_Hand_Type = "Full House";
+                }
+                else if (playerscore >= 7000 & playerscore < 8000)
+                {
+                    Player_Hand_Type = "Four of a Kind";
+                }
+                else if (playerscore >= 8000 & playerscore < 9000)
+                {
+                    Player_Hand_Type = "Straight Flush";
+                }
+                else if (playerscore >= 9000)
+                {
+                    Player_Hand_Type = "Royal Flush";
+                }
+                PlayerHandLabel.Text = ("Hand:  " + Player_Hand_Type + "\r\n" + "Score:  " + playerscore.ToString());
+
+                String handType = "Nothing";
+                if (compscore >= 1000 & compscore < 2000)
+                {
+                    handType = "Pair";
+                }
+                else if (compscore >= 2000 & compscore < 3000)
+                {
+                    handType = "2 Pairs";
+                }
+                else if (compscore >= 3000 & compscore < 4000)
+                {
+                    handType = "3 of a Kind";
+                }
+                else if (compscore >= 4000 & compscore < 5000)
+                {
+                    handType = "Straight";
+                }
+                else if (compscore >= 5000 & compscore < 6000)
+                {
+                    handType = "Flush";
+                }
+                else if (compscore >= 6000 & compscore < 7000)
+                {
+                    handType = "Full House";
+                }
+                else if (compscore >= 7000 & compscore < 8000)
+                {
+                    handType = "Four of a Kind";
+                }
+                else if (compscore >= 8000 & compscore < 9000)
+                {
+                    handType = "Straight Flush";
+                }
+                else if (compscore >= 9000)
+                {
+                    handType = "Royal Flush";
+                }
+                CompHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + compscore.ToString());
+                this.Update();
+            
+        }
+
+        private async void FadeOut(Form o, int interval = 80)
+        {
+            //Object is fully visible. Fade it out
+            while (o.Opacity > 0.0)
+            {
+                await Task.Delay(interval);
+                o.Opacity -= 0.05;
+            }
+            o.Opacity = 0; //make fully invisible       
+        }
+
     }
 }

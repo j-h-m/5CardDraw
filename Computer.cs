@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    public class Computer : Hand
+    public class Computer:GameState
     {
         int computerBet;
+        GameState gs = new GameState();
         public Computer()
         {
 
@@ -58,6 +59,78 @@ namespace WindowsFormsApplication1
                 computerBet = 0;
             }
             return computerBet;
+        }
+
+        public int Draw(Card[] handCards)
+        {
+            //Pair
+            if (handCards[0].getFace() == handCards[1].getFace())
+            {
+                
+                gs.CompDraw(2, handCards);
+                gs.CompDraw(3, handCards);
+                gs.CompDraw(4, handCards);
+                return 234;
+            }
+            else if (handCards[1].getFace() == handCards[2].getFace())
+            {
+                gs.CompDraw(0, handCards);
+                gs.CompDraw(3, handCards);
+                gs.CompDraw(4, handCards);
+                return 034;
+            }
+            else if (handCards[2].getFace() == handCards[3].getFace())
+            {
+                gs.CompDraw(0, handCards);
+                gs.CompDraw(1, handCards);
+                gs.CompDraw(4, handCards);
+                return 014;
+            }
+            else if (handCards[3].getFace() == handCards[4].getFace())
+            {
+                gs.CompDraw(0, handCards);
+                gs.CompDraw(1, handCards);
+                gs.CompDraw(2, handCards);
+                return 012;
+            }
+            //Two pair
+            else if ((handCards[0].getFace() == handCards[1].getFace() && handCards[2].getFace() == handCards[3].getFace()))
+            {
+                gs.CompDraw(4, handCards);
+                return 4;
+            }
+            else if ((handCards[0].getFace() == handCards[1].getFace() && handCards[3].getFace() == handCards[4].getFace()))
+            {
+                gs.CompDraw(2, handCards);
+                return 2;
+            }
+            else if ((handCards[1].getFace() == handCards[2].getFace() && handCards[3].getFace() == handCards[4].getFace()))
+            {
+                gs.CompDraw(0, handCards);
+                return 0;
+            }
+            //Three of a kind
+            else if ((handCards[0].getFace() == handCards[1].getFace() && handCards[0].getFace() == handCards[2].getFace()))
+            {
+                gs.CompDraw(3, handCards);
+                gs.CompDraw(4, handCards);
+                return 34;
+         
+            }
+            else if ((handCards[1].getFace() == handCards[2].getFace() && handCards[1].getFace() == handCards[3].getFace()))
+            {
+                gs.CompDraw(0, handCards);
+                gs.CompDraw(4, handCards);
+                return 14;
+
+            }
+            else if ((handCards[2].getFace() == handCards[3].getFace() && handCards[2].getFace() == handCards[4].getFace()))
+            {
+                gs.CompDraw(0, handCards);
+                gs.CompDraw(1, handCards);
+                return 1;
+            }
+            return -1;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.IO;
 
 namespace WindowsFormsApplication1
 {
-    public class GameState : GameBoard
+    public class GameState
     {
 
         private Deck myDeck = new Deck();
@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
             int x;
             try
             {
-                using (TextReader reader = File.OpenText(@"C:\Users\Robert\Source\Repos\5CardDraw\PlayerWallet.txt"))
+                using (TextReader reader = File.OpenText(@"C:\Users\grant\Source\Repos\5CardDraw\PlayerWallet.txt"))
                 {
                       x = int.Parse(reader.ReadLine());
                 }
@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
             int x;
             try
             {
-                using (TextReader reader = File.OpenText(@"C:\Users\Robert\Source\Repos\5CardDraw\CompWallet.txt"))
+                using (TextReader reader = File.OpenText(@"C:\Users\grant\Source\Repos\5CardDraw\CompWallet.txt"))
                 {
                      x = int.Parse(reader.ReadLine());
                 }
@@ -80,14 +80,18 @@ namespace WindowsFormsApplication1
             hand_ref.sortHand(comp_hand);
         }
 
-        public void PlayerDraw()
+        public void PlayerDraw(int i, Card[] playerHand)
         {
-
+           
+            playerHand[i] = myDeck.getDeck().Pop();
+            hand_ref.sortHand(playerHand);
         }
 
-        public void CompDraw()
+        public void CompDraw(int i, Card[] compHand)
         {
-
+            
+            compHand[i] = myDeck.getDeck().Pop();
+            hand_ref.sortHand(compHand);
         }
 
        
