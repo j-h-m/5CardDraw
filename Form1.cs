@@ -11,23 +11,22 @@ namespace WindowsFormsApplication1
         private Deck myDeck = new Deck();
         private Hand hand_ref = new Hand();
         private RankHand hand_rank = new RankHand();
+        private Computer computerGuy = new Computer();
         private int PbetClickCounter = 0;
         private int CbetClickCounter = 0;
         private int DrawClickCounter = 0;
-        private int finalCheckboxVal = 0;
 
-        private int playerStartingAmount = 0;
-        private int compStartingAmount = 0;
+        private int playerStartingAmount = 1000;
+        private int compStartingAmount = 1000;
         private int moneyPotStartingAmount = 0;
 
         private Card[] player_hand = new Card[4];
         private Card[] comp_hand = new Card[4];
 
-        private GameState game_state = new GameState();
-
         public GameBoard()
         {
             InitializeComponent();
+
         }
 
         private void GameBoard_Load(object sender, EventArgs e)
@@ -47,7 +46,7 @@ namespace WindowsFormsApplication1
                 PplayerCard1.Location = new Point(35, 44);
                 PplayerCard1.FlatAppearance.BorderSize = 0;
                 PplayerCard1.Checked = false;
-               
+
             }
             if (PplayerCard2.Checked)
             {
@@ -137,7 +136,7 @@ namespace WindowsFormsApplication1
                 PcomputerCard5.Checked = false;
             }
 
-            
+
             PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
             PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
             PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
@@ -150,12 +149,14 @@ namespace WindowsFormsApplication1
 
             if (DrawClickCounter >= 2)
             {
-                
+
                 CompPanel.Enabled = false;
                 PlayerBetPanel.Enabled = true;
+                PlayerBetLabel.Visible = true;
 
                 if ((PbetClickCounter >= 2) && (CbetClickCounter >= 2))
                 {
+                    PlayerBetLabel.Visible = false;
                     int playerscore = hand_rank.evalHand(player_hand);
                     int compscore = hand_rank.evalHand(comp_hand);
 
@@ -250,19 +251,113 @@ namespace WindowsFormsApplication1
                         handType = "Royal Flush";
                     }
                     CompHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + compscore.ToString());
+                    this.Update();
                 }
 
 
 
             }
-            
 
-            
+
+            /*int playerscore = hand_rank.evalHand(player_hand);
+            int compscore = hand_rank.evalHand(comp_hand);
+
+            if (playerscore > compscore)
+            {
+                Winner.Text = "Player Wins";
+            }
+            else if (compscore > playerscore)
+            {
+                Winner2.Text = "Computer Wins";
+            }
+            else
+            {
+                Winner.Text = "Chuck Norris Wins";
+                Winner2.Text = "Chuck Norris Wins";
+            }
+
+            String Player_Hand_Type = "Nothing";
+            if (playerscore >= 1000 & playerscore < 2000)
+            {
+                Player_Hand_Type = "Pair";
+            }
+            else if (playerscore >= 2000 & playerscore < 3000)
+            {
+                Player_Hand_Type = "2 Pairs";
+            }
+            else if (playerscore >= 3000 & playerscore < 4000)
+            {
+                Player_Hand_Type = "3 of a Kind";
+            }
+            else if (playerscore >= 4000 & playerscore < 5000)
+            {
+                Player_Hand_Type = "Straight";
+            }
+            else if (playerscore >= 5000 & playerscore < 6000)
+            {
+                Player_Hand_Type = "Flush";
+            }
+            else if (playerscore >= 6000 & playerscore < 7000)
+            {
+                Player_Hand_Type = "Full House";
+            }
+            else if (playerscore >= 7000 & playerscore < 8000)
+            {
+                Player_Hand_Type = "Four of a Kind";
+            }
+            else if (playerscore >= 8000 & playerscore < 9000)
+            {
+                Player_Hand_Type = "Straight Flush";
+            }
+            else if (playerscore >= 9000)
+            {
+                Player_Hand_Type = "Royal Flush";
+            }
+            PlayerHandLabel.Text = ("Hand:  " + Player_Hand_Type + "\r\n" + "Score:  " + playerscore.ToString());
+
+            String handType = "Nothing";
+            if (compscore >= 1000 & compscore < 2000)
+            {
+                handType = "Pair";
+            }
+            else if (compscore >= 2000 & compscore < 3000)
+            {
+                handType = "2 Pairs";
+            }
+            else if (compscore >= 3000 & compscore < 4000)
+            {
+                handType = "3 of a Kind";
+            }
+            else if (compscore >= 4000 & compscore < 5000)
+            {
+                handType = "Straight";
+            }
+            else if (compscore >= 5000 & compscore < 6000)
+            {
+                handType = "Flush";
+            }
+            else if (compscore >= 6000 & compscore < 7000)
+            {
+                handType = "Full House";
+            }
+            else if (compscore >= 7000 & compscore < 8000)
+            {
+                handType = "Four of a Kind";
+            }
+            else if (compscore >= 8000 & compscore < 9000)
+            {
+                handType = "Straight Flush";
+            }
+            else if (compscore >= 9000)
+            {
+                handType = "Royal Flush";
+            }
+            CompHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + compscore.ToString());*/
         }
 
         private void DealBtn_Click(object sender, EventArgs e)
         {
-            /*string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
             string cardback = projectPath + "\\Card Images\\back of card.png";
@@ -279,10 +374,6 @@ namespace WindowsFormsApplication1
             PBplayerCard4.Image = player_hand[3].getImage();
             PBplayerCard5.Image = player_hand[4].getImage();*/
 
-            game_state.PlayerDeal(out player_hand);
-            game_state.CompDeal(out comp_hand);
-
-         
             PplayerCard1.BackgroundImage = player_hand[0].getImage();
             PplayerCard2.BackgroundImage = player_hand[1].getImage();
             PplayerCard3.BackgroundImage = player_hand[2].getImage();
@@ -302,20 +393,22 @@ namespace WindowsFormsApplication1
             PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
             PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
 
-            playerStartingAmount = game_state.PlayerWallet() - 2;
+            playerStartingAmount = playerStartingAmount - 2;
             playerMoney.Text = playerStartingAmount.ToString();
-            compStartingAmount = game_state.CompWallet() - 2;
+            compStartingAmount = compStartingAmount - 2;
             compMoney.Text = compStartingAmount.ToString();
             moneyPotStartingAmount = moneyPotStartingAmount + 4;
             moneyPot.Text = moneyPotStartingAmount.ToString();
-           
+
 
             DealBtn.Enabled = false;
             DealBtn.BackColor = Color.Gray;
             FoldBtn.Enabled = true;
             FoldBtn.BackColor = Color.Transparent;
             PlayerBetPanel.Enabled = true;
-            
+
+            PlayerBetLabel.Visible = true;
+
         }
 
         private void PplayerCard1_CheckedChanged(object sender, EventArgs e)
@@ -325,7 +418,7 @@ namespace WindowsFormsApplication1
                 PplayerCard1.Location = new Point(35, 14);
                 PplayerCard1.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard1.FlatAppearance.BorderSize = 2;
-                
+
             }
             else
             {
@@ -342,7 +435,7 @@ namespace WindowsFormsApplication1
                 PplayerCard2.Location = new Point(156, 14);
                 PplayerCard2.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard2.FlatAppearance.BorderSize = 2;
-               
+
             }
             else
             {
@@ -359,7 +452,7 @@ namespace WindowsFormsApplication1
                 PplayerCard3.Location = new Point(284, 14);
                 PplayerCard3.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard3.FlatAppearance.BorderSize = 2;
-               
+
             }
             else
             {
@@ -376,7 +469,7 @@ namespace WindowsFormsApplication1
                 PplayerCard4.Location = new Point(408, 14);
                 PplayerCard4.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard4.FlatAppearance.BorderSize = 2;
-                
+
             }
             else
             {
@@ -393,7 +486,7 @@ namespace WindowsFormsApplication1
                 PplayerCard5.Location = new Point(536, 14);
                 PplayerCard5.FlatAppearance.BorderColor = Color.Cyan;
                 PplayerCard5.FlatAppearance.BorderSize = 2;
-                
+
             }
             else
             {
@@ -445,7 +538,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                
+
                 PcomputerCard3.Location = new Point(291, 12);
 
                 PcomputerCard3.FlatAppearance.BorderSize = 0;
@@ -465,7 +558,7 @@ namespace WindowsFormsApplication1
                 PcomputerCard4.Location = new Point(415, 12);
 
                 PcomputerCard4.FlatAppearance.BorderSize = 0;
-                
+
             }
         }
 
@@ -488,12 +581,14 @@ namespace WindowsFormsApplication1
         private void Winner_Click(object sender, EventArgs e)
         {
 
-           
+
 
         }
 
         private void CompBetButton_Click(object sender, EventArgs e)
         {
+            CompBetLabel.Visible = false;
+            thinkLabel.Visible = false;
             compStartingAmount = compStartingAmount - (Convert.ToInt32(Math.Round(CompBet.Value, 0)));
             compMoney.Text = compStartingAmount.ToString();
             moneyPotStartingAmount = moneyPotStartingAmount + (Convert.ToInt32(Math.Round(CompBet.Value, 0)));
@@ -506,17 +601,25 @@ namespace WindowsFormsApplication1
             DrawBtn.BackColor = Color.Transparent;
             CbetClickCounter = CbetClickCounter + 1;
 
-            if(CbetClickCounter >= 2)
+            if (CbetClickCounter >= 2)
             {
                 DrawBtn.PerformClick();
             }
-            
+
         }
 
         private void PlayerBetButton_Click(object sender, EventArgs e)
         {
-            
-            
+
+            PlayerBetLabel.Visible = false;
+            CompBetLabel.Text = "Computer's Bet!";
+            CompBetLabel.Visible = true;
+            this.Update();
+            System.Threading.Thread.Sleep(1000);
+            thinkLabel.Text = "Thinking...";
+            thinkLabel.Visible = true;
+            this.Update();
+
             playerStartingAmount = playerStartingAmount - (Convert.ToInt32(Math.Round(PlayerBet.Value, 0)));
             playerMoney.Text = playerStartingAmount.ToString();
             moneyPotStartingAmount = moneyPotStartingAmount + (Convert.ToInt32(Math.Round(PlayerBet.Value, 0)));
@@ -527,13 +630,18 @@ namespace WindowsFormsApplication1
             PbetClickCounter = PbetClickCounter + 1;
 
 
+
+            System.Threading.Thread.Sleep(3000);
+            CompBet.Value = PlayerBet.Value + computerGuy.generateBet(hand_rank.evalHand(comp_hand));
+            CompBetButton.PerformClick();
+
+
+
         }
 
         private void compMoney_Click(object sender, EventArgs e)
         {
 
         }
-
-        
     }
 }

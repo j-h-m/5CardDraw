@@ -69,6 +69,9 @@ namespace WindowsFormsApplication1
             this.PlayerPanel = new System.Windows.Forms.Panel();
             this.PlayerBetPanel = new System.Windows.Forms.Panel();
             this.CompBetPanel = new System.Windows.Forms.Panel();
+            this.CompBetLabel = new System.Windows.Forms.Label();
+            this.PlayerBetLabel = new System.Windows.Forms.Label();
+            this.thinkLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -644,6 +647,40 @@ namespace WindowsFormsApplication1
             this.CompBetPanel.Size = new System.Drawing.Size(200, 188);
             this.CompBetPanel.TabIndex = 49;
             // 
+            // CompBetLabel
+            // 
+            this.CompBetLabel.AutoSize = true;
+            this.CompBetLabel.BackColor = System.Drawing.Color.Transparent;
+            this.CompBetLabel.Font = new System.Drawing.Font("Rockwell", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompBetLabel.Location = new System.Drawing.Point(20, 231);
+            this.CompBetLabel.Name = "CompBetLabel";
+            this.CompBetLabel.Size = new System.Drawing.Size(0, 19);
+            this.CompBetLabel.TabIndex = 50;
+            this.CompBetLabel.Visible = false;
+            // 
+            // PlayerBetLabel
+            // 
+            this.PlayerBetLabel.AutoSize = true;
+            this.PlayerBetLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerBetLabel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerBetLabel.Location = new System.Drawing.Point(14, 335);
+            this.PlayerBetLabel.Name = "PlayerBetLabel";
+            this.PlayerBetLabel.Size = new System.Drawing.Size(110, 19);
+            this.PlayerBetLabel.TabIndex = 51;
+            this.PlayerBetLabel.Text = "Player\'s Bet!";
+            this.PlayerBetLabel.Visible = false;
+            // 
+            // thinkLabel
+            // 
+            this.thinkLabel.AutoSize = true;
+            this.thinkLabel.BackColor = System.Drawing.Color.Transparent;
+            this.thinkLabel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thinkLabel.Location = new System.Drawing.Point(17, 256);
+            this.thinkLabel.Name = "thinkLabel";
+            this.thinkLabel.Size = new System.Drawing.Size(0, 19);
+            this.thinkLabel.TabIndex = 52;
+            this.thinkLabel.Visible = false;
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,6 +689,9 @@ namespace WindowsFormsApplication1
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 626);
+            this.Controls.Add(this.thinkLabel);
+            this.Controls.Add(this.PlayerBetLabel);
+            this.Controls.Add(this.CompBetLabel);
             this.Controls.Add(this.playerMoney);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.compMoney);
@@ -746,6 +786,9 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Panel PlayerPanel;
         private System.Windows.Forms.Panel PlayerBetPanel;
         private System.Windows.Forms.Panel CompBetPanel;
+        private Label CompBetLabel;
+        private Label PlayerBetLabel;
+        private Label thinkLabel;
     }
 }
 

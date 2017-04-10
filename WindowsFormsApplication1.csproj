@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="Computer.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="RankHand.cs" />
     <Compile Include="Deck.cs" />
