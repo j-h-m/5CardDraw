@@ -1,0 +1,10 @@
+C:\Users\colby\Desktop\5CardDraw\obj\Debug\WindowsFormsApplication1.GameBoard.resources
+C:\Users\colby\Desktop\5CardDraw\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\colby\Desktop\5CardDraw\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\colby\Desktop\5CardDraw\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\colby\Desktop\5CardDraw\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\colby\Desktop\5CardDraw\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\colby\Desktop\5CardDraw\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\colby\Desktop\5CardDraw\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\colby\Desktop\5CardDraw\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\Users\colby\Desktop\5CardDraw\obj\Debug\WindowsFormsApplication1.Main_Menu_Form.resources
