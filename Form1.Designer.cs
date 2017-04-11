@@ -716,9 +716,11 @@ namespace WindowsFormsApplication1
             this.Controls.Add(this.CompBetPanel);
             this.Controls.Add(this.PlayerBetPanel);
             this.DoubleBuffered = true;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "GameBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game";
             this.Load += new System.EventHandler(this.GameBoard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).EndInit();

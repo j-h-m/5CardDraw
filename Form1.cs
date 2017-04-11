@@ -25,11 +25,12 @@ namespace WindowsFormsApplication1
 
         private Card[] player_hand = new Card[4];
         private Card[] comp_hand = new Card[4];
+        
 
         public GameBoard()
         {
             InitializeComponent();
-
+            this.KeyPreview = true;
         }
 
         private void GameBoard_Load(object sender, EventArgs e)
@@ -695,5 +696,37 @@ namespace WindowsFormsApplication1
             o.Opacity = 0; //make fully invisible       
         }
 
+        
+
+        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, System.Windows.Forms.Keys keyData)
+        {
+            try
+            {
+                if (msg.WParam.ToInt32() == (int)Keys.Escape)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to open the Main Menu?", "Main Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        Main_Menu_Form mmf = new Main_Menu_Form();
+                        mmf.Show();
+                    }
+                }
+
+                else
+                {
+                    return base.ProcessCmdKey(ref msg, keyData);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Key Press Error...!");
+            }
+
+            return false;
+            
+        }
     }
+
+
 }
