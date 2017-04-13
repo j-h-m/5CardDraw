@@ -18,10 +18,9 @@ namespace WindowsFormsApplication1
 
         public Card()
         {
-           
+            
         }
-       
-
+        
         public Image getImage()
         {
             return image;

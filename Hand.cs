@@ -13,15 +13,12 @@ namespace WindowsFormsApplication1
     {
         Card[] newHand = new Card[5];
         Card[] computerHand = new Card[5];
-        Deck myDeck = new Deck();
 
         public Hand()
         {
-            newHand = setnewHand();
-            computerHand = setcomputerHand();
         }
 
-        public Card[] setnewHand()
+        public Card[] setnewHand(Deck myDeck)
         {
             for (int i = 0; i < 5; i++)
             {
@@ -29,22 +26,12 @@ namespace WindowsFormsApplication1
             }
             return newHand;
         }
-        public Card[] setcomputerHand()
+        public Card[] setcomputerHand(Deck myDeck)
         {
             for (int i = 0; i < 5; i++)
             {
                 computerHand[i] = (myDeck.getDeck().Pop());
             }
-            return computerHand;
-        }
-
-        public Card[] getnewHand()
-        {
-            return newHand;
-        }
-
-        public Card[] getcomputerHand()
-        {
             return computerHand;
         }
 

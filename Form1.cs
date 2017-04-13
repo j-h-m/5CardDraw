@@ -25,11 +25,12 @@ namespace WindowsFormsApplication1
 
         private Card[] player_hand = new Card[4];
         private Card[] comp_hand = new Card[4];
+        
 
         public GameBoard()
         {
             InitializeComponent();
-
+            this.KeyPreview = true;
         }
 
         private void GameBoard_Load(object sender, EventArgs e)
@@ -48,7 +49,7 @@ namespace WindowsFormsApplication1
             if (PplayerCard1.Checked)
             {
              
-                game_state.PlayerDraw(0, player_hand);
+                game_state.PlayerDraw(0, player_hand, myDeck);
                 PplayerCard1.Location = new Point(35, 44);
                 PplayerCard1.FlatAppearance.BorderSize = 0;
                 PplayerCard1.Checked = false;
@@ -57,7 +58,7 @@ namespace WindowsFormsApplication1
             }
             if (PplayerCard2.Checked)
             {
-                game_state.PlayerDraw(1, player_hand);
+                game_state.PlayerDraw(1, player_hand, myDeck);
                 PplayerCard2.Location = new Point(156, 44);
                 PplayerCard2.FlatAppearance.BorderSize = 0;
                 PplayerCard2.Checked = false;
@@ -65,7 +66,7 @@ namespace WindowsFormsApplication1
             }
             if (PplayerCard3.Checked)
             {
-                game_state.PlayerDraw(2, player_hand);
+                game_state.PlayerDraw(2, player_hand, myDeck);
                 PplayerCard3.Location = new Point(284, 44);            
                 PplayerCard3.FlatAppearance.BorderSize = 0;
                 PplayerCard3.Checked = false;
@@ -73,7 +74,7 @@ namespace WindowsFormsApplication1
             }
             if (PplayerCard4.Checked)
             {
-                game_state.PlayerDraw(3, player_hand);
+                game_state.PlayerDraw(3, player_hand, myDeck);
                 PplayerCard4.Location = new Point(408, 44);
                 PplayerCard4.FlatAppearance.BorderSize = 0;
                 PplayerCard4.Checked = false;
@@ -81,7 +82,7 @@ namespace WindowsFormsApplication1
             }
             if (PplayerCard5.Checked)
             {
-                game_state.PlayerDraw(4, player_hand);
+                game_state.PlayerDraw(4, player_hand, myDeck);
                 PplayerCard5.Location = new Point(536, 44);
                 PplayerCard5.FlatAppearance.BorderSize = 0;
                 PplayerCard5.Checked = false;
@@ -92,7 +93,7 @@ namespace WindowsFormsApplication1
             PplayerCard3.BackgroundImage = player_hand[2].getImage();
             PplayerCard4.BackgroundImage = player_hand[3].getImage();
             PplayerCard5.BackgroundImage = player_hand[4].getImage();
-            int compDrawIndex=  computerGuy.Draw(comp_hand);
+            int compDrawIndex=  computerGuy.Draw(comp_hand, myDeck);
 
             if(compDrawIndex==234)
             {
@@ -291,25 +292,8 @@ namespace WindowsFormsApplication1
 
         private void DealBtn_Click(object sender, EventArgs e)
         {
-            //string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            //var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
-            //string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            //string cardback = projectPath + "\\Card Images\\back of card.png";
-
-            //// test of Hand class
-            //player_hand = hand_ref.getnewHand();
-            //hand_ref.sortHand(player_hand);
-            //comp_hand = hand_ref.getcomputerHand();
-            //hand_ref.sortHand(comp_hand);
-
-            /*PBplayerCard1.Image = player_hand[0].getImage();
-            PBplayerCard2.Image = player_hand[1].getImage();
-            PBplayerCard3.Image = player_hand[2].getImage();
-            PBplayerCard4.Image = player_hand[3].getImage();
-            PBplayerCard5.Image = player_hand[4].getImage();*/
-
-            game_state.PlayerDeal(out player_hand);
-            game_state.CompDeal(out comp_hand);
+            game_state.PlayerDeal(out player_hand, myDeck);
+            game_state.CompDeal(out comp_hand, myDeck);
 
 
             PplayerCard1.BackgroundImage = player_hand[0].getImage();
@@ -317,13 +301,6 @@ namespace WindowsFormsApplication1
             PplayerCard3.BackgroundImage = player_hand[2].getImage();
             PplayerCard4.BackgroundImage = player_hand[3].getImage();
             PplayerCard5.BackgroundImage = player_hand[4].getImage();
-
-            /*ComputerCard1.Image = Image.FromFile(cardback);
-            ComputerCard2.Image = Image.FromFile(cardback);
-            ComputerCard3.Image = Image.FromFile(cardback);
-            ComputerCard4.Image = Image.FromFile(cardback);
-            ComputerCard5.Image = Image.FromFile(cardback);*/
-
 
             PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
             PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
@@ -337,7 +314,6 @@ namespace WindowsFormsApplication1
             compMoney.Text = compStartingAmount.ToString();
             moneyPotStartingAmount = moneyPotStartingAmount + 4;
             moneyPot.Text = moneyPotStartingAmount.ToString();
-
 
             DealBtn.Enabled = false;
             DealBtn.BackColor = Color.Gray;
@@ -695,5 +671,37 @@ namespace WindowsFormsApplication1
             o.Opacity = 0; //make fully invisible       
         }
 
+        
+
+        protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, System.Windows.Forms.Keys keyData)
+        {
+            try
+            {
+                if (msg.WParam.ToInt32() == (int)Keys.Escape)
+                {
+                    DialogResult result = MessageBox.Show("Are you sure you want to open the Main Menu?", "Main Menu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        Main_Menu_Form mmf = new Main_Menu_Form();
+                        mmf.Show();
+                    }
+                }
+
+                else
+                {
+                    return base.ProcessCmdKey(ref msg, keyData);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Key Press Error...!");
+            }
+
+            return false;
+            
+        }
     }
+
+
 }

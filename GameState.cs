@@ -9,13 +9,8 @@ namespace WindowsFormsApplication1
 {
     public class GameState
     {
-
-        private Deck myDeck = new Deck();
         private Hand hand_ref = new Hand();
-        
-       
-        //private Card[] player_hand = new Card[4];
-        //private Card[] comp_hand = new Card[4];
+
 
         public int PlayerWallet()
         {
@@ -54,7 +49,7 @@ namespace WindowsFormsApplication1
             return x;
         }
 
-        public void PlayerDeal(out Card[] player_hand)
+        public void PlayerDeal(out Card[] player_hand, Deck myDeck)
         {
 
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
@@ -62,32 +57,31 @@ namespace WindowsFormsApplication1
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
             string cardback = projectPath + "\\Card Images\\back of card.png";
 
-            // test of Hand class
-            player_hand = hand_ref.getnewHand();
+            player_hand = hand_ref.setnewHand(myDeck);
             hand_ref.sortHand(player_hand);
            
 
         }
 
-        public void CompDeal(out Card[] comp_hand)
+        public void CompDeal(out Card[] comp_hand, Deck myDeck)
         {
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
             string cardback = projectPath + "\\Card Images\\back of card.png";
 
-            comp_hand = hand_ref.getcomputerHand();
+            comp_hand = hand_ref.setcomputerHand(myDeck);
             hand_ref.sortHand(comp_hand);
         }
 
-        public void PlayerDraw(int i, Card[] playerHand)
+        public void PlayerDraw(int i, Card[] playerHand, Deck myDeck)
         {
            
             playerHand[i] = myDeck.getDeck().Pop();
             hand_ref.sortHand(playerHand);
         }
 
-        public void CompDraw(int i, Card[] compHand)
+        public void CompDraw(int i, Card[] compHand, Deck myDeck)
         {
             
             compHand[i] = myDeck.getDeck().Pop();

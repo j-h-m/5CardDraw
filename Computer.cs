@@ -61,73 +61,73 @@ namespace WindowsFormsApplication1
             return computerBet;
         }
 
-        public int Draw(Card[] handCards)
+        public int Draw(Card[] handCards, Deck myDeck)
         {
             //Pair
             if (handCards[0].getFace() == handCards[1].getFace())
             {
                 
-                gs.CompDraw(2, handCards);
-                gs.CompDraw(3, handCards);
-                gs.CompDraw(4, handCards);
+                gs.CompDraw(2, handCards, myDeck);
+                gs.CompDraw(3, handCards, myDeck);
+                gs.CompDraw(4, handCards, myDeck);
                 return 234;
             }
             else if (handCards[1].getFace() == handCards[2].getFace())
             {
-                gs.CompDraw(0, handCards);
-                gs.CompDraw(3, handCards);
-                gs.CompDraw(4, handCards);
+                gs.CompDraw(0, handCards, myDeck);
+                gs.CompDraw(3, handCards, myDeck);
+                gs.CompDraw(4, handCards, myDeck);
                 return 034;
             }
             else if (handCards[2].getFace() == handCards[3].getFace())
             {
-                gs.CompDraw(0, handCards);
-                gs.CompDraw(1, handCards);
-                gs.CompDraw(4, handCards);
+                gs.CompDraw(0, handCards, myDeck);
+                gs.CompDraw(1, handCards, myDeck);
+                gs.CompDraw(4, handCards, myDeck);
                 return 014;
             }
             else if (handCards[3].getFace() == handCards[4].getFace())
             {
-                gs.CompDraw(0, handCards);
-                gs.CompDraw(1, handCards);
-                gs.CompDraw(2, handCards);
+                gs.CompDraw(0, handCards, myDeck);
+                gs.CompDraw(1, handCards, myDeck);
+                gs.CompDraw(2, handCards, myDeck);
                 return 012;
             }
             //Two pair
             else if ((handCards[0].getFace() == handCards[1].getFace() && handCards[2].getFace() == handCards[3].getFace()))
             {
-                gs.CompDraw(4, handCards);
+                gs.CompDraw(4, handCards, myDeck);
                 return 4;
             }
             else if ((handCards[0].getFace() == handCards[1].getFace() && handCards[3].getFace() == handCards[4].getFace()))
             {
-                gs.CompDraw(2, handCards);
+                gs.CompDraw(2, handCards, myDeck);
                 return 2;
             }
             else if ((handCards[1].getFace() == handCards[2].getFace() && handCards[3].getFace() == handCards[4].getFace()))
             {
-                gs.CompDraw(0, handCards);
+                gs.CompDraw(0, handCards, myDeck);
                 return 0;
             }
             //Three of a kind
             else if ((handCards[0].getFace() == handCards[1].getFace() && handCards[0].getFace() == handCards[2].getFace()))
             {
-                gs.CompDraw(3, handCards);
-                gs.CompDraw(4, handCards);
+                gs.CompDraw(3, handCards, myDeck);
+                gs.CompDraw(4, handCards, myDeck);
                 return 34;
          
             }
             else if ((handCards[1].getFace() == handCards[2].getFace() && handCards[1].getFace() == handCards[3].getFace()))
             {
-                gs.CompDraw(0, handCards);
-                gs.CompDraw(4, handCards);
+                gs.CompDraw(0, handCards, myDeck);
+                gs.CompDraw(4, handCards, myDeck);
                 return 14;
 
             }
             else if ((handCards[2].getFace() == handCards[3].getFace() && handCards[2].getFace() == handCards[4].getFace()))
             {
-                gs.CompDraw(0, handCards);
-                gs.CompDraw(1, handCards);
+                gs.CompDraw(0, handCards, myDeck);
+                gs.CompDraw(1, handCards, myDeck);
                 return 1;
             }
             return -1;
