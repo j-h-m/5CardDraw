@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Main_Menu_Form : Form
+    public partial class Main_Menu_Form:Form
     {
 
         public Main_Menu_Form()
@@ -24,14 +24,20 @@ namespace WindowsFormsApplication1
             Form fc = Application.OpenForms["Gameboard"];
             GameBoard brd = new GameBoard();
             brd.Show();
+            
 
             if (fc != null)
             {
                 fc.Close();
             }
             this.Hide();
-
+            brd.FormClosing += brdClosing;
         
+        }
+
+        private void brdClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
         }
 
         private void continue_button_Click(object sender, EventArgs e)
@@ -61,6 +67,15 @@ namespace WindowsFormsApplication1
 
             Settings_Menu_Form frm = new Settings_Menu_Form();
             frm.Show();
+        }
+        private void Wait(int segundos)
+        {
+            if (segundos < 1) return;
+            DateTime _desired = DateTime.Now.AddSeconds(segundos);
+            while (DateTime.Now < _desired)
+            {
+                System.Windows.Forms.Application.DoEvents();
+            }
         }
     }
 }

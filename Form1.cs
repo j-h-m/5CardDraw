@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApplication1;
 
 
 namespace WindowsFormsApplication1
@@ -44,6 +45,15 @@ namespace WindowsFormsApplication1
 
         private void FoldBtn_Click(object sender, EventArgs e)
         {
+            cMoney = cMoney + potValue;
+            compMoney.Text = cMoney.ToString();
+            Winner2.Text = "Forest Wins-Player Folded";
+            Winner2.Visible = true;
+            potValue = game_state.resetPot();
+            moneyPot.Text = potValue.ToString();
+            Wait(3);
+            newGame();
+            
             
         }
 
@@ -103,11 +113,11 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard3.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard4.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard5.Checked = true;
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
@@ -117,11 +127,11 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard1.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard4.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard5.Checked = true;
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
@@ -131,11 +141,11 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard1.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard2.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard5.Checked = true;
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
@@ -145,11 +155,11 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard1.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard2.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard3.Checked = true;
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
@@ -159,9 +169,9 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard5.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
             }
@@ -170,9 +180,9 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard3.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
             }
@@ -181,9 +191,9 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard1.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
             }
@@ -192,11 +202,11 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard1.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard5.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
             }
@@ -206,11 +216,11 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard1.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard2.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
             }
@@ -219,11 +229,11 @@ namespace WindowsFormsApplication1
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
                 this.Update();
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard1.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 PcomputerCard3.Checked = true;
-                System.Threading.Thread.Sleep(1000);
+                Wait(1);
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
             }
@@ -514,7 +524,7 @@ namespace WindowsFormsApplication1
             PlayerPanel.Enabled = true;
             DrawBtn.Enabled = true;
             DrawBtn.BackColor = Color.Transparent;
-        
+            Update();
 
            
 
@@ -528,7 +538,7 @@ namespace WindowsFormsApplication1
             CompBetLabel.Text = "Computer's Bet!";
             CompBetLabel.Visible = true;
             this.Update();
-            System.Threading.Thread.Sleep(1000);
+            Wait(1);
             thinkLabel.Text = "Thinking...";
             thinkLabel.Visible = true;
             this.Update();
@@ -541,7 +551,7 @@ namespace WindowsFormsApplication1
 
 
 
-            System.Threading.Thread.Sleep(3000);
+            Wait(3);
             CompBet.Value = PlayerBet.Value + game_state.forest.generateBet(hand_rank.evalHand(comp_hand));
            // decimal Cbet = CompBet.Value;
             CompBetButton.PerformClick();
@@ -560,7 +570,7 @@ namespace WindowsFormsApplication1
 
         private void showdown()
         {
-            
+            PlayerPanel.Enabled = false;
                 PlayerBetLabel.Visible = false;
                   DrawBtn.Enabled = false;
             FoldBtn.Enabled = false;
@@ -629,7 +639,7 @@ namespace WindowsFormsApplication1
                 PlayerHandLabel.Text = ("Hand:  " + Player_Hand_Type + "\r\n" + "Score:  " + playerscore.ToString());
             PlayerHandLabel.Visible = true;
                 String handType = "Nothing";
-                if (compscore >= 1000 & compscore < 2000)
+                if (compscore >= 1 & compscore < 2000)
                 {
                     handType = "Pair";
                 }
@@ -718,6 +728,22 @@ namespace WindowsFormsApplication1
 
         private void continueBtn_Click(object sender, EventArgs e)
         {
+            newGame();
+        }
+
+        private void quitBtn_Click(object sender, EventArgs e)
+        {
+           
+            this.Close();
+            this.Dispose();
+            GC.Collect();
+            
+         
+        }
+
+        private void newGame()
+        {
+            myDeck = new Deck();
             continueBtn.Enabled = false;
             continueBtn.Visible = false;
             quitBtn.Enabled = false;
@@ -736,6 +762,7 @@ namespace WindowsFormsApplication1
             Winner2.Text = null;
             PlayerHandLabel.Visible = false;
             CompHandLabel.Visible = false;
+            PlayerBetLabel.Visible = false;
 
             PplayerCard1.BackgroundImage = null;
             PplayerCard2.BackgroundImage = null;
@@ -743,22 +770,22 @@ namespace WindowsFormsApplication1
             PplayerCard4.BackgroundImage = null;
             PplayerCard5.BackgroundImage = null;
 
+            PlayerPanel.Enabled = false;
+
             PcomputerCard1.BackgroundImage = null;
             PcomputerCard2.BackgroundImage = null;
             PcomputerCard3.BackgroundImage = null;
             PcomputerCard4.BackgroundImage = null;
             PcomputerCard5.BackgroundImage = null;
         }
-
-        private void quitBtn_Click(object sender, EventArgs e)
+        private void Wait(int segundos)
         {
-            FadeOut(this, 100);
-            this.Close();
-            this.Dispose();
-            GC.Collect();
-            Main_Menu_Form mm = new Main_Menu_Form();
-            mm.Show();
-
+            if (segundos < 1) return;
+            DateTime _desired = DateTime.Now.AddSeconds(segundos);
+            while (DateTime.Now < _desired)
+            {
+                System.Windows.Forms.Application.DoEvents();
+            }
         }
     }
 

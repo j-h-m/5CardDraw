@@ -17,9 +17,11 @@ namespace WindowsFormsApplication1
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main_Menu_Form());
-
+            Main_Menu_Form mmform = new Main_Menu_Form();
             
+            Application.Run(mmform);
+            
+
         }
 
 
