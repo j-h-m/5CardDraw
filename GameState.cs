@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 {
     public class GameState
     {
-        private Hand hand_ref = new Hand();
+       private Hand hand_ref = new Hand();
        public Computer forest = new Computer();
        public Player player = new Player();
 
