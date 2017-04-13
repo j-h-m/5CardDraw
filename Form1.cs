@@ -9,21 +9,19 @@ using WindowsFormsApplication1;
 
 namespace WindowsFormsApplication1
 {
-    public partial class GameBoard :Form
+    public partial class GameBoard : Form
     {
-        private Deck myDeck = new Deck();
-        //private Hand hand_ref = new Hand();
-        private RankHand hand_rank = new RankHand();
-       // private Computer computerGuy = new Computer();
-        private GameState game_state = new GameState();
-       // private Player player = new Player();
+        private Deck myDeck;
+        private RankHand hand_rank;
+        private GameState game_state;
+
+        private Card[] player_hand = new Card[4];
+        private Card[] comp_hand = new Card[4];
+
         private int PbetClickCounter = 0;
         private int DrawClickCounter = 0;
         private decimal potValue=0;
-        private decimal pMoney;
-        private decimal cMoney;
-        private Card[] player_hand = new Card[4];
-        private Card[] comp_hand = new Card[4];
+        private decimal pMoney, cMoney;
         
 
         public GameBoard()
@@ -34,13 +32,16 @@ namespace WindowsFormsApplication1
 
         private void GameBoard_Load(object sender, EventArgs e)
         {
-            pMoney= game_state.player.getPlayerMoney();
+            myDeck = new Deck();
+            hand_rank = new RankHand();
+            game_state = new GameState();
+
+            pMoney = game_state.player.getPlayerMoney();
             playerMoney.Text = pMoney.ToString();
             cMoney = game_state.forest.getCompMoney();
             compMoney.Text = cMoney.ToString();
             compMoney.Text = game_state.forest.getCompMoney().ToString();
             moneyPot.Text = potValue.ToString();
-
         }
 
         private void FoldBtn_Click(object sender, EventArgs e)
@@ -777,6 +778,20 @@ namespace WindowsFormsApplication1
             PcomputerCard3.BackgroundImage = null;
             PcomputerCard4.BackgroundImage = null;
             PcomputerCard5.BackgroundImage = null;
+
+            // empty out old data
+            myDeck = null;
+            hand_rank = null;
+            game_state = null;
+            player_hand = null;
+            comp_hand = null;
+
+            // create new objects -> varName
+            myDeck = new Deck();
+            hand_rank = new RankHand();
+            game_state = new GameState();
+            player_hand = new Card[4];
+            comp_hand = new Card[4];
         }
         private void Wait(int segundos)
         {
@@ -787,7 +802,24 @@ namespace WindowsFormsApplication1
                 System.Windows.Forms.Application.DoEvents();
             }
         }
+
+        // for saving / loading SaveGame
+        public void writeToBinaryFile<T>(string filePath, T objectToWrite, bool append = false)
+        {
+            using (Stream stream = File.Open(filePath, append ? FileMode.Append : FileMode.Create))
+            {
+                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                binaryFormatter.Serialize(stream, objectToWrite);
+            }
+        }
+
+        public static T readFromBinaryFile<T>(string filePath)
+        {
+            using (Stream stream = File.Open(filePath, FileMode.Open))
+            {
+                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                return (T)binaryFormatter.Deserialize(stream);
+            }
+        }
     }
-
-
 }
