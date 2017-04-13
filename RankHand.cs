@@ -5,7 +5,7 @@
         public int hTotal { get; set; }
     }
 
-    internal class RankHand : Hand
+    internal class RankHand
     {
         public HandTotal HandSum;
         public int ClubsCount;     //rank of club suit = 1

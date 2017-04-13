@@ -62,6 +62,7 @@
       <DependentUpon>Main_Menu_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="GameState.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="RankHand.cs" />
     <Compile Include="Deck.cs" />

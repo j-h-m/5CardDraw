@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    public class Computer:GameState
+    public class Computer
     {
         int computerBet;
-        GameState gs = new GameState();
+        int computerMoney=100;
+        
         public Computer()
         {
 
@@ -61,7 +62,7 @@ namespace WindowsFormsApplication1
             return computerBet;
         }
 
-        public int Draw(Card[] handCards, Deck myDeck)
+        public int Draw(Card[] handCards, Deck myDeck,GameState gs)
         {
             //Pair
             if (handCards[0].getFace() == handCards[1].getFace())
@@ -131,6 +132,11 @@ namespace WindowsFormsApplication1
                 return 1;
             }
             return -1;
+        }
+
+        public int getCompMoney()
+        {
+            return computerMoney;
         }
     }
 }

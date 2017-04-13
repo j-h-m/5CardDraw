@@ -11,18 +11,16 @@ namespace WindowsFormsApplication1
     public partial class GameBoard :Form
     {
         private Deck myDeck = new Deck();
-        private Hand hand_ref = new Hand();
+        //private Hand hand_ref = new Hand();
         private RankHand hand_rank = new RankHand();
-        private Computer computerGuy = new Computer();
+       // private Computer computerGuy = new Computer();
         private GameState game_state = new GameState();
+       // private Player player = new Player();
         private int PbetClickCounter = 0;
         private int DrawClickCounter = 0;
-        
-
-        private int playerStartingAmount = 1000;
-        private int compStartingAmount = 1000;
-        private int moneyPotStartingAmount = 0;
-
+        private decimal potValue=0;
+        private decimal pMoney;
+        private decimal cMoney;
         private Card[] player_hand = new Card[4];
         private Card[] comp_hand = new Card[4];
         
@@ -35,12 +33,17 @@ namespace WindowsFormsApplication1
 
         private void GameBoard_Load(object sender, EventArgs e)
         {
+            pMoney= game_state.player.getPlayerMoney();
+            playerMoney.Text = pMoney.ToString();
+            cMoney = game_state.forest.getCompMoney();
+            compMoney.Text = cMoney.ToString();
+            compMoney.Text = game_state.forest.getCompMoney().ToString();
+            moneyPot.Text = potValue.ToString();
+
         }
 
         private void FoldBtn_Click(object sender, EventArgs e)
         {
-            FadeOut(this,100);
-            this.Close();
             
         }
 
@@ -93,7 +96,7 @@ namespace WindowsFormsApplication1
             PplayerCard3.BackgroundImage = player_hand[2].getImage();
             PplayerCard4.BackgroundImage = player_hand[3].getImage();
             PplayerCard5.BackgroundImage = player_hand[4].getImage();
-            int compDrawIndex=  computerGuy.Draw(comp_hand, myDeck);
+            int compDrawIndex=  game_state.forest.Draw(comp_hand, myDeck,game_state);
 
             if(compDrawIndex==234)
             {
@@ -292,10 +295,15 @@ namespace WindowsFormsApplication1
 
         private void DealBtn_Click(object sender, EventArgs e)
         {
+            
             game_state.PlayerDeal(out player_hand, myDeck);
             game_state.CompDeal(out comp_hand, myDeck);
-
-
+            potValue = potValue + 2;
+            moneyPot.Text = potValue.ToString();
+            pMoney--;
+            cMoney--;
+            playerMoney.Text = pMoney.ToString();
+            compMoney.Text = cMoney.ToString();
             PplayerCard1.BackgroundImage = player_hand[0].getImage();
             PplayerCard2.BackgroundImage = player_hand[1].getImage();
             PplayerCard3.BackgroundImage = player_hand[2].getImage();
@@ -308,12 +316,7 @@ namespace WindowsFormsApplication1
             PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
             PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
 
-            playerStartingAmount = playerStartingAmount - 2;
-            playerMoney.Text = playerStartingAmount.ToString();
-            compStartingAmount = compStartingAmount - 2;
-            compMoney.Text = compStartingAmount.ToString();
-            moneyPotStartingAmount = moneyPotStartingAmount + 4;
-            moneyPot.Text = moneyPotStartingAmount.ToString();
+            
 
             DealBtn.Enabled = false;
             DealBtn.BackColor = Color.Gray;
@@ -503,12 +506,10 @@ namespace WindowsFormsApplication1
         {
             CompBetLabel.Visible = false;
             thinkLabel.Visible = false;
-            compStartingAmount = compStartingAmount - (Convert.ToInt32(Math.Round(CompBet.Value, 0)));
-            compMoney.Text = compStartingAmount.ToString();
-            moneyPotStartingAmount = moneyPotStartingAmount + (Convert.ToInt32(Math.Round(CompBet.Value, 0)));
-            moneyPot.Text = moneyPotStartingAmount.ToString();
-
-
+            cMoney = cMoney - CompBet.Value;
+            potValue = game_state.updatePot(potValue, PlayerBet.Value, CompBet.Value);
+            moneyPot.Text = potValue.ToString();
+            compMoney.Text = cMoney.ToString();
             CompBetPanel.Enabled = false;
             PlayerPanel.Enabled = true;
             DrawBtn.Enabled = true;
@@ -521,7 +522,8 @@ namespace WindowsFormsApplication1
 
         private void PlayerBetButton_Click(object sender, EventArgs e)
         {
-
+            pMoney = pMoney - PlayerBet.Value;
+            playerMoney.Text = pMoney.ToString();
             PlayerBetLabel.Visible = false;
             CompBetLabel.Text = "Computer's Bet!";
             CompBetLabel.Visible = true;
@@ -531,10 +533,7 @@ namespace WindowsFormsApplication1
             thinkLabel.Visible = true;
             this.Update();
 
-            playerStartingAmount = playerStartingAmount - (Convert.ToInt32(Math.Round(PlayerBet.Value, 0)));
-            playerMoney.Text = playerStartingAmount.ToString();
-            moneyPotStartingAmount = moneyPotStartingAmount + (Convert.ToInt32(Math.Round(PlayerBet.Value, 0)));
-            moneyPot.Text = moneyPotStartingAmount.ToString();
+            
 
             PlayerBetPanel.Enabled = false;
             CompBetPanel.Enabled = true;
@@ -543,7 +542,8 @@ namespace WindowsFormsApplication1
 
 
             System.Threading.Thread.Sleep(3000);
-            CompBet.Value = PlayerBet.Value + computerGuy.generateBet(hand_rank.evalHand(comp_hand));
+            CompBet.Value = PlayerBet.Value + game_state.forest.generateBet(hand_rank.evalHand(comp_hand));
+           // decimal Cbet = CompBet.Value;
             CompBetButton.PerformClick();
             if (PbetClickCounter >= 2)
             {
@@ -562,22 +562,32 @@ namespace WindowsFormsApplication1
         {
             
                 PlayerBetLabel.Visible = false;
-                int playerscore = hand_rank.evalHand(player_hand);
+                  DrawBtn.Enabled = false;
+            FoldBtn.Enabled = false;
+            int playerscore = hand_rank.evalHand(player_hand);
                 int compscore = hand_rank.evalHand(comp_hand);
 
                 if (playerscore > compscore)
                 {
                     Winner.Text = "Player Wins";
+                     pMoney += potValue;
+                     playerMoney.Text = pMoney.ToString();
                 }
                 else if (compscore > playerscore)
                 {
-                    Winner2.Text = "Computer Wins";
+                    Winner2.Text = "Forest Wins";
+                cMoney += potValue;
+                compMoney.Text = cMoney.ToString();
                 }
                 else
                 {
                     Winner.Text = "Chuck Norris Wins";
                     Winner2.Text = "Chuck Norris Wins";
                 }
+
+                 potValue = game_state.resetPot();
+                moneyPot.Text = potValue.ToString();
+                
 
                 String Player_Hand_Type = "Nothing";
                 if (playerscore >= 1000 & playerscore < 2000)
@@ -617,7 +627,7 @@ namespace WindowsFormsApplication1
                     Player_Hand_Type = "Royal Flush";
                 }
                 PlayerHandLabel.Text = ("Hand:  " + Player_Hand_Type + "\r\n" + "Score:  " + playerscore.ToString());
-
+            PlayerHandLabel.Visible = true;
                 String handType = "Nothing";
                 if (compscore >= 1000 & compscore < 2000)
                 {
@@ -656,8 +666,12 @@ namespace WindowsFormsApplication1
                     handType = "Royal Flush";
                 }
                 CompHandLabel.Text = ("Hand:  " + handType + "\r\n" + "Score:  " + compscore.ToString());
+            CompHandLabel.Visible = true;
                 this.Update();
-            
+            continueBtn.Enabled = true;
+            continueBtn.Visible = true;
+            quitBtn.Enabled = true;
+            quitBtn.Visible = true;
         }
 
         private async void FadeOut(Form o, int interval = 80)
@@ -700,6 +714,51 @@ namespace WindowsFormsApplication1
 
             return false;
             
+        }
+
+        private void continueBtn_Click(object sender, EventArgs e)
+        {
+            continueBtn.Enabled = false;
+            continueBtn.Visible = false;
+            quitBtn.Enabled = false;
+            quitBtn.Visible = false;
+            DealBtn.Enabled = true;
+            DealBtn.BackColor = Color.Transparent;
+
+            FoldBtn.Enabled = false;
+            FoldBtn.BackColor = Color.Gray;
+            PbetClickCounter = 0;
+            DrawBtn.Enabled = false;
+            DrawBtn.BackColor = Color.Gray;
+            DrawClickCounter = 0;
+
+            Winner.Text = null;
+            Winner2.Text = null;
+            PlayerHandLabel.Visible = false;
+            CompHandLabel.Visible = false;
+
+            PplayerCard1.BackgroundImage = null;
+            PplayerCard2.BackgroundImage = null;
+            PplayerCard3.BackgroundImage = null;
+            PplayerCard4.BackgroundImage = null;
+            PplayerCard5.BackgroundImage = null;
+
+            PcomputerCard1.BackgroundImage = null;
+            PcomputerCard2.BackgroundImage = null;
+            PcomputerCard3.BackgroundImage = null;
+            PcomputerCard4.BackgroundImage = null;
+            PcomputerCard5.BackgroundImage = null;
+        }
+
+        private void quitBtn_Click(object sender, EventArgs e)
+        {
+            FadeOut(this, 100);
+            this.Close();
+            this.Dispose();
+            GC.Collect();
+            Main_Menu_Form mm = new Main_Menu_Form();
+            mm.Show();
+
         }
     }
 

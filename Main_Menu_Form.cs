@@ -30,6 +30,7 @@ namespace WindowsFormsApplication1
                 fc.Close();
             }
             this.Hide();
+
         
         }
 
@@ -49,6 +50,9 @@ namespace WindowsFormsApplication1
             {
                 Application.OpenForms[i].Close();
             }
+            this.Close();
+            GC.Collect();
+            Application.Exit();
         }
 
         private void settings_picture_Click(object sender, EventArgs e)

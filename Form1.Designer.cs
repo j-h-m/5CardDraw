@@ -72,6 +72,8 @@ namespace WindowsFormsApplication1
             this.CompBetLabel = new System.Windows.Forms.Label();
             this.PlayerBetLabel = new System.Windows.Forms.Label();
             this.thinkLabel = new System.Windows.Forms.Label();
+            this.continueBtn = new System.Windows.Forms.Button();
+            this.quitBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -681,6 +683,34 @@ namespace WindowsFormsApplication1
             this.thinkLabel.TabIndex = 52;
             this.thinkLabel.Visible = false;
             // 
+            // continueBtn
+            // 
+            this.continueBtn.BackColor = System.Drawing.Color.White;
+            this.continueBtn.Enabled = false;
+            this.continueBtn.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.continueBtn.Location = new System.Drawing.Point(341, 219);
+            this.continueBtn.Name = "continueBtn";
+            this.continueBtn.Size = new System.Drawing.Size(92, 29);
+            this.continueBtn.TabIndex = 53;
+            this.continueBtn.Text = "Continue?";
+            this.continueBtn.UseVisualStyleBackColor = false;
+            this.continueBtn.Visible = false;
+            this.continueBtn.Click += new System.EventHandler(this.continueBtn_Click);
+            // 
+            // quitBtn
+            // 
+            this.quitBtn.BackColor = System.Drawing.Color.White;
+            this.quitBtn.Enabled = false;
+            this.quitBtn.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quitBtn.Location = new System.Drawing.Point(667, 221);
+            this.quitBtn.Name = "quitBtn";
+            this.quitBtn.Size = new System.Drawing.Size(92, 29);
+            this.quitBtn.TabIndex = 54;
+            this.quitBtn.Text = "Quit";
+            this.quitBtn.UseVisualStyleBackColor = false;
+            this.quitBtn.Visible = false;
+            this.quitBtn.Click += new System.EventHandler(this.quitBtn_Click);
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -689,6 +719,8 @@ namespace WindowsFormsApplication1
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 626);
+            this.Controls.Add(this.quitBtn);
+            this.Controls.Add(this.continueBtn);
             this.Controls.Add(this.thinkLabel);
             this.Controls.Add(this.PlayerBetLabel);
             this.Controls.Add(this.CompBetLabel);
@@ -791,6 +823,8 @@ namespace WindowsFormsApplication1
         private Label CompBetLabel;
         private Label PlayerBetLabel;
         private Label thinkLabel;
+        private Button continueBtn;
+        private Button quitBtn;
     }
 }
 
