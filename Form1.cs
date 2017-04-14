@@ -60,6 +60,11 @@ namespace WindowsFormsApplication1
 
         private void DrawBtn_Click(object sender, EventArgs e)
         {
+            string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
+            string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
+            string cardback = projectPath + "\\Card Images\\back of card.png";
+
             if (PplayerCard1.Checked)
             {
              
@@ -278,11 +283,11 @@ namespace WindowsFormsApplication1
                 PcomputerCard5.Checked = false;
                 
             }
-            PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
-            PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
-            PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
-            PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
-            PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
+            PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
 
             CompPanel.Enabled = true;
             PlayerPanel.Enabled = false;
@@ -306,7 +311,12 @@ namespace WindowsFormsApplication1
 
         private void DealBtn_Click(object sender, EventArgs e)
         {
-            
+            string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
+            string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
+            string cardback = projectPath + "\\Card Images\\back of card.png";
+
+
             game_state.PlayerDeal(out player_hand, myDeck);
             game_state.CompDeal(out comp_hand, myDeck);
             potValue = potValue + 2;
@@ -321,13 +331,17 @@ namespace WindowsFormsApplication1
             PplayerCard4.BackgroundImage = player_hand[3].getImage();
             PplayerCard5.BackgroundImage = player_hand[4].getImage();
 
-            PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
-            PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
-            PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
-            PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
-            PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
+            // PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
+            //  PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
+            // PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
+            // PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
+            // PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
 
-            
+            PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
 
             DealBtn.Enabled = false;
             DealBtn.BackColor = Color.Gray;
@@ -577,8 +591,19 @@ namespace WindowsFormsApplication1
             FoldBtn.Enabled = false;
             int playerscore = hand_rank.evalHand(player_hand);
                 int compscore = hand_rank.evalHand(comp_hand);
+            
+             PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
+            Wait(1);
+             PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
+            Wait(1);
+            PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
+            Wait(1);
+            PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
+            Wait(1);
+            PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
 
-                if (playerscore > compscore)
+
+            if (playerscore > compscore)
                 {
                     Winner.Text = "Player Wins";
                      pMoney += potValue;
@@ -640,7 +665,7 @@ namespace WindowsFormsApplication1
                 PlayerHandLabel.Text = ("Hand:  " + Player_Hand_Type + "\r\n" + "Score:  " + playerscore.ToString());
             PlayerHandLabel.Visible = true;
                 String handType = "Nothing";
-                if (compscore >= 1 & compscore < 2000)
+                if (compscore >= 1000 & compscore < 2000)
                 {
                     handType = "Pair";
                 }
@@ -744,7 +769,7 @@ namespace WindowsFormsApplication1
 
         private void newGame()
         {
-            myDeck = new Deck();
+            
             continueBtn.Enabled = false;
             continueBtn.Visible = false;
             quitBtn.Enabled = false;

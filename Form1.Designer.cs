@@ -91,11 +91,11 @@ namespace WindowsFormsApplication1
             this.computerLabel.BackColor = System.Drawing.Color.Transparent;
             this.computerLabel.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.computerLabel.ForeColor = System.Drawing.Color.White;
-            this.computerLabel.Location = new System.Drawing.Point(13, 83);
+            this.computerLabel.Location = new System.Drawing.Point(8, 70);
             this.computerLabel.Name = "computerLabel";
-            this.computerLabel.Size = new System.Drawing.Size(115, 25);
+            this.computerLabel.Size = new System.Drawing.Size(77, 25);
             this.computerLabel.TabIndex = 0;
-            this.computerLabel.Text = "Computer";
+            this.computerLabel.Text = "Forest";
             // 
             // playerLabel
             // 
@@ -642,6 +642,7 @@ namespace WindowsFormsApplication1
             this.CompBetPanel.BackColor = System.Drawing.Color.Transparent;
             this.CompBetPanel.Controls.Add(this.CompBetButton);
             this.CompBetPanel.Controls.Add(this.CompBet);
+            this.CompBetPanel.Controls.Add(this.computerLabel);
             this.CompBetPanel.Enabled = false;
             this.CompBetPanel.ForeColor = System.Drawing.Color.Transparent;
             this.CompBetPanel.Location = new System.Drawing.Point(11, 13);
@@ -742,7 +743,6 @@ namespace WindowsFormsApplication1
             this.Controls.Add(this.jackpotpictureBox1);
             this.Controls.Add(this.FoldBtn);
             this.Controls.Add(this.playerLabel);
-            this.Controls.Add(this.computerLabel);
             this.Controls.Add(this.CompPanel);
             this.Controls.Add(this.PlayerPanel);
             this.Controls.Add(this.CompBetPanel);
@@ -766,6 +766,7 @@ namespace WindowsFormsApplication1
             this.PlayerPanel.PerformLayout();
             this.PlayerBetPanel.ResumeLayout(false);
             this.CompBetPanel.ResumeLayout(false);
+            this.CompBetPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
