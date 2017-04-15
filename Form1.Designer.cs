@@ -36,8 +36,6 @@ namespace WindowsFormsApplication1
             this.playerLabel = new System.Windows.Forms.Label();
             this.FoldBtn = new System.Windows.Forms.Button();
             this.jackpotpictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.moneyPot = new System.Windows.Forms.Label();
             this.DealBtn = new System.Windows.Forms.Button();
@@ -61,7 +59,6 @@ namespace WindowsFormsApplication1
             this.PlayerBet = new System.Windows.Forms.NumericUpDown();
             this.CompBet = new System.Windows.Forms.NumericUpDown();
             this.PlayerBetButton = new System.Windows.Forms.Button();
-            this.CompBetButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -74,15 +71,18 @@ namespace WindowsFormsApplication1
             this.thinkLabel = new System.Windows.Forms.Label();
             this.continueBtn = new System.Windows.Forms.Button();
             this.quitBtn = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CompBetButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompBet)).BeginInit();
             this.CompPanel.SuspendLayout();
             this.PlayerPanel.SuspendLayout();
             this.PlayerBetPanel.SuspendLayout();
             this.CompBetPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // computerLabel
@@ -91,11 +91,11 @@ namespace WindowsFormsApplication1
             this.computerLabel.BackColor = System.Drawing.Color.Transparent;
             this.computerLabel.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.computerLabel.ForeColor = System.Drawing.Color.White;
-            this.computerLabel.Location = new System.Drawing.Point(8, 70);
+            this.computerLabel.Location = new System.Drawing.Point(111, 0);
             this.computerLabel.Name = "computerLabel";
-            this.computerLabel.Size = new System.Drawing.Size(77, 25);
+            this.computerLabel.Size = new System.Drawing.Size(86, 25);
             this.computerLabel.TabIndex = 0;
-            this.computerLabel.Text = "Forest";
+            this.computerLabel.Text = "Forrest";
             // 
             // playerLabel
             // 
@@ -104,7 +104,7 @@ namespace WindowsFormsApplication1
             this.playerLabel.BackColor = System.Drawing.Color.Transparent;
             this.playerLabel.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.playerLabel.Location = new System.Drawing.Point(17, 376);
+            this.playerLabel.Location = new System.Drawing.Point(122, 185);
             this.playerLabel.Name = "playerLabel";
             this.playerLabel.Size = new System.Drawing.Size(95, 25);
             this.playerLabel.TabIndex = 1;
@@ -113,16 +113,16 @@ namespace WindowsFormsApplication1
             // FoldBtn
             // 
             this.FoldBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.FoldBtn.BackColor = System.Drawing.Color.Gray;
+            this.FoldBtn.BackColor = System.Drawing.Color.Transparent;
             this.FoldBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("FoldBtn.BackgroundImage")));
             this.FoldBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.FoldBtn.Enabled = false;
             this.FoldBtn.FlatAppearance.BorderSize = 0;
             this.FoldBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoldBtn.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FoldBtn.Location = new System.Drawing.Point(983, 37);
+            this.FoldBtn.Location = new System.Drawing.Point(911, 376);
             this.FoldBtn.Name = "FoldBtn";
-            this.FoldBtn.Size = new System.Drawing.Size(94, 128);
+            this.FoldBtn.Size = new System.Drawing.Size(156, 67);
             this.FoldBtn.TabIndex = 2;
             this.FoldBtn.UseVisualStyleBackColor = false;
             this.FoldBtn.Click += new System.EventHandler(this.FoldBtn_Click);
@@ -138,29 +138,6 @@ namespace WindowsFormsApplication1
             this.jackpotpictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.jackpotpictureBox1.TabIndex = 3;
             this.jackpotpictureBox1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.poker_chips1;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 404);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::WindowsFormsApplication1.Properties.Resources.poker_chips1;
-            this.pictureBox2.Location = new System.Drawing.Point(23, 111);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(105, 82);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
             // 
             // label1
             // 
@@ -200,9 +177,9 @@ namespace WindowsFormsApplication1
             this.DealBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DealBtn.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DealBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.DealBtn.Location = new System.Drawing.Point(983, 256);
+            this.DealBtn.Location = new System.Drawing.Point(923, 472);
             this.DealBtn.Name = "DealBtn";
-            this.DealBtn.Size = new System.Drawing.Size(94, 135);
+            this.DealBtn.Size = new System.Drawing.Size(144, 54);
             this.DealBtn.TabIndex = 12;
             this.DealBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.DealBtn.UseVisualStyleBackColor = false;
@@ -211,7 +188,7 @@ namespace WindowsFormsApplication1
             // DrawBtn
             // 
             this.DrawBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DrawBtn.BackColor = System.Drawing.Color.Gray;
+            this.DrawBtn.BackColor = System.Drawing.Color.Transparent;
             this.DrawBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DrawBtn.BackgroundImage")));
             this.DrawBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.DrawBtn.Enabled = false;
@@ -219,9 +196,9 @@ namespace WindowsFormsApplication1
             this.DrawBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DrawBtn.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DrawBtn.ForeColor = System.Drawing.Color.Black;
-            this.DrawBtn.Location = new System.Drawing.Point(952, 494);
+            this.DrawBtn.Location = new System.Drawing.Point(911, 560);
             this.DrawBtn.Name = "DrawBtn";
-            this.DrawBtn.Size = new System.Drawing.Size(125, 94);
+            this.DrawBtn.Size = new System.Drawing.Size(156, 54);
             this.DrawBtn.TabIndex = 13;
             this.DrawBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.DrawBtn.UseVisualStyleBackColor = false;
@@ -250,7 +227,7 @@ namespace WindowsFormsApplication1
             this.playerMoney.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.playerMoney.Font = new System.Drawing.Font("Goudy Stout", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playerMoney.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.playerMoney.Location = new System.Drawing.Point(35, 496);
+            this.playerMoney.Location = new System.Drawing.Point(24, 74);
             this.playerMoney.Name = "playerMoney";
             this.playerMoney.Size = new System.Drawing.Size(60, 26);
             this.playerMoney.TabIndex = 25;
@@ -487,7 +464,7 @@ namespace WindowsFormsApplication1
             0,
             0,
             0});
-            this.PlayerBet.Location = new System.Drawing.Point(3, 124);
+            this.PlayerBet.Location = new System.Drawing.Point(1, 107);
             this.PlayerBet.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -510,7 +487,7 @@ namespace WindowsFormsApplication1
             0,
             0,
             0});
-            this.CompBet.Location = new System.Drawing.Point(3, 34);
+            this.CompBet.Location = new System.Drawing.Point(0, 82);
             this.CompBet.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -531,31 +508,13 @@ namespace WindowsFormsApplication1
             this.PlayerBetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PlayerBetButton.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayerBetButton.ForeColor = System.Drawing.Color.Transparent;
-            this.PlayerBetButton.Location = new System.Drawing.Point(122, 44);
+            this.PlayerBetButton.Location = new System.Drawing.Point(8, 137);
             this.PlayerBetButton.Name = "PlayerBetButton";
-            this.PlayerBetButton.Size = new System.Drawing.Size(69, 106);
+            this.PlayerBetButton.Size = new System.Drawing.Size(106, 54);
             this.PlayerBetButton.TabIndex = 42;
             this.PlayerBetButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.PlayerBetButton.UseVisualStyleBackColor = false;
             this.PlayerBetButton.Click += new System.EventHandler(this.PlayerBetButton_Click);
-            // 
-            // CompBetButton
-            // 
-            this.CompBetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.CompBetButton.BackColor = System.Drawing.Color.Transparent;
-            this.CompBetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CompBetButton.BackgroundImage")));
-            this.CompBetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CompBetButton.FlatAppearance.BorderSize = 0;
-            this.CompBetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CompBetButton.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompBetButton.ForeColor = System.Drawing.Color.Transparent;
-            this.CompBetButton.Location = new System.Drawing.Point(128, 7);
-            this.CompBetButton.Name = "CompBetButton";
-            this.CompBetButton.Size = new System.Drawing.Size(69, 106);
-            this.CompBetButton.TabIndex = 43;
-            this.CompBetButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.CompBetButton.UseVisualStyleBackColor = false;
-            this.CompBetButton.Click += new System.EventHandler(this.CompBetButton_Click);
             // 
             // label2
             // 
@@ -587,7 +546,7 @@ namespace WindowsFormsApplication1
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Goudy Stout", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(11, 493);
+            this.label4.Location = new System.Drawing.Point(0, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 32);
             this.label4.TabIndex = 46;
@@ -630,6 +589,10 @@ namespace WindowsFormsApplication1
             this.PlayerBetPanel.BackColor = System.Drawing.Color.Transparent;
             this.PlayerBetPanel.Controls.Add(this.PlayerBet);
             this.PlayerBetPanel.Controls.Add(this.PlayerBetButton);
+            this.PlayerBetPanel.Controls.Add(this.pictureBox1);
+            this.PlayerBetPanel.Controls.Add(this.playerMoney);
+            this.PlayerBetPanel.Controls.Add(this.label4);
+            this.PlayerBetPanel.Controls.Add(this.playerLabel);
             this.PlayerBetPanel.Enabled = false;
             this.PlayerBetPanel.ForeColor = System.Drawing.Color.Transparent;
             this.PlayerBetPanel.Location = new System.Drawing.Point(11, 404);
@@ -643,6 +606,7 @@ namespace WindowsFormsApplication1
             this.CompBetPanel.Controls.Add(this.CompBetButton);
             this.CompBetPanel.Controls.Add(this.CompBet);
             this.CompBetPanel.Controls.Add(this.computerLabel);
+            this.CompBetPanel.Controls.Add(this.pictureBox2);
             this.CompBetPanel.Enabled = false;
             this.CompBetPanel.ForeColor = System.Drawing.Color.Transparent;
             this.CompBetPanel.Location = new System.Drawing.Point(11, 13);
@@ -712,6 +676,47 @@ namespace WindowsFormsApplication1
             this.quitBtn.Visible = false;
             this.quitBtn.Click += new System.EventHandler(this.quitBtn_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::WindowsFormsApplication1.Properties.Resources.poker_chips1;
+            this.pictureBox2.Location = new System.Drawing.Point(1, 113);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(89, 70);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::WindowsFormsApplication1.Properties.Resources.poker_chips1;
+            this.pictureBox1.Location = new System.Drawing.Point(0, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(84, 72);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // CompBetButton
+            // 
+            this.CompBetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.CompBetButton.BackColor = System.Drawing.Color.Transparent;
+            this.CompBetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CompBetButton.BackgroundImage")));
+            this.CompBetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CompBetButton.FlatAppearance.BorderSize = 0;
+            this.CompBetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CompBetButton.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompBetButton.ForeColor = System.Drawing.Color.Transparent;
+            this.CompBetButton.Location = new System.Drawing.Point(-5, 25);
+            this.CompBetButton.Name = "CompBetButton";
+            this.CompBetButton.Size = new System.Drawing.Size(89, 51);
+            this.CompBetButton.TabIndex = 43;
+            this.CompBetButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.CompBetButton.UseVisualStyleBackColor = false;
+            this.CompBetButton.Click += new System.EventHandler(this.CompBetButton_Click);
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -725,8 +730,7 @@ namespace WindowsFormsApplication1
             this.Controls.Add(this.thinkLabel);
             this.Controls.Add(this.PlayerBetLabel);
             this.Controls.Add(this.CompBetLabel);
-            this.Controls.Add(this.playerMoney);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.DealBtn);
             this.Controls.Add(this.compMoney);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -736,13 +740,9 @@ namespace WindowsFormsApplication1
             this.Controls.Add(this.moneyPot);
             this.Controls.Add(this.Winner);
             this.Controls.Add(this.DrawBtn);
-            this.Controls.Add(this.DealBtn);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.jackpotpictureBox1);
             this.Controls.Add(this.FoldBtn);
-            this.Controls.Add(this.playerLabel);
             this.Controls.Add(this.CompPanel);
             this.Controls.Add(this.PlayerPanel);
             this.Controls.Add(this.CompBetPanel);
@@ -756,8 +756,6 @@ namespace WindowsFormsApplication1
             this.Text = "Game";
             this.Load += new System.EventHandler(this.GameBoard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerBet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompBet)).EndInit();
             this.CompPanel.ResumeLayout(false);
@@ -765,8 +763,11 @@ namespace WindowsFormsApplication1
             this.PlayerPanel.ResumeLayout(false);
             this.PlayerPanel.PerformLayout();
             this.PlayerBetPanel.ResumeLayout(false);
+            this.PlayerBetPanel.PerformLayout();
             this.CompBetPanel.ResumeLayout(false);
             this.CompBetPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -788,8 +789,6 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.Label playerLabel;
         private System.Windows.Forms.Button FoldBtn;
         private System.Windows.Forms.PictureBox jackpotpictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label moneyPot;
         private System.Windows.Forms.Button DealBtn;
@@ -813,7 +812,6 @@ namespace WindowsFormsApplication1
         private System.Windows.Forms.NumericUpDown PlayerBet;
         private System.Windows.Forms.NumericUpDown CompBet;
         private System.Windows.Forms.Button PlayerBetButton;
-        private System.Windows.Forms.Button CompBetButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -826,6 +824,9 @@ namespace WindowsFormsApplication1
         private Label thinkLabel;
         private Button continueBtn;
         private Button quitBtn;
+        private PictureBox pictureBox1;
+        private Button CompBetButton;
+        private PictureBox pictureBox2;
     }
 }
 
