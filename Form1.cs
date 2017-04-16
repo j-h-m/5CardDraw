@@ -48,8 +48,10 @@ namespace WindowsFormsApplication1
         {
             cMoney = cMoney + potValue;
             compMoney.Text = cMoney.ToString();
-            Winner2.Text = "Forest Wins-Player Folded";
+            Winner2.Text = "Forrest Wins-Player Folded";
             Winner2.Visible = true;
+            
+            forrest.Visible = true;
             potValue = game_state.resetPot();
             moneyPot.Text = potValue.ToString();
             Wait(3);
@@ -614,6 +616,8 @@ namespace WindowsFormsApplication1
                     Winner2.Text = "Forest Wins";
                 cMoney += potValue;
                 compMoney.Text = cMoney.ToString();
+                    
+                    forrest.Visible = true;
                 }
                 else
                 {
@@ -770,6 +774,7 @@ namespace WindowsFormsApplication1
         private void newGame()
         {
             
+            forrest.Visible = false;
             continueBtn.Enabled = false;
             continueBtn.Visible = false;
             quitBtn.Enabled = false;
