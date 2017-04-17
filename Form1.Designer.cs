@@ -235,7 +235,7 @@ namespace WindowsFormsApplication1
             this.playerMoney.Name = "playerMoney";
             this.playerMoney.Size = new System.Drawing.Size(60, 26);
             this.playerMoney.TabIndex = 25;
-            this.playerMoney.Text = "300";
+            this.playerMoney.Text = "100";
             // 
             // Winner
             // 

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-  public  class Player
+  public class Player
     {
-        decimal playerMoney=100;
+        decimal playerMoney=30;
         public Player()
         {
             
