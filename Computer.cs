@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
     public class Computer
     {
         int computerBet;
-        int computerMoney=100;
+        int computerMoney=10000;
         
         public Computer()
         {
