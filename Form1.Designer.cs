@@ -76,6 +76,7 @@ namespace WindowsFormsApplication1
             this.quitBtn = new System.Windows.Forms.Button();
             this.forrest = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.jackpotpictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompBet)).BeginInit();
@@ -494,14 +495,14 @@ namespace WindowsFormsApplication1
             this.CompBet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CompBet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.CompBet.DecimalPlaces = 2;
-            this.CompBet.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompBet.Font = new System.Drawing.Font("Beon", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompBet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.CompBet.Increment = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.CompBet.Location = new System.Drawing.Point(0, 82);
+            this.CompBet.Location = new System.Drawing.Point(8, 63);
             this.CompBet.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -513,7 +514,7 @@ namespace WindowsFormsApplication1
             0,
             0});
             this.CompBet.Name = "CompBet";
-            this.CompBet.Size = new System.Drawing.Size(113, 24);
+            this.CompBet.Size = new System.Drawing.Size(113, 22);
             this.CompBet.TabIndex = 41;
             this.CompBet.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CompBet.Value = new decimal(new int[] {
@@ -639,6 +640,7 @@ namespace WindowsFormsApplication1
             // CompBetPanel
             // 
             this.CompBetPanel.BackColor = System.Drawing.Color.Transparent;
+            this.CompBetPanel.Controls.Add(this.button1);
             this.CompBetPanel.Controls.Add(this.CompBetButton);
             this.CompBetPanel.Controls.Add(this.CompBet);
             this.CompBetPanel.Controls.Add(this.computerLabel);
@@ -654,15 +656,14 @@ namespace WindowsFormsApplication1
             // 
             this.CompBetButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.CompBetButton.BackColor = System.Drawing.Color.Transparent;
-            this.CompBetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CompBetButton.BackgroundImage")));
             this.CompBetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.CompBetButton.FlatAppearance.BorderSize = 0;
             this.CompBetButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CompBetButton.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CompBetButton.ForeColor = System.Drawing.Color.Transparent;
-            this.CompBetButton.Location = new System.Drawing.Point(0, 15);
+            this.CompBetButton.Location = new System.Drawing.Point(0, 0);
             this.CompBetButton.Name = "CompBetButton";
-            this.CompBetButton.Size = new System.Drawing.Size(105, 61);
+            this.CompBetButton.Size = new System.Drawing.Size(10, 10);
             this.CompBetButton.TabIndex = 43;
             this.CompBetButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.CompBetButton.UseVisualStyleBackColor = false;
@@ -672,7 +673,7 @@ namespace WindowsFormsApplication1
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::WindowsFormsApplication1.Properties.Resources.poker_chips1;
-            this.pictureBox2.Location = new System.Drawing.Point(1, 113);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 93);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(89, 70);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -763,6 +764,24 @@ namespace WindowsFormsApplication1
             this.pictureBox3.Size = new System.Drawing.Size(231, 201);
             this.pictureBox3.TabIndex = 56;
             this.pictureBox3.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Enabled = false;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(0, -1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 54);
+            this.button1.TabIndex = 57;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // GameBoard
             // 
@@ -880,6 +899,7 @@ namespace WindowsFormsApplication1
         private PictureBox pictureBox2;
         private PictureBox forrest;
         private PictureBox pictureBox3;
+        private Button button1;
     }
 }
 

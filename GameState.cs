@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace WindowsFormsApplication1
 {
@@ -79,14 +80,14 @@ namespace WindowsFormsApplication1
         {
            
             playerHand[i] = myDeck.getDeck().Pop();
-            hand_ref.sortHand(playerHand);
+           // hand_ref.sortHand(playerHand);
         }
 
         public void CompDraw(int i, Card[] compHand, Deck myDeck)
         {
             
             compHand[i] = myDeck.getDeck().Pop();
-            hand_ref.sortHand(compHand);
+           // hand_ref.sortHand(compHand);
         }
 
         public decimal updatePot(decimal moneyPot, decimal playerBet, decimal compBet)
@@ -98,6 +99,20 @@ namespace WindowsFormsApplication1
         {
             return 0;
         }
+
+        public bool BetIsValid(decimal MoneyInWallet, decimal MoneyToBet )
+        {
+            if (MoneyToBet > MoneyInWallet)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        
 
         
     }

@@ -131,7 +131,13 @@ namespace WindowsFormsApplication1
                 gs.CompDraw(1, handCards, myDeck);
                 return 1;
             }
-            return -1;
+            else
+            {
+                gs.CompDraw(0, handCards, myDeck);
+                gs.CompDraw(2, handCards, myDeck);
+                return -2;
+            }
+            
         }
 
         public int getCompMoney()

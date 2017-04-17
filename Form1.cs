@@ -12,6 +12,7 @@ namespace WindowsFormsApplication1
         private Deck myDeck;
         private RankHand hand_rank;
         private GameState game_state;
+        private Hand ForSortingHand = new Hand();
 
         private Card[] player_hand = new Card[4];
         private Card[] comp_hand = new Card[4];
@@ -47,7 +48,8 @@ namespace WindowsFormsApplication1
             compMoney.Text = cMoney.ToString();
             Winner2.Text = "Forrest Wins-Player Folded";
             Winner2.Visible = true;
-
+            PlayerBetPanel.Enabled = false;
+            CompBetPanel.Enabled = false;
             forrest.Visible = true;
             potValue = game_state.resetPot();
             moneyPot.Text = potValue.ToString();
@@ -97,11 +99,13 @@ namespace WindowsFormsApplication1
                 PplayerCard5.FlatAppearance.BorderSize = 0;
                 PplayerCard5.Checked = false;
             }
+            ForSortingHand.sortHand(player_hand);
             PplayerCard1.BackgroundImage = player_hand[0].getImage();
             PplayerCard2.BackgroundImage = player_hand[1].getImage();
             PplayerCard3.BackgroundImage = player_hand[2].getImage();
             PplayerCard4.BackgroundImage = player_hand[3].getImage();
             PplayerCard5.BackgroundImage = player_hand[4].getImage();
+
             int compDrawIndex = game_state.forest.Draw(comp_hand, myDeck, game_state);
 
             if (compDrawIndex == 234)
@@ -219,7 +223,7 @@ namespace WindowsFormsApplication1
                 thinkLabel.Visible = false;
                 DrawBtn.Enabled = false;
             }
-            else if (compDrawIndex == -1)
+            else if (compDrawIndex == -2)
             {
                 thinkLabel.Text = "Thinking...";
                 thinkLabel.Visible = true;
@@ -262,11 +266,19 @@ namespace WindowsFormsApplication1
                 PcomputerCard5.FlatAppearance.BorderSize = 0;
                 PcomputerCard5.Checked = false;
             }
-            PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
-            PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
-            PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
-            PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
-            PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
+            ForSortingHand.sortHand(comp_hand);
+            //PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
+            //PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
+            //PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
+            //PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
+            //PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
+
+            PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
+            PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
+            PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
+            PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
+            PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
+
 
             CompPanel.Enabled = true;
             PlayerPanel.Enabled = false;
@@ -301,17 +313,17 @@ namespace WindowsFormsApplication1
             PplayerCard4.BackgroundImage = player_hand[3].getImage();
             PplayerCard5.BackgroundImage = player_hand[4].getImage();
 
-            // PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
-            //  PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
-            // PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
-            // PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
-            // PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
+             PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
+             PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
+             PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
+             PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
+             PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
 
-            PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
-            PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
-            PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
-            PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
-            PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
+            //PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
+            //PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
+            //PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
+            //PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
+            //PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
 
             DealBtn.Enabled = false;
             DealBtn.BackColor = Color.Gray;
@@ -488,44 +500,56 @@ namespace WindowsFormsApplication1
 
         private void CompBetButton_Click(object sender, EventArgs e)
         {
-            CompBetLabel.Visible = false;
-            thinkLabel.Visible = false;
-            cMoney = cMoney - CompBet.Value;
-            potValue = game_state.updatePot(potValue, PlayerBet.Value, CompBet.Value);
-            moneyPot.Text = potValue.ToString();
-            compMoney.Text = cMoney.ToString();
-            CompBetPanel.Enabled = false;
-            PlayerPanel.Enabled = true;
-            DrawBtn.Enabled = true;
-            DrawBtn.BackColor = Color.Transparent;
-            Update();
+           
+                CompBetLabel.Visible = false;
+                thinkLabel.Visible = false;
+                cMoney = cMoney - CompBet.Value;
+                potValue = game_state.updatePot(potValue, PlayerBet.Value, CompBet.Value);
+                moneyPot.Text = potValue.ToString();
+                compMoney.Text = cMoney.ToString();
+                CompBetPanel.Enabled = false;
+                PlayerPanel.Enabled = true;
+                DrawBtn.Enabled = true;
+                DrawBtn.BackColor = Color.Transparent;
+                Update();
+            
+                
         }
 
         private void PlayerBetButton_Click(object sender, EventArgs e)
         {
-            pMoney = pMoney - PlayerBet.Value;
-            playerMoney.Text = pMoney.ToString();
-            PlayerBetLabel.Visible = false;
-            CompBetLabel.Text = "Computer's Bet!";
-            CompBetLabel.Visible = true;
-            this.Update();
-            Wait(1);
-            thinkLabel.Text = "Thinking...";
-            thinkLabel.Visible = true;
-            this.Update();
-
-            PlayerBetPanel.Enabled = false;
-            CompBetPanel.Enabled = true;
-            PbetClickCounter = PbetClickCounter + 1;
-
-            Wait(3);
-            CompBet.Value = PlayerBet.Value + game_state.forest.generateBet(hand_rank.evalHand(comp_hand));
-            // decimal Cbet = CompBet.Value;
-            CompBetButton.PerformClick();
-            if (PbetClickCounter >= 2)
+            if (game_state.BetIsValid(pMoney, PlayerBet.Value))
             {
-                showdown();
+                pMoney = pMoney - PlayerBet.Value;
+                playerMoney.Text = pMoney.ToString();
+                PlayerBetLabel.Visible = false;
+                CompBetLabel.Text = "Computer's Bet!";
+                CompBetLabel.Visible = true;
+                this.Update();
+                Wait(1);
+                thinkLabel.Text = "Thinking...";
+                thinkLabel.Visible = true;
+                this.Update();
+
+
+                PlayerBetPanel.Enabled = false;
+                CompBetPanel.Enabled = true;
+                PbetClickCounter = PbetClickCounter + 1;
+
+                Wait(2);
+                CompBet.Value = PlayerBet.Value + game_state.forest.generateBet(hand_rank.evalHand(comp_hand));
+                // decimal Cbet = CompBet.Value;
+                CompBetButton.PerformClick();
+                if (PbetClickCounter >= 2)
+                {
+                    showdown();
+                }
             }
+            else
+            {
+                MessageBox.Show("Insufficient Funds.  Try Again.");
+            }
+            
         }
 
         private void compMoney_Click(object sender, EventArgs e)
