@@ -118,6 +118,7 @@
             this.Controls.Add(this.continue_button);
             this.Controls.Add(this.new_game_button);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Name = "Main_Menu_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

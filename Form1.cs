@@ -35,24 +35,24 @@ namespace WindowsFormsApplication1
             game_state = new GameState();
 
             pMoney = game_state.player.getPlayerMoney();
-            playerMoney.Text = pMoney.ToString();
+            playerMoney.Text = pMoney.ToString("###,###");
             cMoney = game_state.forest.getCompMoney();
-            compMoney.Text = cMoney.ToString();
+            compMoney.Text = cMoney.ToString("###,###");
             compMoney.Text = game_state.forest.getCompMoney().ToString();
-            moneyPot.Text = potValue.ToString();
+            moneyPot.Text = potValue.ToString("###,###");
         }
 
         private void FoldBtn_Click(object sender, EventArgs e)
         {
             cMoney = cMoney + potValue;
-            compMoney.Text = cMoney.ToString();
+            compMoney.Text = cMoney.ToString("###,###");
             Winner2.Text = "Forrest Wins-Player Folded";
             Winner2.Visible = true;
             PlayerBetPanel.Enabled = false;
             CompBetPanel.Enabled = false;
             forrest.Visible = true;
             potValue = game_state.resetPot();
-            moneyPot.Text = potValue.ToString();
+            moneyPot.Text = potValue.ToString("###,###");
             Wait(3);
             newGame();
         }
@@ -302,11 +302,11 @@ namespace WindowsFormsApplication1
             game_state.PlayerDeal(out player_hand, myDeck);
             game_state.CompDeal(out comp_hand, myDeck);
             potValue = potValue + 2;
-            moneyPot.Text = potValue.ToString();
+            moneyPot.Text = potValue.ToString("###,###");
             pMoney--;
             cMoney--;
-            playerMoney.Text = pMoney.ToString();
-            compMoney.Text = cMoney.ToString();
+            playerMoney.Text = pMoney.ToString("###,###");
+            compMoney.Text = cMoney.ToString("###,###");
             PplayerCard1.BackgroundImage = player_hand[0].getImage();
             PplayerCard2.BackgroundImage = player_hand[1].getImage();
             PplayerCard3.BackgroundImage = player_hand[2].getImage();
@@ -505,8 +505,8 @@ namespace WindowsFormsApplication1
                 thinkLabel.Visible = false;
                 cMoney = cMoney - CompBet.Value;
                 potValue = game_state.updatePot(potValue, PlayerBet.Value, CompBet.Value);
-                moneyPot.Text = potValue.ToString();
-                compMoney.Text = cMoney.ToString();
+                moneyPot.Text = potValue.ToString("###,###");
+                compMoney.Text = cMoney.ToString("###,###");
                 CompBetPanel.Enabled = false;
                 PlayerPanel.Enabled = true;
                 DrawBtn.Enabled = true;
@@ -521,7 +521,7 @@ namespace WindowsFormsApplication1
             if (game_state.BetIsValid(pMoney, PlayerBet.Value))
             {
                 pMoney = pMoney - PlayerBet.Value;
-                playerMoney.Text = pMoney.ToString();
+                playerMoney.Text = pMoney.ToString("###,###");
                 PlayerBetLabel.Visible = false;
                 CompBetLabel.Text = "Computer's Bet!";
                 CompBetLabel.Visible = true;
@@ -579,13 +579,13 @@ namespace WindowsFormsApplication1
             {
                 Winner.Text = "Player Wins";
                 pMoney += potValue;
-                playerMoney.Text = pMoney.ToString();
+                playerMoney.Text = pMoney.ToString("###,###");
             }
             else if (compscore > playerscore)
             {
                 Winner2.Text = "Forest Wins";
                 cMoney += potValue;
-                compMoney.Text = cMoney.ToString();
+                compMoney.Text = cMoney.ToString("###,###");
 
                 forrest.Visible = true;
 
@@ -604,7 +604,7 @@ namespace WindowsFormsApplication1
             }
 
             potValue = game_state.resetPot();
-            moneyPot.Text = potValue.ToString();
+            moneyPot.Text = potValue.ToString("###,###");
 
             String Player_Hand_Type = "Nothing";
             if (playerscore >= 1000 & playerscore < 2000)

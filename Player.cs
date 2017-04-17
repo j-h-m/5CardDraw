@@ -8,7 +8,7 @@ namespace WindowsFormsApplication1
 {
   public class Player
     {
-        decimal playerMoney=300;
+        decimal playerMoney=3000;
         public Player()
         {
             
