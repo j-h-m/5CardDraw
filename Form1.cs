@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string cardback = projectPath + "\\Card Images\\back of card.png";
+            string cardback = projectPath + "\\Program Files (x86)\\Five Card Draw\\Card Images\\back of card.png";
 
             if (PplayerCard1.Checked)
             {
@@ -320,7 +320,7 @@ namespace WindowsFormsApplication1
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string cardback = projectPath + "\\Card Images\\back of card.png";
+            string cardback = projectPath + "\\Program Files (x86)\\Five Card Draw\\Card Images\\back of card.png";
 
             game_state.PlayerDeal(out player_hand, myDeck);
             game_state.CompDeal(out comp_hand, myDeck);
@@ -597,6 +597,7 @@ namespace WindowsFormsApplication1
             PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
             Wait(1);
             PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
+            Wait(1);
 
             if (playerscore > compscore)
             {
@@ -609,7 +610,7 @@ namespace WindowsFormsApplication1
                 Winner2.Text = "Forest Wins";
                 cMoney += potValue;
                 compMoney.Text = cMoney.ToString("###,###");
-
+                Wait(1);
                 forrest.Visible = true;
 
                 if (pMoney <= 20)
@@ -783,7 +784,7 @@ namespace WindowsFormsApplication1
                 string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
                 var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
                 string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-                string filePath = projectPath + "\\Saved Games\\" + gameSaveName;
+                string filePath = projectPath + "\\Program Files (x86)\\Five Card Draw\\Saved Games\\" + gameSaveName;
                 SaveGame gameSave = new SaveGame(myDeck, pMoney, cMoney, filePath);
                 writeToBinaryFile<SaveGame>(filePath, gameSave);
 

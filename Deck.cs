@@ -25,7 +25,7 @@ namespace WindowsFormsApplication1
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string testFolderPath = projectPath + "\\Card Images\\Cards\\";
+            string testFolderPath = projectPath + "\\Program Files (x86)\\Five Card Draw\\Card Images\\Cards\\";
 
             card_names = Directory.GetFiles(testFolderPath).Select(Path.GetFileName).ToArray();
             Card[] card_array = new Card[52];
