@@ -6,6 +6,7 @@ using System.Linq;
 
 namespace WindowsFormsApplication1
 {
+    [Serializable]
     public class Deck
     {
         private Card[] card_array = null;

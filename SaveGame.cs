@@ -7,39 +7,39 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
+    [Serializable]
     class SaveGame
     {
         private Deck deck;
-        private RankHand rankHand;
-        private GameState gameState;
-        private Card[] pHand;
-        private Card[] cHand;
-        private decimal potValue, pMoney, cMoney;
+        private decimal pMoney, cMoney;
+        private string filePath;
 
-        /*
-         * Step 1: 
-         *  Construct one of these when a "save button" is pressed, then use the added methods in Form1 to write this var to a file
-         * Step 2:
-         *  Setup logic to load file (may need to put getter methods in here to return the needed values to start a game)
-         *  Something like,
-         *      if (click load game)
-         *          initialize vars with stuff from SaveGame
-         *      else
-         *          start a new game regular way    
-         *           
-         */
-
-        public SaveGame(Deck oldDeck, RankHand oldRank, GameState oldGS, Card[] oldPHand, Card[] oldCHand, decimal oldPot, decimal oldPlayMoney, decimal oldCompMoney)
+        public SaveGame(Deck oldDeck, decimal oldPlayMoney, decimal oldCompMoney, string saveFile)
         {
             deck = oldDeck;
-            rankHand = oldRank;
-            gameState = oldGS;
-            pHand = oldPHand;
-            cHand = oldCHand;
-            potValue = oldPot;
             pMoney = oldPlayMoney;
             cMoney = oldCompMoney;
+            filePath = saveFile;
         }
 
+        public Deck getSavedDeck()
+        {
+            return deck;
+        }
+
+        public decimal getSavedPlayerMoney()
+        {
+            return pMoney;
+        }
+
+        public decimal getSavedComputerMoney()
+        {
+            return cMoney;
+        }
+
+        public string getFilePath()
+        {
+            return filePath;
+        }
     }
 }

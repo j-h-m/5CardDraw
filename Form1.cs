@@ -22,24 +22,47 @@ namespace WindowsFormsApplication1
         private decimal potValue = 0;
         private decimal pMoney, cMoney;
 
-        public GameBoard()
+        // don't touch me I'm fragile!
+        private string gameSaveFilePath;
+
+        public GameBoard(string gameSavePath)
         {
             InitializeComponent();
             this.KeyPreview = true;
+            gameSaveFilePath = gameSavePath;
         }
 
         private void GameBoard_Load(object sender, EventArgs e)
         {
-            myDeck = new Deck();
-            hand_rank = new RankHand();
-            game_state = new GameState();
+            string shouldGiveGamePath = gameSaveFilePath;
 
-            pMoney = game_state.player.getPlayerMoney();
-            playerMoney.Text = pMoney.ToString("###,###");
-            cMoney = game_state.forest.getCompMoney();
-            compMoney.Text = cMoney.ToString("###,###");
-            compMoney.Text = game_state.forest.getCompMoney().ToString();
-            moneyPot.Text = potValue.ToString("###,###");
+            if (!shouldGiveGamePath.Equals("no path"))
+            {
+                SaveGame loadThisGame = readFromBinaryFile<SaveGame>(shouldGiveGamePath);
+
+                myDeck = loadThisGame.getSavedDeck();
+                hand_rank = new RankHand();
+                game_state = new GameState();
+
+                pMoney = loadThisGame.getSavedPlayerMoney();
+                playerMoney.Text = pMoney.ToString("###,###");
+                cMoney = loadThisGame.getSavedComputerMoney();
+                compMoney.Text = cMoney.ToString("###,###");
+            }
+
+            else
+            {
+                myDeck = new Deck();
+                hand_rank = new RankHand();
+                game_state = new GameState();
+
+                pMoney = game_state.player.getPlayerMoney();
+                playerMoney.Text = pMoney.ToString("###,###");
+                cMoney = game_state.forest.getCompMoney();
+                compMoney.Text = cMoney.ToString("###,###");
+                compMoney.Text = game_state.forest.getCompMoney().ToString("###,###");
+                moneyPot.Text = potValue.ToString("###,###");
+            }
         }
 
         private void FoldBtn_Click(object sender, EventArgs e)
@@ -267,17 +290,17 @@ namespace WindowsFormsApplication1
                 PcomputerCard5.Checked = false;
             }
             ForSortingHand.sortHand(comp_hand);
-            //PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
-            //PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
-            //PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
-            //PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
-            //PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
 
-            PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
-            PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
-            PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
-            PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
-            PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
+            //PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
+            //PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
+            //PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
+            //PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
+            //PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
 
 
             CompPanel.Enabled = true;
@@ -313,17 +336,17 @@ namespace WindowsFormsApplication1
             PplayerCard4.BackgroundImage = player_hand[3].getImage();
             PplayerCard5.BackgroundImage = player_hand[4].getImage();
 
-             PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
-             PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
-             PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
-             PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
-             PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
+            //PcomputerCard1.BackgroundImage = comp_hand[0].getImage();
+            //PcomputerCard2.BackgroundImage = comp_hand[1].getImage();
+            //PcomputerCard3.BackgroundImage = comp_hand[2].getImage();
+            //PcomputerCard4.BackgroundImage = comp_hand[3].getImage();
+            //PcomputerCard5.BackgroundImage = comp_hand[4].getImage();
 
-            //PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
-            //PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
-            //PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
-            //PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
-            //PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard1.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard2.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard3.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard4.BackgroundImage = Image.FromFile(cardback);
+            PcomputerCard5.BackgroundImage = Image.FromFile(cardback);
 
             DealBtn.Enabled = false;
             DealBtn.BackColor = Color.Gray;
@@ -734,11 +757,46 @@ namespace WindowsFormsApplication1
             newGame();
         }
 
+        string placeholder = "Enter File Name Here";
+        string gameSaveName = "temp";
+
         private void quitBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
-            this.Dispose();
-            GC.Collect();
+            var result = MessageBox.Show("Would you like to SAVE thy game?\nYou will exit to main menu unless you click Cancel!", "Game Save", MessageBoxButtons.YesNoCancel);
+
+            if (result == DialogResult.No)
+            {
+                this.Close();
+                this.Dispose();
+                GC.Collect();
+            }
+
+            else if (result == DialogResult.Yes)
+            {
+                // prompt user for file name
+                if (InputBox("Game Save", "Please enter your game save name below", ref placeholder) == DialogResult.OK)
+                {
+                    gameSaveName = placeholder;
+                }
+
+                // save the game
+                string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
+                var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
+                string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
+                string filePath = projectPath + "\\Saved Games\\" + gameSaveName;
+                SaveGame gameSave = new SaveGame(myDeck, pMoney, cMoney, filePath);
+                writeToBinaryFile<SaveGame>(filePath, gameSave);
+
+                // close, dispose, collect as above
+                this.Close();
+                this.Dispose();
+                GC.Collect();
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                // do nothing to continue
+            }
+
         }
 
         private void newGame()
@@ -820,6 +878,49 @@ namespace WindowsFormsApplication1
                 var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
                 return (T)binaryFormatter.Deserialize(stream);
             }
+        }
+
+        // now we're getting freaky
+        public DialogResult InputBox(string title, string promptText, ref string value)
+        {
+            Form form = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button buttonOk = new Button();
+            Button buttonCancel = new Button();
+
+            form.Text = title;
+            label.Text = promptText;
+            textBox.Text = value;
+
+            buttonOk.Text = "OK";
+            buttonCancel.Text = "Cancel";
+            buttonOk.DialogResult = DialogResult.OK;
+            buttonCancel.DialogResult = DialogResult.Cancel;
+
+            label.SetBounds(9, 20, 372, 13);
+            textBox.SetBounds(12, 36, 372, 20);
+            buttonOk.SetBounds(228, 72, 75, 23);
+            buttonCancel.SetBounds(309, 72, 75, 23);
+
+            label.AutoSize = true;
+            textBox.Anchor = textBox.Anchor | AnchorStyles.Right;
+            buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+
+            form.ClientSize = new Size(396, 107);
+            form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
+            form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+            form.AcceptButton = buttonOk;
+            form.CancelButton = buttonCancel;
+
+            DialogResult dialogResult = form.ShowDialog();
+            value = textBox.Text;
+            return dialogResult;
         }
     }
 }
