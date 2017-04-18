@@ -14,43 +14,6 @@ namespace WindowsFormsApplication1
        public Computer forest = new Computer();
        public Player player = new Player();
 
-        public int PlayerWallet()
-        {
-            int x;
-            try
-            {
-                using (TextReader reader = File.OpenText(@"C:\Users\grant\Source\Repos\5CardDraw\PlayerWallet.txt"))
-                {
-                      x = int.Parse(reader.ReadLine());
-                }
-            }
-            catch (FileNotFoundException e)
-            {
-                throw new FileNotFoundException ("File Not Found.", e);
-            }
-
-            return x;
-            
-        }
-
-        public int CompWallet()
-        {
-            int x;
-            try
-            {
-                using (TextReader reader = File.OpenText(@"C:\Users\grant\Source\Repos\5CardDraw\CompWallet.txt"))
-                {
-                     x = int.Parse(reader.ReadLine());
-                }
-            }
-            catch (FileNotFoundException e)
-            {
-                throw new FileNotFoundException("File Not Found.", e);
-            }
-
-            return x;
-        }
-
         public void PlayerDeal(out Card[] player_hand, Deck myDeck)
         {
 
