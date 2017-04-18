@@ -347,6 +347,9 @@
     <None Include="Resources\1489065876_Settings.png" />
     <None Include="Resources\Settings_Icon.bmp" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Saved Games\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
