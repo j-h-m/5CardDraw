@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace WindowsFormsApplication1
 {
@@ -13,6 +14,10 @@ namespace WindowsFormsApplication1
         private RankHand hand_rank;
         private GameState game_state;
         private Hand ForSortingHand = new Hand();
+        Statistics stats = new Statistics();
+        private int wins=0;
+        private int losses;
+        String Player;
 
         private Card[] player_hand = new Card[4];
         private Card[] comp_hand = new Card[4];
@@ -21,6 +26,8 @@ namespace WindowsFormsApplication1
         private int DrawClickCounter = 0;
         private decimal potValue = 0;
         private decimal pMoney, cMoney;
+
+
 
         // don't touch me I'm fragile!
         private string gameSaveFilePath;
@@ -34,6 +41,8 @@ namespace WindowsFormsApplication1
 
         private void GameBoard_Load(object sender, EventArgs e)
         {
+            Player = Interaction.InputBox("Enter your name in the field below.", "Name", "Player");
+            playerLabel.Text = Player;
             string shouldGiveGamePath = gameSaveFilePath;
 
             if (!shouldGiveGamePath.Equals("no path"))
@@ -67,6 +76,7 @@ namespace WindowsFormsApplication1
 
         private void FoldBtn_Click(object sender, EventArgs e)
         {
+            losses++;
             cMoney = cMoney + potValue;
             compMoney.Text = cMoney.ToString("###,###");
             Winner2.Text = "Forrest Wins-Player Folded";
@@ -76,6 +86,7 @@ namespace WindowsFormsApplication1
             forrest.Visible = true;
             potValue = game_state.resetPot();
             moneyPot.Text = potValue.ToString("###,###");
+            stats.updateStatistics(Player, 0,1);
             Wait(3);
             newGame();
         }
@@ -85,7 +96,7 @@ namespace WindowsFormsApplication1
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string cardback = projectPath + "\\Program Files (x86)\\Five Card Draw\\Card Images\\back of card.png";
+            string cardback = projectPath + "\\Card Images\\back of card.png";
 
             if (PplayerCard1.Checked)
             {
@@ -320,7 +331,7 @@ namespace WindowsFormsApplication1
             string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
             var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
             string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-            string cardback = projectPath + "\\Program Files (x86)\\Five Card Draw\\Card Images\\back of card.png";
+            string cardback = projectPath + "\\Card Images\\back of card.png";
 
             game_state.PlayerDeal(out player_hand, myDeck);
             game_state.CompDeal(out comp_hand, myDeck);
@@ -601,12 +612,16 @@ namespace WindowsFormsApplication1
 
             if (playerscore > compscore)
             {
+                //wins++;
+                stats.updateStatistics(Player,1,0);
                 Winner.Text = "Player Wins";
                 pMoney += potValue;
                 playerMoney.Text = pMoney.ToString("###,###");
             }
             else if (compscore > playerscore)
             {
+                //losses++;
+                stats.updateStatistics(Player, 0, 1);
                 Winner2.Text = "Forest Wins";
                 cMoney += potValue;
                 compMoney.Text = cMoney.ToString("###,###");
@@ -784,7 +799,7 @@ namespace WindowsFormsApplication1
                 string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
                 var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
                 string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
-                string filePath = projectPath + "\\Program Files (x86)\\Five Card Draw\\Saved Games\\" + gameSaveName;
+                string filePath = projectPath + "\\Saved Games\\" + gameSaveName;
                 SaveGame gameSave = new SaveGame(myDeck, pMoney, cMoney, filePath);
                 writeToBinaryFile<SaveGame>(filePath, gameSave);
 

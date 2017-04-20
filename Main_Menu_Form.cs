@@ -39,6 +39,7 @@ namespace WindowsFormsApplication1
 
         private void brdClosing(object sender, FormClosingEventArgs e)
         {
+            
             this.Show();
         }
 
@@ -74,7 +75,16 @@ namespace WindowsFormsApplication1
 
         private void statistics_button_Click(object sender, EventArgs e)
         {
-
+            Form fc = Application.OpenForms["Statistics"];
+            this.Hide();
+            if (fc != null)
+            {
+                fc.Close();
+            }
+            Statistics_Form frm = new Statistics_Form();
+            frm.Show();
+            
+            frm.FormClosing += brdClosing;
         }
 
         private void exit_game_button_Click(object sender, EventArgs e)
@@ -86,6 +96,7 @@ namespace WindowsFormsApplication1
             this.Close();
             GC.Collect();
             Application.Exit();
+
         }
 
         private void settings_picture_Click(object sender, EventArgs e)
