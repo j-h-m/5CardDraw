@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
                 foreach(var line in originalStats)
                 {
                     string[] lineInfo = line.Split(',');
-                if (lineInfo[0] == player)
+                if (string.Equals(lineInfo[0], player,StringComparison.OrdinalIgnoreCase))
                 {
                     //update
                     playerExists = true;
