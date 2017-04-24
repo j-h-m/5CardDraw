@@ -71,6 +71,8 @@ namespace WindowsFormsApplication1
             this.quitBtn = new System.Windows.Forms.Button();
             this.forrest = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.Help = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompBet)).BeginInit();
             this.CompPanel.SuspendLayout();
@@ -703,6 +705,20 @@ namespace WindowsFormsApplication1
             this.pictureBox3.TabIndex = 56;
             this.pictureBox3.TabStop = false;
             // 
+            // Help
+            // 
+            this.Help.BackColor = System.Drawing.Color.Transparent;
+            this.Help.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Help.BackgroundImage")));
+            this.Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Help.FlatAppearance.BorderSize = 0;
+            this.Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Help.Location = new System.Drawing.Point(993, 266);
+            this.Help.Name = "Help";
+            this.Help.Size = new System.Drawing.Size(107, 77);
+            this.Help.TabIndex = 57;
+            this.Help.UseVisualStyleBackColor = false;
+            this.Help.Click += new System.EventHandler(this.Help_Click);
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -711,6 +727,7 @@ namespace WindowsFormsApplication1
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 626);
+            this.Controls.Add(this.Help);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.forrest);
             this.Controls.Add(this.quitBtn);
@@ -808,6 +825,8 @@ namespace WindowsFormsApplication1
         private PictureBox forrest;
         private PictureBox pictureBox3;
         private Button button1;
+        private HelpProvider helpProvider1;
+        private Button Help;
     }
 }
 

@@ -896,6 +896,12 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void Help_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.Show(); 
+        }
+
         // now we're getting freaky
         public DialogResult InputBox(string title, string promptText, ref string value)
         {
