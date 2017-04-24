@@ -896,6 +896,38 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void helpBtn_Click(object sender, EventArgs e)
+        {
+            string startupPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            var pathItems = startupPath.Split(Path.DirectorySeparatorChar);
+            string projectPath = String.Join(Path.DirectorySeparatorChar.ToString(), pathItems.Take(pathItems.Length - 3));
+            string helpPic = projectPath + "\\Card Images\\helpPNG.png";
+            
+            using (Form help = new Form())
+            {
+                
+        Image img = Image.FromFile(helpPic);
+
+                 help.StartPosition = FormStartPosition.CenterParent;
+               // help.Location = new Point(this.Right, this.Top);
+                help.Size = img.Size;
+                
+                PictureBox pb = new PictureBox();
+                pb.Dock = DockStyle.Fill;
+                pb.Image = img;
+                help.FormBorderStyle = FormBorderStyle.FixedSingle;
+               // pb.BackgroundImageLayout = ImageLayout.Stretch;
+                help.Controls.Add(pb);
+              
+                help.ShowDialog() ;
+
+
+                
+            }
+        }
+
+       
+
         // now we're getting freaky
         public DialogResult InputBox(string title, string promptText, ref string value)
         {

@@ -71,6 +71,8 @@ namespace WindowsFormsApplication1
             this.quitBtn = new System.Windows.Forms.Button();
             this.forrest = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.helpBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerBet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompBet)).BeginInit();
             this.CompPanel.SuspendLayout();
@@ -125,9 +127,7 @@ namespace WindowsFormsApplication1
             // 
             // moneyPot
             // 
-            this.moneyPot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.moneyPot.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.moneyPot.BackColor = System.Drawing.Color.Transparent;
             this.moneyPot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.moneyPot.Font = new System.Drawing.Font("Digital-7", 51.74999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -213,9 +213,9 @@ namespace WindowsFormsApplication1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Winner.BackColor = System.Drawing.Color.Transparent;
-            this.Winner.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Winner.Font = new System.Drawing.Font("Beon", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Winner.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.Winner.Location = new System.Drawing.Point(279, 276);
+            this.Winner.Location = new System.Drawing.Point(226, 276);
             this.Winner.Name = "Winner";
             this.Winner.Size = new System.Drawing.Size(180, 57);
             this.Winner.TabIndex = 26;
@@ -388,7 +388,7 @@ namespace WindowsFormsApplication1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Winner2.BackColor = System.Drawing.Color.Transparent;
-            this.Winner2.Font = new System.Drawing.Font("Wide Latin", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Winner2.Font = new System.Drawing.Font("Beon", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Winner2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Winner2.Location = new System.Drawing.Point(753, 276);
             this.Winner2.Name = "Winner2";
@@ -402,10 +402,10 @@ namespace WindowsFormsApplication1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PlayerHandLabel.BackColor = System.Drawing.Color.Transparent;
-            this.PlayerHandLabel.Font = new System.Drawing.Font("Goudy Stout", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerHandLabel.Font = new System.Drawing.Font("Beon", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlayerHandLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.PlayerHandLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PlayerHandLabel.Location = new System.Drawing.Point(14, 318);
+            this.PlayerHandLabel.Location = new System.Drawing.Point(28, 312);
             this.PlayerHandLabel.Name = "PlayerHandLabel";
             this.PlayerHandLabel.Size = new System.Drawing.Size(214, 48);
             this.PlayerHandLabel.TabIndex = 38;
@@ -417,8 +417,8 @@ namespace WindowsFormsApplication1
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CompHandLabel.BackColor = System.Drawing.Color.Transparent;
-            this.CompHandLabel.Font = new System.Drawing.Font("Goudy Stout", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CompHandLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.CompHandLabel.Font = new System.Drawing.Font("Beon", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompHandLabel.ForeColor = System.Drawing.Color.LightGoldenrodYellow;
             this.CompHandLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CompHandLabel.Location = new System.Drawing.Point(21, 226);
             this.CompHandLabel.Name = "CompHandLabel";
@@ -512,6 +512,7 @@ namespace WindowsFormsApplication1
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Digital-7", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -524,6 +525,7 @@ namespace WindowsFormsApplication1
             // 
             // CompPanel
             // 
+            this.CompPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.CompPanel.BackColor = System.Drawing.Color.Transparent;
             this.CompPanel.Controls.Add(this.PcomputerCard4);
             this.CompPanel.Controls.Add(this.PcomputerCard1);
@@ -540,6 +542,7 @@ namespace WindowsFormsApplication1
             // 
             // PlayerPanel
             // 
+            this.PlayerPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PlayerPanel.BackColor = System.Drawing.Color.Transparent;
             this.PlayerPanel.Controls.Add(this.PplayerCard1);
             this.PlayerPanel.Controls.Add(this.PplayerCard2);
@@ -622,10 +625,11 @@ namespace WindowsFormsApplication1
             // 
             this.CompBetLabel.AutoSize = true;
             this.CompBetLabel.BackColor = System.Drawing.Color.Transparent;
-            this.CompBetLabel.Font = new System.Drawing.Font("Rockwell", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompBetLabel.Font = new System.Drawing.Font("Beon", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CompBetLabel.ForeColor = System.Drawing.Color.LightCyan;
             this.CompBetLabel.Location = new System.Drawing.Point(20, 231);
             this.CompBetLabel.Name = "CompBetLabel";
-            this.CompBetLabel.Size = new System.Drawing.Size(0, 19);
+            this.CompBetLabel.Size = new System.Drawing.Size(0, 25);
             this.CompBetLabel.TabIndex = 50;
             this.CompBetLabel.Visible = false;
             // 
@@ -633,10 +637,12 @@ namespace WindowsFormsApplication1
             // 
             this.PlayerBetLabel.AutoSize = true;
             this.PlayerBetLabel.BackColor = System.Drawing.Color.Transparent;
-            this.PlayerBetLabel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerBetLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlayerBetLabel.Font = new System.Drawing.Font("Beon", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerBetLabel.ForeColor = System.Drawing.Color.LightCyan;
             this.PlayerBetLabel.Location = new System.Drawing.Point(14, 335);
             this.PlayerBetLabel.Name = "PlayerBetLabel";
-            this.PlayerBetLabel.Size = new System.Drawing.Size(110, 19);
+            this.PlayerBetLabel.Size = new System.Drawing.Size(166, 25);
             this.PlayerBetLabel.TabIndex = 51;
             this.PlayerBetLabel.Text = "Player\'s Bet!";
             this.PlayerBetLabel.Visible = false;
@@ -645,7 +651,8 @@ namespace WindowsFormsApplication1
             // 
             this.thinkLabel.AutoSize = true;
             this.thinkLabel.BackColor = System.Drawing.Color.Transparent;
-            this.thinkLabel.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thinkLabel.Font = new System.Drawing.Font("Beon", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thinkLabel.ForeColor = System.Drawing.Color.LightCyan;
             this.thinkLabel.Location = new System.Drawing.Point(17, 256);
             this.thinkLabel.Name = "thinkLabel";
             this.thinkLabel.Size = new System.Drawing.Size(0, 19);
@@ -654,6 +661,7 @@ namespace WindowsFormsApplication1
             // 
             // continueBtn
             // 
+            this.continueBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.continueBtn.BackColor = System.Drawing.Color.White;
             this.continueBtn.Enabled = false;
             this.continueBtn.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -668,6 +676,7 @@ namespace WindowsFormsApplication1
             // 
             // quitBtn
             // 
+            this.quitBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.quitBtn.BackColor = System.Drawing.Color.White;
             this.quitBtn.Enabled = false;
             this.quitBtn.Font = new System.Drawing.Font("Rockwell", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -682,6 +691,7 @@ namespace WindowsFormsApplication1
             // 
             // forrest
             // 
+            this.forrest.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.forrest.BackColor = System.Drawing.Color.Transparent;
             this.forrest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.forrest.Image = ((System.Drawing.Image)(resources.GetObject("forrest.Image")));
@@ -694,6 +704,7 @@ namespace WindowsFormsApplication1
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -703,6 +714,24 @@ namespace WindowsFormsApplication1
             this.pictureBox3.TabIndex = 56;
             this.pictureBox3.TabStop = false;
             // 
+            // helpBtn
+            // 
+            this.helpBtn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.helpBtn.BackColor = System.Drawing.Color.Transparent;
+            this.helpBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("helpBtn.BackgroundImage")));
+            this.helpBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.helpBtn.FlatAppearance.BorderSize = 0;
+            this.helpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpBtn.Font = new System.Drawing.Font("Stencil", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.helpBtn.ForeColor = System.Drawing.Color.Transparent;
+            this.helpBtn.Location = new System.Drawing.Point(1027, 202);
+            this.helpBtn.Name = "helpBtn";
+            this.helpBtn.Size = new System.Drawing.Size(62, 55);
+            this.helpBtn.TabIndex = 57;
+            this.helpBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.helpBtn.UseVisualStyleBackColor = false;
+            this.helpBtn.Click += new System.EventHandler(this.helpBtn_Click);
+            // 
             // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -711,6 +740,7 @@ namespace WindowsFormsApplication1
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1101, 626);
+            this.Controls.Add(this.helpBtn);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.forrest);
             this.Controls.Add(this.quitBtn);
@@ -732,13 +762,15 @@ namespace WindowsFormsApplication1
             this.Controls.Add(this.PlayerBetPanel);
             this.Controls.Add(this.CompHandLabel);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1000, 600);
             this.Name = "GameBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Game";
+            this.Text = "Five Card Draw";
             this.Load += new System.EventHandler(this.GameBoard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PlayerBet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompBet)).EndInit();
@@ -808,6 +840,8 @@ namespace WindowsFormsApplication1
         private PictureBox forrest;
         private PictureBox pictureBox3;
         private Button button1;
+        private HelpProvider helpProvider1;
+        private Button helpBtn;
     }
 }
 
