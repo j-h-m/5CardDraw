@@ -712,9 +712,9 @@ namespace WindowsFormsApplication1
             this.Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Help.FlatAppearance.BorderSize = 0;
             this.Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Help.Location = new System.Drawing.Point(993, 266);
+            this.Help.Location = new System.Drawing.Point(1008, 296);
             this.Help.Name = "Help";
-            this.Help.Size = new System.Drawing.Size(107, 77);
+            this.Help.Size = new System.Drawing.Size(81, 58);
             this.Help.TabIndex = 57;
             this.Help.UseVisualStyleBackColor = false;
             this.Help.Click += new System.EventHandler(this.Help_Click);
