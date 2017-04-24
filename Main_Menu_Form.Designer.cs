@@ -34,6 +34,7 @@
             this.statistics_button = new System.Windows.Forms.Button();
             this.exit_game_button = new System.Windows.Forms.Button();
             this.settings_picture = new System.Windows.Forms.PictureBox();
+            this.Help = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.settings_picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +106,20 @@
             this.settings_picture.TabStop = false;
             this.settings_picture.Click += new System.EventHandler(this.settings_picture_Click);
             // 
+            // Help
+            // 
+            this.Help.BackColor = System.Drawing.Color.Transparent;
+            this.Help.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Help.BackgroundImage")));
+            this.Help.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Help.FlatAppearance.BorderSize = 0;
+            this.Help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Help.Location = new System.Drawing.Point(750, 374);
+            this.Help.Name = "Help";
+            this.Help.Size = new System.Drawing.Size(86, 60);
+            this.Help.TabIndex = 58;
+            this.Help.UseVisualStyleBackColor = false;
+            this.Help.Click += new System.EventHandler(this.Help_Click);
+            // 
             // Main_Menu_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +127,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(913, 446);
+            this.Controls.Add(this.Help);
             this.Controls.Add(this.settings_picture);
             this.Controls.Add(this.exit_game_button);
             this.Controls.Add(this.statistics_button);
@@ -134,5 +150,6 @@
         private System.Windows.Forms.Button statistics_button;
         private System.Windows.Forms.Button exit_game_button;
         private System.Windows.Forms.PictureBox settings_picture;
+        private System.Windows.Forms.Button Help;
     }
 }

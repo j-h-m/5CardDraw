@@ -126,5 +126,11 @@ namespace WindowsFormsApplication1
                 return (T)binaryFormatter.Deserialize(stream);
             }
         }
+
+        private void Help_Click(object sender, EventArgs e)
+        {
+            Help help = new Help();
+            help.Show();
+        }
     }
 }
